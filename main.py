@@ -11,26 +11,34 @@ def main(stdscr):
     shared_objects = create_shared_state()
     shared_state = SharedGameState(shared_objects)
     
-    robot_process = Robot(0, shared_objects)
-    robot_process.start()
+    player_robot = Robot(0, shared_objects)
+    player_robot.start()
 
     viewer = Viewer(shared_state)
-    
     time.sleep(0.1)
 
-    while True:
+    running = True
+    while running:
         viewer.display_grid(stdscr)
         
         #'q' pra sair
         key = stdscr.getch()
         if key == ord('q'):
-            break
+            running = False
         
-        #pausa 100ms entre frames
-        curses.napms(100)
+        if key == curses.KEY_UP:
+            player_robot.set_direction(0, -1)
+        elif key == curses.KEY_DOWN:
+            player_robot.set_direction(0, 1)
+        elif key == curses.KEY_LEFT:
+            player_robot.set_direction(-1, 0)
+        elif key == curses.KEY_RIGHT:
+            player_robot.set_direction(1, 0)
+            
+        curses.napms(50)
 
-    robot_process.terminate()
-    robot_process.join()
+    player_robot.terminate()
+    player_robot.join()
 
 if __name__ == "__main__":
     multiprocessing.set_start_method('spawn', force=True)
