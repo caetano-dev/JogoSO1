@@ -3,6 +3,14 @@ import time
 import random
 from config import *
 from shared_memory import SharedGameState
+import os
+
+def log(msg):
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    with open(path, "a") as f:
+        f.write(msg + "\n")
+    print(msg)
+
 
 class Robot(multiprocessing.Process):
     def __init__(self, robot_id, is_player, shared_objects):

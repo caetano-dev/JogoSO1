@@ -1,10 +1,18 @@
 import multiprocessing
 import curses
 import time
+import os
 from config import *
 from shared_memory import create_shared_state, SharedGameState
 from robot import Robot
 from viewer import Viewer
+
+def log(msg):
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    with open(path, "a") as f:
+        f.write(msg + "\n")
+    print(msg)
+
 
 def main(stdscr):
     curses.curs_set(0)

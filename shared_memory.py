@@ -1,6 +1,14 @@
 import multiprocessing
 import random
 from config import *
+import os
+
+def log(msg):
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    with open(path, "a") as f:
+        f.write(msg + "\n")
+    print(msg)
+
 
 def create_shared_state():
     manager = multiprocessing.Manager()

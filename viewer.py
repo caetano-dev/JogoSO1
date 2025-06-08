@@ -1,6 +1,14 @@
 import time
 import curses
+import os
 from config import *
+
+def log(msg):
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    with open(path, "a") as f:
+        f.write(msg + "\n")
+    print(msg)
+
 
 class Viewer:
     def __init__(self, shared_state):
