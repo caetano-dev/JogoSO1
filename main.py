@@ -26,26 +26,35 @@ def main(stdscr):
         robot = Robot(i, is_player, shared_objects)
         robot_processes.append(robot)
         robot.start()
+        log(f"Robo numero {i} criado")
     
     player_robot = robot_processes[0]
     viewer = Viewer(SharedGameState(shared_objects))
+    
+    log("Jogo iniciado")
     
     running = True
     while running:
         viewer.display_grid(stdscr)
         
         key = stdscr.getch()
+        log(f"Tecla {key} pressionada.")
         if key == ord('q'):
             running = False
+            log("Jogo está sendo encerrado, obrigado por jogar <3")
         
         if key == curses.KEY_UP:
             player_robot.set_direction(0, -1)
+            log("Robo do jogador se moveu para cima.")
         elif key == curses.KEY_DOWN:
             player_robot.set_direction(0, 1)
+            log("Robo do jogador se moveu para baixo.")
         elif key == curses.KEY_LEFT:
             player_robot.set_direction(-1, 0)
+            log("Robo do jogador se moveu para a esquerda.")
         elif key == curses.KEY_RIGHT:
             player_robot.set_direction(1, 0)
+            log("Robo do jogador se moveu para a direita.")
             
         curses.napms(50)
 
