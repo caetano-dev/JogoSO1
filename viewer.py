@@ -7,7 +7,6 @@ def log(msg):
     path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "a") as f:
         f.write(msg + "\n")
-    print(msg)
 
 
 class Viewer:
