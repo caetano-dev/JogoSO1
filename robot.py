@@ -32,6 +32,32 @@ class Robot(multiprocessing.Process):
                     self.shared_state.set_grid_cell(x, y, self.get_robot_symbol())
                     break 
 
+    def place_batteries(self):
+        for battery_idx in range(NUM_BATTERIES):
+            for _ in range(100):
+                x = random.randint(1, GRID_WIDTH - 2)
+                y = random.randint(1, GRID_HEIGHT - 2)
+                
+                with self.shared_state.grid_mutex:
+                    if self.shared_state.get_grid_cell(x, y) == EMPTY_SYMBOL:
+                        with self.shared_state.battery_mutexes[battery_idx]:
+                            battery_data = {
+                                'x': x, 
+                                'y': y, 
+                                'collected': 0, 
+                                'owner': -1
+                            }
+                            self.shared_state.set_battery_data(battery_idx, battery_data)
+                        
+                        self.shared_state.set_grid_cell(x, y, BATTERY_SYMBOL)
+                        break
+
+    def initialize_with_batteries(self):
+        if self.id == 0: 
+            self.place_batteries()
+        
+        self.initialize()
+
     def set_direction(self, dx, dy):
         if self.is_player and self.direction_queue:
             while not self.direction_queue.empty():
@@ -76,5 +102,5 @@ class Robot(multiprocessing.Process):
     def run(self):
         self.shared_state = SharedGameState(self.shared_objects)
         time.sleep(0.01 * self.id) #atrasa um pouco pra nao dar race condition
-        self.initialize()
+        self.initialize_with_batteries()
         self.sense_act()
