@@ -4,7 +4,7 @@ from config import *
 import os
 
 def log(msg):
-    path = os.path.join(os.path.dirname(_file_), "log.txt")
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "a") as f:
         f.write(msg + "\n")
 
@@ -39,7 +39,7 @@ def create_shared_state():
     }
 
 class SharedGameState:
-    def _init_(self, shared_objects):
+    def __init__(self, shared_objects):
         self.grid = shared_objects['grid']
         self.robots = shared_objects['robots']
         self.batteries = shared_objects['batteries']
