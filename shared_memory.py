@@ -13,6 +13,15 @@ def create_shared_state():
     manager = multiprocessing.Manager()
     
     grid = manager.list()
+    robots = manager.list()
+    batteries = manager.list()
+    flags = manager.dict()
+    
+    init_mutex = manager.Lock()
+    grid_mutex = manager.Lock()
+    robots_mutex = manager.Lock()
+    battery_mutexes = [manager.Lock() for _ in range(NUM_BATTERIES)]
+    
     for y in range(GRID_HEIGHT):
         row = []
         for x in range(GRID_WIDTH):
@@ -22,17 +31,38 @@ def create_shared_state():
                 row.append(EMPTY_SYMBOL)
         grid.append(row)
     
-    robots = manager.list([manager.dict() for _ in range(NUM_ROBOTS)])
-    batteries = manager.list([manager.dict() for _ in range(NUM_BATTERIES)])
+    for robot_id in range(NUM_ROBOTS):
+        robots.append(manager.dict({
+            'id': robot_id,
+            'x': 0,
+            'y': 0,
+            'F': 0,
+            'E': 0,
+            'V': 0,
+            'status': 0  # 0: morto, 1: vivo TODO: poderia ser um enum
+        }))
     
-    grid_mutex = manager.Lock()
-    robots_mutex = manager.Lock()
-    battery_mutexes = [manager.Lock() for _ in range(NUM_BATTERIES)]
+    for battery_id in range(NUM_BATTERIES):
+        batteries.append(manager.dict({
+            'x': 0,
+            'y': 0,
+            'collected': 0,
+            'owner': -1
+        }))
+    
+    flags.update({
+        'init_done': 0,
+        'game_over': 0,
+        'winner': -1,
+        'alive_count': 0
+    })
     
     return {
         'grid': grid,
         'robots': robots,
         'batteries': batteries,
+        'flags': flags,
+        'init_mutex': init_mutex,
         'grid_mutex': grid_mutex,
         'robots_mutex': robots_mutex,
         'battery_mutexes': battery_mutexes
@@ -43,6 +73,8 @@ class SharedGameState:
         self.grid = shared_objects['grid']
         self.robots = shared_objects['robots']
         self.batteries = shared_objects['batteries']
+        self.flags = shared_objects['flags']
+        self.init_mutex = shared_objects['init_mutex']
         self.grid_mutex = shared_objects['grid_mutex']
         self.robots_mutex = shared_objects['robots_mutex']
         self.battery_mutexes = shared_objects['battery_mutexes']
@@ -50,7 +82,7 @@ class SharedGameState:
     def get_grid_cell(self, x, y):
         if 0 <= y < GRID_HEIGHT and 0 <= x < GRID_WIDTH:
             return self.grid[y][x]
-        return None
+        return BORDER_SYMBOL
 
     def set_grid_cell(self, x, y, value):
         if 0 <= y < GRID_HEIGHT and 0 <= x < GRID_WIDTH:

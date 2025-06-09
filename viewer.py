@@ -10,7 +10,7 @@ def log(msg):
 
 
 class Viewer:
-    def _init_(self, shared_state):
+    def __init__(self, shared_state):
         self.shared_state = shared_state
 
     def display_grid(self, stdscr):
