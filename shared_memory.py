@@ -4,14 +4,24 @@ from config import *
 import os
 
 def log(msg):
-    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    path = os.path.join(os.path.dirname(_file_), "log.txt")
     with open(path, "a") as f:
         f.write(msg + "\n")
 
 
 def create_shared_state():
     manager = multiprocessing.Manager()
-    grid = manager.list([manager.list([EMPTY_SYMBOL] * GRID_WIDTH) for _ in range(GRID_HEIGHT)])
+    
+    grid = manager.list()
+    for y in range(GRID_HEIGHT):
+        row = []
+        for x in range(GRID_WIDTH):
+            if x == 0 or x == GRID_WIDTH-1 or y == 0 or y == GRID_HEIGHT-1:
+                row.append(BORDER_SYMBOL)
+            else:
+                row.append(EMPTY_SYMBOL)
+        grid.append(row)
+    
     robots = manager.list([manager.dict() for _ in range(NUM_ROBOTS)])
     batteries = manager.list([manager.dict() for _ in range(NUM_BATTERIES)])
     
@@ -29,7 +39,7 @@ def create_shared_state():
     }
 
 class SharedGameState:
-    def __init__(self, shared_objects):
+    def _init_(self, shared_objects):
         self.grid = shared_objects['grid']
         self.robots = shared_objects['robots']
         self.batteries = shared_objects['batteries']
