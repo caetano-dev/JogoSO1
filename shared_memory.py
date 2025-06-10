@@ -117,3 +117,19 @@ class SharedGameState:
         if not (0 <= battery_id < NUM_BATTERIES):
             return
         self.batteries[battery_id].update(battery_data)
+
+    def get_robot_data(self, robot_id):
+        if not (0 <= robot_id < NUM_ROBOTS):
+            return None
+        return dict(self.robots[robot_id])
+
+    def set_robot_data(self, robot_id, robot_data):
+        if not (0 <= robot_id < NUM_ROBOTS):
+            return
+        self.robots[robot_id].update(robot_data)
+
+    def get_flags(self):
+        return dict(self.flags)
+
+    def set_flags(self, flags_dict):
+        self.flags.update(flags_dict)
