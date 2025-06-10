@@ -28,7 +28,25 @@ def create_shared_state():
             if x == 0 or x == GRID_WIDTH-1 or y == 0 or y == GRID_HEIGHT-1:
                 row.append(BORDER_SYMBOL)
             else:
-                row.append(EMPTY_SYMBOL)
+                grid_aleatoria = random.randint(0,3)#0,3
+                match(grid_aleatoria):
+                    case 0:
+                        row.append(EMPTY_SYMBOL)
+                    case 1:
+                        if ((10 <= x < 15 or 25 < x <= 30) and (y == 5 or y == 15)) or((x==10 or x==30) and (5<y<9 or 12<y<15)):
+                            row.append(BORDER_SYMBOL)
+                        else:
+                            row.append(EMPTY_SYMBOL)
+                    case 2:
+                        if ((15 <= x <= 25) and (y == 3 or y == 17)) or((x==5 or x==35) and (3<=y<9 or 11<y<=17)):
+                            row.append(BORDER_SYMBOL)
+                        else:
+                            row.append(EMPTY_SYMBOL)
+                    case 3:
+                        if ((x==10 or x==30) and (4<=y<8 or 12<y<=16)) or (x==20 and (5<y<10 or 10<y<15)):
+                            row.append(BORDER_SYMBOL)
+                        else:
+                            row.append(EMPTY_SYMBOL)
         grid.append(row)
     
     for robot_id in range(NUM_ROBOTS):
