@@ -25,6 +25,9 @@ class Robot(multiprocessing.Process):
         self.E = random.randint(95, 100)
         self.V = random.randint(4, 5)
         
+        self.current_battery_id = None
+        self.current_battery_mutex = None
+        
         self.direction_queue = multiprocessing.Queue() if is_player else None
 
     def get_robot_symbol(self):
@@ -83,10 +86,7 @@ class Robot(multiprocessing.Process):
                                 'status': 1
                             })
                         self.shared_state.set_grid_cell(x, y, PLAYER_SYMBOL if robot_idx == 0 else str(robot_idx))
-                        log(f"Robo {robot_idx} inicializado na posicao {x},{y}, com {self.E}% de energia, {self.F} de forca e {self.V} de velocidade. ")
                         break
-                    
-                
 
     def set_direction(self, dx, dy):
         if self.is_player and self.direction_queue:
@@ -100,11 +100,17 @@ class Robot(multiprocessing.Process):
             old_x, old_y = robot_data['x'], robot_data['y']
             new_x, new_y = old_x + dx, old_y + dy
 
-            is_valid_move = (0 < new_x < GRID_WIDTH - 1 and
-                             0 < new_y < GRID_HEIGHT - 1 and
-                             self.shared_state.get_grid_cell(new_x, new_y) == EMPTY_SYMBOL)
+            if not (0 < new_x < GRID_WIDTH - 1 and 0 < new_y < GRID_HEIGHT - 1):
+                return
+            
+            target_cell = self.shared_state.get_grid_cell(new_x, new_y)
+            is_valid_move = target_cell == EMPTY_SYMBOL or target_cell == BATTERY_SYMBOL
 
             if is_valid_move:
+                battery_id = self.find_battery_at_position(new_x, new_y)
+                if battery_id is not None:
+                    self.acquire_battery_mutex(battery_id)
+                
                 robot_data['x'] = new_x
                 robot_data['y'] = new_y
                 robot_data['E'] = max(0, robot_data['E'] - 1)
@@ -115,11 +121,27 @@ class Robot(multiprocessing.Process):
                 self.shared_state.set_robot_data(self.id, robot_data)
                 
                 if robot_data['status'] == 0:
-                    self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
-                    self.shared_state.set_grid_cell(new_x, new_y, EMPTY_SYMBOL)
+                    if self.is_on_battery(old_x, old_y):
+                        self.shared_state.set_grid_cell(old_x, old_y, BATTERY_SYMBOL)
+                    else:
+                        self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
+                    
+                    if battery_id is not None:
+                        self.shared_state.set_grid_cell(new_x, new_y, BATTERY_SYMBOL)
+                        self.release_battery_mutex()
+                    else:
+                        self.shared_state.set_grid_cell(new_x, new_y, EMPTY_SYMBOL)
                 else:
                     self.shared_state.set_grid_cell(new_x, new_y, self.get_robot_symbol())
-                    self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
+                    
+                    if self.is_on_battery(old_x, old_y):
+                        old_battery_id = self.find_battery_at_position(old_x, old_y)
+                        if old_battery_id != battery_id: 
+                            self.shared_state.set_grid_cell(old_x, old_y, BATTERY_SYMBOL)
+                            if self.current_battery_id == old_battery_id:
+                                self.release_battery_mutex()
+                    else:
+                        self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
 
     def sense_act(self):
         while True:
@@ -127,6 +149,12 @@ class Robot(multiprocessing.Process):
                 robot_data = self.shared_state.get_robot_data(self.id)
                 if robot_data['status'] == 0:
                     break
+            
+            if self.current_battery_id is not None:
+                robot_data = self.shared_state.get_robot_data(self.id)
+                if robot_data and self.is_on_battery(robot_data['x'], robot_data['y']):
+                    robot_data['E'] = min(100, robot_data['E'] + 5) 
+                    self.shared_state.set_robot_data(self.id, robot_data)
             
             dx, dy = 0, 0
             if self.is_player:
@@ -141,14 +169,51 @@ class Robot(multiprocessing.Process):
             if dx != 0 or dy != 0:
                 self.move(dx, dy)
             
-            time.sleep(0.2) 
+            time.sleep(0.2)
+
+    def find_battery_at_position(self, x, y):
+        for battery_idx in range(NUM_BATTERIES):
+            battery_data = self.shared_state.get_battery_data(battery_idx)
+            if battery_data and battery_data['x'] > 0:
+                bx, by = battery_data['x'], battery_data['y']
+                if x == bx and y == by:
+                    return battery_idx
+        return None
+
+    def is_on_battery(self, x, y):
+        return self.find_battery_at_position(x, y) is not None
+
+    def acquire_battery_mutex(self, battery_id):
+        if battery_id is not None and self.current_battery_id != battery_id:
+            if self.current_battery_id is not None:
+                self.release_battery_mutex()
+            time.sleep(0.01 + random.uniform(0, 0.02))
+            self.shared_state.battery_mutexes[battery_id].acquire()
+            self.current_battery_id = battery_id
+            self.current_battery_mutex = self.shared_state.battery_mutexes[battery_id]
+
+    def release_battery_mutex(self):
+        if self.current_battery_mutex is not None:
+            try:
+                log(f"Robô {self.id} - LIBERANDO battery_mutex da bateria {self.current_battery_id}")
+                self.current_battery_mutex.release()
+            except Exception:
+                log(f"Robô {self.id} - ERRO ao liberar battery_mutex da bateria {self.current_battery_id}: {e}")
+                pass
+            finally:
+                self.current_battery_id = None
+                self.current_battery_mutex = None
 
     def run(self):
-        self.shared_state = SharedGameState(self.shared_objects)
-        time.sleep(0.01 * self.id)
-        self.initialize_arena_if_needed()
-        
-        while not self.shared_state.get_flags()['init_done']:
-            time.sleep(0.1)
-        
-        self.sense_act()
+        try:
+            self.shared_state = SharedGameState(self.shared_objects)
+            time.sleep(0.01 * self.id)
+            self.initialize_arena_if_needed()
+            
+            while not self.shared_state.get_flags()['init_done']:
+                time.sleep(0.1)
+            
+            self.sense_act()
+        finally:
+            if self.current_battery_id is not None:
+                self.release_battery_mutex()
