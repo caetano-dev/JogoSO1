@@ -4,11 +4,13 @@ import random
 from config import *
 from shared_memory import SharedGameState
 import os
+import datetime
 
 def log(msg):
+    timestamp = datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
     path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "a") as f:
-        f.write(msg + "\n")
+        f.write(f"[{timestamp}] {msg}\n")
 
 
 class Robot(multiprocessing.Process):

@@ -6,11 +6,13 @@ from config import *
 from shared_memory import create_shared_state, SharedGameState
 from robot import Robot
 from viewer import Viewer
+import datetime
 
 def log(msg):
+    timestamp = datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
     path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "a") as f:
-        f.write(msg + "\n")
+        f.write(f"[{timestamp}] {msg}\n")
         
 def clearLog():
     path = os.path.join(os.path.dirname(__file__), "log.txt")
