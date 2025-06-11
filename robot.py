@@ -29,9 +29,19 @@ class Robot(multiprocessing.Process):
         self.current_battery_mutex = None
         
         self.direction_queue = multiprocessing.Queue() if is_player else None
+        
+        robot_type = "JOGADOR" if is_player else "IA"
+        log(f"Robô {robot_id} ({robot_type}) criado - F:{self.F}, E:{self.E}, V:{self.V}")
 
     def get_robot_symbol(self):
         return PLAYER_SYMBOL if self.is_player else str(self.id)
+
+    def attach_shared_memory(self):
+        self.shared_state = SharedGameState(self.shared_objects)
+        log(f"Robô {self.id} - Memória compartilhada anexada")
+
+    def validate_robot_data(self, robot_data):
+        return robot_data and robot_data['status'] == 1
 
     def place_batteries(self):
         for battery_idx in range(NUM_BATTERIES):
@@ -144,11 +154,14 @@ class Robot(multiprocessing.Process):
                         self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
 
     def sense_act(self):
+        log(f"Robô {self.id} - Iniciando ciclo sense_act")
         while True:
             with self.shared_state.robots_mutex:
+                log(f"Robô {self.id} - robots_mutex ADQUIRIDO")
                 robot_data = self.shared_state.get_robot_data(self.id)
-                if robot_data['status'] == 0:
-                    break
+                log(f"Robô {self.id} - LIBERANDO robots_mutex")
+            if not self.validate_robot_data(robot_data):
+                break
             
             if self.current_battery_id is not None:
                 robot_data = self.shared_state.get_robot_data(self.id)
@@ -186,34 +199,48 @@ class Robot(multiprocessing.Process):
     def acquire_battery_mutex(self, battery_id):
         if battery_id is not None and self.current_battery_id != battery_id:
             if self.current_battery_id is not None:
+                log(f"Robô {self.id} - Liberando mutex da bateria {self.current_battery_id} antes de adquirir bateria {battery_id}")
                 self.release_battery_mutex()
             time.sleep(0.01 + random.uniform(0, 0.02))
+            log(f"Robô {self.id} - TENTANDO ADQUIRIR battery_mutex da bateria {battery_id}")
             self.shared_state.battery_mutexes[battery_id].acquire()
             self.current_battery_id = battery_id
             self.current_battery_mutex = self.shared_state.battery_mutexes[battery_id]
+            log(f"Robô {self.id} - battery_mutex da bateria {battery_id} ADQUIRIDO COM SUCESSO")
 
     def release_battery_mutex(self):
         if self.current_battery_mutex is not None:
             try:
                 log(f"Robô {self.id} - LIBERANDO battery_mutex da bateria {self.current_battery_id}")
                 self.current_battery_mutex.release()
-            except Exception:
+                log(f"Robô {self.id} - battery_mutex da bateria {self.current_battery_id} LIBERADO COM SUCESSO")
+            except Exception as e:
                 log(f"Robô {self.id} - ERRO ao liberar battery_mutex da bateria {self.current_battery_id}: {e}")
                 pass
             finally:
+                old_battery_id = self.current_battery_id
                 self.current_battery_id = None
                 self.current_battery_mutex = None
+                log(f"Robô {self.id} - Referências do battery_mutex da bateria {old_battery_id} limpas")
 
     def run(self):
+        log(f"Robô {self.id} - Processo iniciado")
         try:
-            self.shared_state = SharedGameState(self.shared_objects)
+            self.attach_shared_memory()
             time.sleep(0.01 * self.id)
             self.initialize_arena_if_needed()
             
+            log(f"Robô {self.id} - Aguardando inicialização do arena")
             while not self.shared_state.get_flags()['init_done']:
                 time.sleep(0.1)
             
+            log(f"Robô {self.id} - Arena inicializada, começando sense_act")
             self.sense_act()
+        except Exception as e:
+            log(f"Robô {self.id} - ERRO no processo principal: {e}")
+            pass
         finally:
+            log(f"Robô {self.id} - Finalizando processo")
             if self.current_battery_id is not None:
+                log(f"Robô {self.id} - Liberando mutex final da bateria {self.current_battery_id}")
                 self.release_battery_mutex()
