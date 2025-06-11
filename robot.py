@@ -81,7 +81,10 @@ class Robot(multiprocessing.Process):
                                 'status': 1
                             })
                         self.shared_state.set_grid_cell(x, y, PLAYER_SYMBOL if robot_idx == 0 else str(robot_idx))
+                        log(f"Robo {robot_idx} inicializado na posicao {x},{y}, com {self.E}% de energia, {self.F} de forca e {self.V} de velocidade. ")
                         break
+                    
+                
 
     def set_direction(self, dx, dy):
         if self.is_player and self.direction_queue:

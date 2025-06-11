@@ -11,7 +11,12 @@ def log(msg):
     path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "a") as f:
         f.write(msg + "\n")
-
+        
+def clearLog():
+    path = os.path.join(os.path.dirname(__file__), "log.txt")
+    with open(path, "w") as f:
+        f.write("")
+        
 
 def main(stdscr):
     curses.curs_set(0)
@@ -38,21 +43,26 @@ def main(stdscr):
         
         key = stdscr.getch()
         log(f"Tecla {key} pressionada.")
+        
         if key == ord('q'):
             running = False
-            log("Jogo está sendo encerrado, obrigado por jogar <3")
+            log("Jogo esta sendo encerrado, obrigado por jogar <3")
         
         if key == curses.KEY_UP:
             player_robot.set_direction(0, -1)
+            log(f"Tecla {key} pressionada.")
             log("Robo do jogador se moveu para cima.")
         elif key == curses.KEY_DOWN:
             player_robot.set_direction(0, 1)
+            log(f"Tecla {key} pressionada.")
             log("Robo do jogador se moveu para baixo.")
         elif key == curses.KEY_LEFT:
             player_robot.set_direction(-1, 0)
+            log(f"Tecla {key} pressionada.")
             log("Robo do jogador se moveu para a esquerda.")
         elif key == curses.KEY_RIGHT:
             player_robot.set_direction(1, 0)
+            log(f"Tecla {key} pressionada.")
             log("Robo do jogador se moveu para a direita.")
             
         curses.napms(50)
@@ -62,5 +72,6 @@ def main(stdscr):
         robot.join()
 
 if __name__ == "__main__":
+    clearLog()
     multiprocessing.set_start_method('spawn', force=True)
     curses.wrapper(main)

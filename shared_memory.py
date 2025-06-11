@@ -28,7 +28,7 @@ def create_shared_state():
             if x == 0 or x == GRID_WIDTH-1 or y == 0 or y == GRID_HEIGHT-1:
                 row.append(BORDER_SYMBOL)
             else:
-                grid_aleatoria = random.randint(0,3)#0,3
+                grid_aleatoria = random.randint(3,3)#0,3
                 match(grid_aleatoria):
                     case 0:
                         row.append(EMPTY_SYMBOL)
