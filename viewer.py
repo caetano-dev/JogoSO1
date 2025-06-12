@@ -75,3 +75,29 @@ class Viewer:
             stdscr.addstr(GRID_HEIGHT + 4, 0, controls[:max_x-1])
         
         stdscr.refresh()
+
+    def handle_quit_input(self, stdscr):
+        key = stdscr.getch()
+        return key == ord('q')
+    
+    def run(self, stdscr):
+        stdscr.nodelay(True)
+        
+        while self.running:
+            try:
+                flags = self.shared_state.get_flags()
+                if flags['game_over']:
+                    self.display_grid(stdscr)
+                    time.sleep(2)
+                    break
+                
+                self.display_grid(stdscr)
+                
+                key = stdscr.getch()
+                if key == ord('q') or key == ord('Q'):
+                    break
+                
+                time.sleep(0.1)
+                
+            except KeyboardInterrupt:
+                break
