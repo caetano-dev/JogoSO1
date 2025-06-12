@@ -152,6 +152,13 @@ class Robot(multiprocessing.Process):
                                 self.release_battery_mutex()
                     else:
                         self.shared_state.set_grid_cell(old_x, old_y, EMPTY_SYMBOL)
+            else:
+                if target_cell.isdigit():
+                    if self.find_battery_at_position(new_x, new_y) is not None: 
+                        return 
+                    other_robot_id = self.find_robot_at_position(new_x, new_y)
+                    if other_robot_id is not None and other_robot_id != self.id:
+                        self.initiate_duel(other_robot_id, old_x, old_y, new_x, new_y)
 
     def sense_act(self):
         log(f"Robô {self.id} - Iniciando ciclo sense_act")
@@ -207,6 +214,46 @@ class Robot(multiprocessing.Process):
             self.current_battery_id = battery_id
             self.current_battery_mutex = self.shared_state.battery_mutexes[battery_id]
             log(f"Robô {self.id} - battery_mutex da bateria {battery_id} ADQUIRIDO COM SUCESSO")
+    
+    def initiate_duel(self, other_robot_id, old_x, old_y, new_x, new_y):
+        with self.shared_state.robots_mutex: # ja temos o grid mutex
+            my_data = self.shared_state.get_robot_data(self.id)
+            other_data = self.shared_state.get_robot_data(other_robot_id)
+            if not self.validate_robot_data(my_data) or not self.validate_robot_data(other_data):
+                return
+            my_power = 2 * my_data['F'] + my_data['E']
+            other_power = 2 * other_data['F'] + other_data['E']
+            if my_power > other_power:
+                other_data['status'] = 0
+                self.shared_state.set_robot_data(other_robot_id, other_data)
+                
+                my_data['x'] = new_x
+                my_data['y'] = new_y
+                my_data['E'] = max(0, my_data['E'] - 1)
+                if my_data['E'] <= 0:
+                    my_data['status'] = 0
+                self.shared_state.set_robot_data(self.id, my_data)
+                
+                self.update_grid_cell(old_x, old_y, self.is_on_battery(old_x, old_y))
+                self.shared_state.set_grid_cell(new_x, new_y, self.get_robot_symbol())
+                
+                if my_data['status'] == 0:
+                    self.handle_robot_death(new_x, new_y, self.is_on_battery(new_x, new_y))
+                    
+            elif other_power > my_power:
+                my_data['status'] = 0
+                self.shared_state.set_robot_data(self.id, my_data)
+                self.handle_robot_death(old_x, old_y, self.is_on_battery(old_x, old_y))
+                
+            else:
+                my_data['status'] = 0
+                other_data['status'] = 0
+                self.shared_state.set_robot_data(self.id, my_data)
+                self.shared_state.set_robot_data(other_robot_id, other_data)
+                self.update_grid_cell(old_x, old_y, self.is_on_battery(old_x, old_y))
+                self.update_grid_cell(new_x, new_y, self.is_on_battery(new_x, new_y))
+                if self.current_battery_id is not None:
+                    self.release_battery_mutex()
 
     def release_battery_mutex(self):
         if self.current_battery_mutex is not None:

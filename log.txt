@@ -1,0 +1,1180 @@
+[00:04:29.197] Robô 0 (JOGADOR) criado - F:10, E:99, V:4
+[00:04:29.199] Robo numero 0 criado
+[00:04:29.199] Robô 1 (IA) criado - F:9, E:100, V:4
+[00:04:29.200] Robo numero 1 criado
+[00:04:29.200] Robô 2 (IA) criado - F:10, E:98, V:5
+[00:04:29.202] Robo numero 2 criado
+[00:04:29.203] Robô 3 (IA) criado - F:10, E:99, V:4
+[00:04:29.205] Robo numero 3 criado
+[00:04:29.206] Robô 4 (IA) criado - F:10, E:97, V:4
+[00:04:29.208] Robo numero 4 criado
+[00:04:29.208] Jogo iniciado
+[00:04:29.428] Tecla -1 pressionada.
+[00:04:29.623] Tecla -1 pressionada.
+[00:04:29.876] Tecla -1 pressionada.
+[00:04:30.010] Robô 1 - Processo iniciado
+[00:04:30.010] Robô 1 - Memória compartilhada anexada
+[00:04:30.131] Robô 1 - Aguardando inicialização do arena
+[00:04:30.132] Robô 1 - Arena inicializada, começando sense_act
+[00:04:30.133] Robô 1 - Iniciando ciclo sense_act
+[00:04:30.133] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:30.143] Robô 1 - LIBERANDO robots_mutex
+[00:04:30.273] Tecla -1 pressionada.
+[00:04:30.348] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:30.356] Robô 1 - LIBERANDO robots_mutex
+[00:04:30.494] Robô 3 - Processo iniciado
+[00:04:30.494] Robô 3 - Memória compartilhada anexada
+[00:04:30.531] Robô 3 - Aguardando inicialização do arena
+[00:04:30.533] Robô 3 - Arena inicializada, começando sense_act
+[00:04:30.533] Robô 3 - Iniciando ciclo sense_act
+[00:04:30.602] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:30.605] Tecla -1 pressionada.
+[00:04:30.608] Robô 3 - LIBERANDO robots_mutex
+[00:04:30.610] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:30.618] Robô 1 - LIBERANDO robots_mutex
+[00:04:30.963] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:30.964] Tecla -1 pressionada.
+[00:04:30.969] Robô 3 - LIBERANDO robots_mutex
+[00:04:30.972] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:30.979] Robô 1 - LIBERANDO robots_mutex
+[00:04:31.172] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:31.179] Robô 3 - LIBERANDO robots_mutex
+[00:04:31.182] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:31.188] Robô 1 - LIBERANDO robots_mutex
+[00:04:31.248] Robô 0 - Processo iniciado
+[00:04:31.248] Robô 0 - Memória compartilhada anexada
+[00:04:31.255] Robô 0 - Aguardando inicialização do arena
+[00:04:31.257] Robô 0 - Arena inicializada, começando sense_act
+[00:04:31.258] Robô 0 - Iniciando ciclo sense_act
+[00:04:31.337] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:31.339] Tecla -1 pressionada.
+[00:04:31.343] Robô 0 - LIBERANDO robots_mutex
+[00:04:31.383] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:31.389] Robô 3 - LIBERANDO robots_mutex
+[00:04:31.392] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:31.399] Robô 1 - LIBERANDO robots_mutex
+[00:04:31.547] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:31.555] Robô 0 - LIBERANDO robots_mutex
+[00:04:31.603] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:31.610] Robô 1 - LIBERANDO robots_mutex
+[00:04:31.656] Robô 4 - Processo iniciado
+[00:04:31.658] Robô 4 - Memória compartilhada anexada
+[00:04:31.706] Robô 4 - Aguardando inicialização do arena
+[00:04:31.707] Robô 4 - Arena inicializada, começando sense_act
+[00:04:31.707] Robô 4 - Iniciando ciclo sense_act
+[00:04:31.752] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:31.755] Tecla -1 pressionada.
+[00:04:31.758] Robô 3 - LIBERANDO robots_mutex
+[00:04:31.762] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:31.769] Robô 4 - LIBERANDO robots_mutex
+[00:04:31.771] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:31.779] Robô 0 - LIBERANDO robots_mutex
+[00:04:31.844] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:31.851] Robô 1 - LIBERANDO robots_mutex
+[00:04:31.963] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:31.971] Robô 3 - LIBERANDO robots_mutex
+[00:04:31.983] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:31.998] Robô 0 - LIBERANDO robots_mutex
+[00:04:32.045] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:32.056] Robô 4 - LIBERANDO robots_mutex
+[00:04:32.268] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:32.274] Tecla -1 pressionada.
+[00:04:32.278] Robô 1 - LIBERANDO robots_mutex
+[00:04:32.284] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:32.292] Robô 3 - LIBERANDO robots_mutex
+[00:04:32.297] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:32.306] Robô 0 - LIBERANDO robots_mutex
+[00:04:32.342] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:32.355] Robô 4 - LIBERANDO robots_mutex
+[00:04:32.488] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:32.496] Robô 1 - LIBERANDO robots_mutex
+[00:04:32.501] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:32.507] Robô 2 - Processo iniciado
+[00:04:32.508] Robô 2 - Memória compartilhada anexada
+[00:04:32.514] Robô 3 - LIBERANDO robots_mutex
+[00:04:32.538] Robô 2 - Aguardando inicialização do arena
+[00:04:32.541] Robô 2 - Arena inicializada, começando sense_act
+[00:04:32.541] Robô 2 - Iniciando ciclo sense_act
+[00:04:32.592] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:32.598] Robô 0 - LIBERANDO robots_mutex
+[00:04:32.664] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:32.672] Robô 2 - LIBERANDO robots_mutex
+[00:04:32.675] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:32.685] Robô 4 - LIBERANDO robots_mutex
+[00:04:32.817] Tecla -1 pressionada.
+[00:04:32.916] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:32.924] Robô 1 - LIBERANDO robots_mutex
+[00:04:32.927] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:32.933] Robô 0 - LIBERANDO robots_mutex
+[00:04:32.935] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:32.940] Robô 3 - LIBERANDO robots_mutex
+[00:04:32.942] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:32.947] Robô 2 - LIBERANDO robots_mutex
+[00:04:33.160] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:33.162] Tecla -1 pressionada.
+[00:04:33.165] Robô 4 - LIBERANDO robots_mutex
+[00:04:33.167] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:33.174] Robô 0 - LIBERANDO robots_mutex
+[00:04:33.177] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:33.182] Robô 3 - LIBERANDO robots_mutex
+[00:04:33.183] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:33.187] Robô 2 - LIBERANDO robots_mutex
+[00:04:33.202] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:33.206] Robô 1 - LIBERANDO robots_mutex
+[00:04:33.388] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:33.390] Tecla -1 pressionada.
+[00:04:33.393] Robô 4 - LIBERANDO robots_mutex
+[00:04:33.395] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:33.400] Robô 0 - LIBERANDO robots_mutex
+[00:04:33.402] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:33.407] Robô 3 - LIBERANDO robots_mutex
+[00:04:33.409] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:33.413] Robô 2 - LIBERANDO robots_mutex
+[00:04:33.415] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:33.419] Robô 1 - LIBERANDO robots_mutex
+[00:04:33.657] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:33.659] Tecla -1 pressionada.
+[00:04:33.661] Robô 4 - LIBERANDO robots_mutex
+[00:04:33.662] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:33.667] Robô 0 - LIBERANDO robots_mutex
+[00:04:33.670] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:33.676] Robô 2 - LIBERANDO robots_mutex
+[00:04:33.678] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:33.683] Robô 1 - LIBERANDO robots_mutex
+[00:04:33.685] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:33.690] Robô 3 - LIBERANDO robots_mutex
+[00:04:33.910] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:33.913] Tecla 259 pressionada.
+[00:04:33.914] Tecla 259 pressionada.
+[00:04:33.914] Robo do jogador se moveu para cima.
+[00:04:33.916] Robô 4 - LIBERANDO robots_mutex
+[00:04:33.919] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:33.925] Robô 0 - LIBERANDO robots_mutex
+[00:04:33.927] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:33.933] Robô 1 - LIBERANDO robots_mutex
+[00:04:33.939] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:33.944] Robô 3 - LIBERANDO robots_mutex
+[00:04:33.991] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:33.996] Robô 2 - LIBERANDO robots_mutex
+[00:04:34.187] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:34.188] Tecla 259 pressionada.
+[00:04:34.189] Tecla 259 pressionada.
+[00:04:34.189] Robo do jogador se moveu para cima.
+[00:04:34.191] Robô 4 - LIBERANDO robots_mutex
+[00:04:34.193] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:34.197] Robô 1 - LIBERANDO robots_mutex
+[00:04:34.200] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:34.204] Robô 3 - LIBERANDO robots_mutex
+[00:04:34.206] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:34.212] Robô 0 - LIBERANDO robots_mutex
+[00:04:34.290] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:34.297] Robô 2 - LIBERANDO robots_mutex
+[00:04:34.401] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:34.408] Robô 1 - LIBERANDO robots_mutex
+[00:04:34.410] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:34.416] Robô 3 - LIBERANDO robots_mutex
+[00:04:34.523] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:34.526] Tecla 259 pressionada.
+[00:04:34.527] Tecla 259 pressionada.
+[00:04:34.527] Robo do jogador se moveu para cima.
+[00:04:34.529] Robô 4 - LIBERANDO robots_mutex
+[00:04:34.531] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:34.537] Robô 2 - LIBERANDO robots_mutex
+[00:04:34.575] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:34.579] Robô 0 - LIBERANDO robots_mutex
+[00:04:34.634] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:34.638] Robô 1 - LIBERANDO robots_mutex
+[00:04:34.640] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:34.645] Robô 3 - LIBERANDO robots_mutex
+[00:04:34.740] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:34.746] Robô 2 - LIBERANDO robots_mutex
+[00:04:34.749] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:34.754] Robô 4 - LIBERANDO robots_mutex
+[00:04:34.874] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:34.876] Tecla 261 pressionada.
+[00:04:34.876] Tecla 261 pressionada.
+[00:04:34.877] Robo do jogador se moveu para a direita.
+[00:04:34.878] Robô 0 - LIBERANDO robots_mutex
+[00:04:34.880] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:34.884] Robô 1 - LIBERANDO robots_mutex
+[00:04:34.885] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:34.893] Robô 3 - LIBERANDO robots_mutex
+[00:04:34.957] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:34.961] Robô 4 - LIBERANDO robots_mutex
+[00:04:35.008] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:35.014] Robô 2 - LIBERANDO robots_mutex
+[00:04:35.147] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:35.150] Tecla -1 pressionada.
+[00:04:35.152] Robô 1 - LIBERANDO robots_mutex
+[00:04:35.155] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:35.161] Robô 3 - LIBERANDO robots_mutex
+[00:04:35.163] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:35.167] Robô 0 - LIBERANDO robots_mutex
+[00:04:35.169] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:35.173] Robô 4 - LIBERANDO robots_mutex
+[00:04:35.217] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:35.224] Robô 2 - LIBERANDO robots_mutex
+[00:04:35.418] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:35.421] Tecla -1 pressionada.
+[00:04:35.424] Robô 1 - LIBERANDO robots_mutex
+[00:04:35.426] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:35.433] Robô 3 - LIBERANDO robots_mutex
+[00:04:35.434] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:35.441] Robô 0 - LIBERANDO robots_mutex
+[00:04:35.443] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:35.447] Robô 4 - LIBERANDO robots_mutex
+[00:04:35.448] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:35.455] Robô 2 - LIBERANDO robots_mutex
+[00:04:35.685] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:35.688] Tecla 261 pressionada.
+[00:04:35.688] Tecla 261 pressionada.
+[00:04:35.688] Robo do jogador se moveu para a direita.
+[00:04:35.690] Robô 1 - LIBERANDO robots_mutex
+[00:04:35.691] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:35.698] Robô 3 - LIBERANDO robots_mutex
+[00:04:35.700] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:35.705] Robô 0 - LIBERANDO robots_mutex
+[00:04:35.706] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:35.710] Robô 4 - LIBERANDO robots_mutex
+[00:04:35.711] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:35.717] Robô 2 - LIBERANDO robots_mutex
+[00:04:35.892] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:35.897] Robô 1 - LIBERANDO robots_mutex
+[00:04:35.901] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:35.907] Robô 3 - LIBERANDO robots_mutex
+[00:04:35.912] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:35.918] Robô 4 - LIBERANDO robots_mutex
+[00:04:36.000] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:36.002] Tecla 258 pressionada.
+[00:04:36.002] Tecla 258 pressionada.
+[00:04:36.002] Robo do jogador se moveu para baixo.
+[00:04:36.005] Robô 0 - LIBERANDO robots_mutex
+[00:04:36.050] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:36.053] Robô 2 - LIBERANDO robots_mutex
+[00:04:36.132] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:36.138] Robô 1 - LIBERANDO robots_mutex
+[00:04:36.140] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:36.147] Robô 3 - LIBERANDO robots_mutex
+[00:04:36.149] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:36.154] Robô 4 - LIBERANDO robots_mutex
+[00:04:36.296] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:36.299] Tecla -1 pressionada.
+[00:04:36.303] Robô 0 - LIBERANDO robots_mutex
+[00:04:36.333] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:36.339] Robô 2 - LIBERANDO robots_mutex
+[00:04:36.341] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:36.345] Robô 1 - LIBERANDO robots_mutex
+[00:04:36.399] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:36.406] Robô 3 - LIBERANDO robots_mutex
+[00:04:36.408] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:36.413] Robô 4 - LIBERANDO robots_mutex
+[00:04:36.587] Robô 0 - robots_mutex ADQUIRIDO
+[00:04:36.590] Tecla 258 pressionada.
+[00:04:36.590] Tecla 258 pressionada.
+[00:04:36.590] Robo do jogador se moveu para baixo.
+[00:04:36.591] Robô 0 - LIBERANDO robots_mutex
+[00:04:36.593] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:36.596] Robô 1 - LIBERANDO robots_mutex
+[00:04:36.620] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:36.620] Robô 0 - ERRO no processo principal: 'Robot' object has no attribute 'find_robot_at_position'
+[00:04:36.620] Robô 0 - Finalizando processo
+[00:04:36.623] Robô 2 - LIBERANDO robots_mutex
+[00:04:36.625] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:36.629] Robô 3 - LIBERANDO robots_mutex
+[00:04:36.631] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:36.636] Robô 4 - LIBERANDO robots_mutex
+[00:04:36.841] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:36.845] Tecla 258 pressionada.
+[00:04:36.845] Tecla 258 pressionada.
+[00:04:36.845] Robo do jogador se moveu para baixo.
+[00:04:36.849] Robô 1 - LIBERANDO robots_mutex
+[00:04:36.854] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:36.861] Robô 2 - LIBERANDO robots_mutex
+[00:04:36.863] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:36.867] Robô 3 - LIBERANDO robots_mutex
+[00:04:36.870] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:36.875] Robô 4 - LIBERANDO robots_mutex
+[00:04:37.126] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:37.128] Tecla 258 pressionada.
+[00:04:37.128] Tecla 258 pressionada.
+[00:04:37.129] Robo do jogador se moveu para baixo.
+[00:04:37.135] Robô 1 - LIBERANDO robots_mutex
+[00:04:37.137] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:37.142] Robô 2 - LIBERANDO robots_mutex
+[00:04:37.145] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:37.152] Robô 3 - LIBERANDO robots_mutex
+[00:04:37.154] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:37.158] Robô 4 - LIBERANDO robots_mutex
+[00:04:37.423] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:37.428] Tecla -1 pressionada.
+[00:04:37.431] Robô 1 - LIBERANDO robots_mutex
+[00:04:37.434] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:37.444] Robô 2 - LIBERANDO robots_mutex
+[00:04:37.447] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:37.455] Robô 4 - LIBERANDO robots_mutex
+[00:04:37.459] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:37.468] Robô 3 - LIBERANDO robots_mutex
+[00:04:37.710] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:37.712] Tecla 258 pressionada.
+[00:04:37.713] Tecla 258 pressionada.
+[00:04:37.713] Robo do jogador se moveu para baixo.
+[00:04:37.714] Robô 1 - LIBERANDO robots_mutex
+[00:04:37.716] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:37.722] Robô 2 - LIBERANDO robots_mutex
+[00:04:37.724] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:37.729] Robô 4 - LIBERANDO robots_mutex
+[00:04:37.731] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:37.738] Robô 3 - LIBERANDO robots_mutex
+[00:04:37.941] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:37.944] Tecla 258 pressionada.
+[00:04:37.944] Tecla 258 pressionada.
+[00:04:37.945] Robo do jogador se moveu para baixo.
+[00:04:37.947] Robô 1 - LIBERANDO robots_mutex
+[00:04:37.952] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:37.959] Robô 2 - LIBERANDO robots_mutex
+[00:04:37.963] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:37.971] Robô 4 - LIBERANDO robots_mutex
+[00:04:37.973] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:37.979] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.165] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.167] Tecla 258 pressionada.
+[00:04:38.168] Tecla 258 pressionada.
+[00:04:38.168] Robo do jogador se moveu para baixo.
+[00:04:38.169] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.171] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:38.175] Robô 2 - LIBERANDO robots_mutex
+[00:04:38.177] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:38.184] Robô 4 - LIBERANDO robots_mutex
+[00:04:38.186] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:38.190] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.425] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.428] Tecla 258 pressionada.
+[00:04:38.428] Tecla 258 pressionada.
+[00:04:38.428] Robo do jogador se moveu para baixo.
+[00:04:38.431] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.433] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:38.438] Robô 2 - LIBERANDO robots_mutex
+[00:04:38.440] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:38.449] Robô 4 - LIBERANDO robots_mutex
+[00:04:38.452] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:38.456] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.696] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.699] Tecla 258 pressionada.
+[00:04:38.700] Tecla 258 pressionada.
+[00:04:38.700] Robo do jogador se moveu para baixo.
+[00:04:38.702] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.705] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:38.711] Robô 2 - LIBERANDO robots_mutex
+[00:04:38.712] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:38.716] Robô 4 - LIBERANDO robots_mutex
+[00:04:38.718] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:38.724] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.905] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.910] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.985] Tecla 258 pressionada.
+[00:04:38.986] Tecla 258 pressionada.
+[00:04:38.986] Robo do jogador se moveu para baixo.
+[00:04:39.034] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.038] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.041] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.046] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.048] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.055] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.270] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.272] Tecla 261 pressionada.
+[00:04:39.272] Tecla 261 pressionada.
+[00:04:39.272] Robo do jogador se moveu para a direita.
+[00:04:39.275] Robô 1 - LIBERANDO robots_mutex
+[00:04:39.278] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.288] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.291] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.297] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.299] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.306] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.566] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.569] Tecla -1 pressionada.
+[00:04:39.571] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.573] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.578] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.580] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.587] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.589] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.594] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.541] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:38.543] Tecla 258 pressionada.
+[00:04:38.543] Tecla 258 pressionada.
+[00:04:38.543] Robo do jogador se moveu para baixo.
+[00:04:38.545] Robô 2 - LIBERANDO robots_mutex
+[00:04:38.546] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.550] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.552] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:38.558] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.560] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:38.563] Robô 4 - LIBERANDO robots_mutex
+[00:04:38.785] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:38.787] Tecla -1 pressionada.
+[00:04:38.789] Robô 1 - LIBERANDO robots_mutex
+[00:04:38.791] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:38.794] Robô 3 - LIBERANDO robots_mutex
+[00:04:38.796] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:38.800] Robô 4 - LIBERANDO robots_mutex
+[00:04:38.882] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:38.888] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.076] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.079] Tecla -1 pressionada.
+[00:04:39.081] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.083] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.087] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.090] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.094] Robô 1 - LIBERANDO robots_mutex
+[00:04:39.136] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.142] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.338] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.340] Tecla -1 pressionada.
+[00:04:39.342] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.344] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.350] Robô 1 - LIBERANDO robots_mutex
+[00:04:39.352] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.356] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.397] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.403] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.596] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.599] Tecla 258 pressionada.
+[00:04:39.599] Tecla 258 pressionada.
+[00:04:39.599] Robo do jogador se moveu para baixo.
+[00:04:39.601] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.603] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.608] Robô 1 - LIBERANDO robots_mutex
+[00:04:39.610] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.616] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.671] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.677] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.819] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:39.824] Robô 3 - LIBERANDO robots_mutex
+[00:04:39.944] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:39.947] Tecla -1 pressionada.
+[00:04:39.950] Robô 4 - LIBERANDO robots_mutex
+[00:04:39.952] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:39.958] Robô 2 - LIBERANDO robots_mutex
+[00:04:39.960] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:39.964] Robô 1 - LIBERANDO robots_mutex
+[00:04:40.067] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:40.073] Robô 3 - LIBERANDO robots_mutex
+[00:04:40.213] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:40.215] Tecla -1 pressionada.
+[00:04:40.218] Robô 4 - LIBERANDO robots_mutex
+[00:04:40.220] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:40.226] Robô 2 - LIBERANDO robots_mutex
+[00:04:40.228] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:40.236] Robô 1 - LIBERANDO robots_mutex
+[00:04:40.277] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:40.284] Robô 3 - LIBERANDO robots_mutex
+[00:04:40.421] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:40.427] Robô 4 - LIBERANDO robots_mutex
+[00:04:40.430] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:40.440] Robô 2 - LIBERANDO robots_mutex
+[00:04:40.501] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:40.506] Robô 1 - LIBERANDO robots_mutex
+[00:04:40.586] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:40.588] Tecla 258 pressionada.
+[00:04:40.588] Tecla 258 pressionada.
+[00:04:40.588] Robo do jogador se moveu para baixo.
+[00:04:40.590] Robô 3 - LIBERANDO robots_mutex
+[00:04:40.644] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:40.651] Robô 2 - LIBERANDO robots_mutex
+[00:04:40.702] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:40.708] Robô 4 - LIBERANDO robots_mutex
+[00:04:40.712] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:40.720] Robô 1 - LIBERANDO robots_mutex
+[00:04:40.793] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:40.798] Robô 3 - LIBERANDO robots_mutex
+[00:04:40.891] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:40.893] Tecla -1 pressionada.
+[00:04:40.896] Robô 2 - LIBERANDO robots_mutex
+[00:04:40.947] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:40.953] Robô 4 - LIBERANDO robots_mutex
+[00:04:40.955] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:40.960] Robô 1 - LIBERANDO robots_mutex
+[00:04:41.001] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:41.007] Robô 3 - LIBERANDO robots_mutex
+[00:04:41.192] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:41.195] Tecla -1 pressionada.
+[00:04:41.198] Robô 2 - LIBERANDO robots_mutex
+[00:04:41.201] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:41.206] Robô 4 - LIBERANDO robots_mutex
+[00:04:41.208] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:41.213] Robô 1 - LIBERANDO robots_mutex
+[00:04:41.215] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:41.220] Robô 3 - LIBERANDO robots_mutex
+[00:04:41.458] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:41.461] Tecla 261 pressionada.
+[00:04:41.461] Tecla 261 pressionada.
+[00:04:41.462] Robo do jogador se moveu para a direita.
+[00:04:41.463] Robô 2 - LIBERANDO robots_mutex
+[00:04:41.466] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:41.472] Robô 4 - LIBERANDO robots_mutex
+[00:04:41.476] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:41.481] Robô 1 - LIBERANDO robots_mutex
+[00:04:41.483] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:41.487] Robô 3 - LIBERANDO robots_mutex
+[00:04:41.714] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:41.716] Tecla -1 pressionada.
+[00:04:41.719] Robô 4 - LIBERANDO robots_mutex
+[00:04:41.720] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:41.725] Robô 1 - LIBERANDO robots_mutex
+[00:04:41.727] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:41.730] Robô 3 - LIBERANDO robots_mutex
+[00:04:41.746] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:41.750] Robô 2 - LIBERANDO robots_mutex
+[00:04:41.985] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:41.988] Tecla -1 pressionada.
+[00:04:41.990] Robô 4 - LIBERANDO robots_mutex
+[00:04:41.993] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:42.001] Robô 1 - LIBERANDO robots_mutex
+[00:04:42.003] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:42.009] Robô 3 - LIBERANDO robots_mutex
+[00:04:42.013] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:42.018] Robô 2 - LIBERANDO robots_mutex
+[00:04:42.299] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:42.300] Tecla -1 pressionada.
+[00:04:42.304] Robô 1 - LIBERANDO robots_mutex
+[00:04:42.306] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:42.310] Robô 3 - LIBERANDO robots_mutex
+[00:04:42.312] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:42.315] Robô 2 - LIBERANDO robots_mutex
+[00:04:42.317] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:42.324] Robô 4 - LIBERANDO robots_mutex
+[00:04:42.557] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:42.560] Tecla -1 pressionada.
+[00:04:42.562] Robô 1 - LIBERANDO robots_mutex
+[00:04:42.564] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:42.569] Robô 3 - LIBERANDO robots_mutex
+[00:04:42.571] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:42.577] Robô 2 - LIBERANDO robots_mutex
+[00:04:42.580] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:42.586] Robô 4 - LIBERANDO robots_mutex
+[00:04:42.794] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:42.797] Tecla -1 pressionada.
+[00:04:42.799] Robô 1 - LIBERANDO robots_mutex
+[00:04:42.801] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:42.807] Robô 3 - LIBERANDO robots_mutex
+[00:04:42.809] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:42.813] Robô 2 - LIBERANDO robots_mutex
+[00:04:42.815] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:42.821] Robô 4 - LIBERANDO robots_mutex
+[00:04:43.021] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:43.023] Tecla -1 pressionada.
+[00:04:43.026] Robô 1 - LIBERANDO robots_mutex
+[00:04:43.028] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:43.033] Robô 3 - LIBERANDO robots_mutex
+[00:04:43.036] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:43.042] Robô 2 - LIBERANDO robots_mutex
+[00:04:43.044] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:43.048] Robô 4 - LIBERANDO robots_mutex
+[00:04:43.272] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:43.274] Tecla -1 pressionada.
+[00:04:43.280] Robô 1 - LIBERANDO robots_mutex
+[00:04:43.283] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:43.293] Robô 3 - LIBERANDO robots_mutex
+[00:04:43.296] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:43.302] Robô 2 - LIBERANDO robots_mutex
+[00:04:43.309] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:43.317] Robô 4 - LIBERANDO robots_mutex
+[00:04:43.557] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:43.560] Tecla 261 pressionada.
+[00:04:43.560] Tecla 261 pressionada.
+[00:04:43.560] Robo do jogador se moveu para a direita.
+[00:04:43.562] Robô 1 - LIBERANDO robots_mutex
+[00:04:43.564] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:43.570] Robô 3 - LIBERANDO robots_mutex
+[00:04:43.573] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:43.577] Robô 2 - LIBERANDO robots_mutex
+[00:04:43.579] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:43.583] Robô 4 - LIBERANDO robots_mutex
+[00:04:43.773] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:43.780] Robô 3 - LIBERANDO robots_mutex
+[00:04:43.783] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:43.790] Robô 2 - LIBERANDO robots_mutex
+[00:04:43.793] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:43.799] Robô 4 - LIBERANDO robots_mutex
+[00:04:43.890] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:43.897] Robô 1 - LIBERANDO robots_mutex
+[00:04:44.001] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:44.003] Tecla 261 pressionada.
+[00:04:44.003] Tecla 261 pressionada.
+[00:04:44.003] Robo do jogador se moveu para a direita.
+[00:04:44.006] Robô 3 - LIBERANDO robots_mutex
+[00:04:44.008] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:44.012] Robô 2 - LIBERANDO robots_mutex
+[00:04:44.091] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:44.097] Robô 4 - LIBERANDO robots_mutex
+[00:04:44.100] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:44.106] Robô 1 - LIBERANDO robots_mutex
+[00:04:44.215] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:44.222] Robô 2 - LIBERANDO robots_mutex
+[00:04:44.387] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:44.391] Tecla 258 pressionada.
+[00:04:44.392] Tecla 258 pressionada.
+[00:04:44.393] Robo do jogador se moveu para baixo.
+[00:04:44.409] Robô 3 - LIBERANDO robots_mutex
+[00:04:44.414] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:44.422] Robô 4 - LIBERANDO robots_mutex
+[00:04:44.424] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:44.429] Robô 1 - LIBERANDO robots_mutex
+[00:04:44.491] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:44.497] Robô 2 - LIBERANDO robots_mutex
+[00:04:44.625] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:44.632] Robô 4 - LIBERANDO robots_mutex
+[00:04:44.638] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:44.648] Robô 1 - LIBERANDO robots_mutex
+[00:04:44.789] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:44.791] Tecla 260 pressionada.
+[00:04:44.792] Tecla 260 pressionada.
+[00:04:44.792] Robo do jogador se moveu para a esquerda.
+[00:04:44.794] Robô 3 - LIBERANDO robots_mutex
+[00:04:44.795] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:44.800] Robô 2 - LIBERANDO robots_mutex
+[00:04:44.838] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:44.845] Robô 4 - LIBERANDO robots_mutex
+[00:04:44.856] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:44.862] Robô 1 - LIBERANDO robots_mutex
+[00:04:44.996] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:45.002] Robô 3 - LIBERANDO robots_mutex
+[00:04:45.005] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:45.011] Robô 2 - LIBERANDO robots_mutex
+[00:04:45.104] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:45.110] Robô 4 - LIBERANDO robots_mutex
+[00:04:45.193] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:45.196] Tecla 260 pressionada.
+[00:04:45.196] Tecla 260 pressionada.
+[00:04:45.196] Robo do jogador se moveu para a esquerda.
+[00:04:45.198] Robô 1 - LIBERANDO robots_mutex
+[00:04:45.215] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:45.222] Robô 2 - LIBERANDO robots_mutex
+[00:04:45.305] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:45.311] Robô 3 - LIBERANDO robots_mutex
+[00:04:45.314] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:45.321] Robô 4 - LIBERANDO robots_mutex
+[00:04:45.491] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:45.493] Tecla 259 pressionada.
+[00:04:45.493] Tecla 259 pressionada.
+[00:04:45.494] Robo do jogador se moveu para cima.
+[00:04:45.514] Robô 1 - LIBERANDO robots_mutex
+[00:04:45.519] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:45.533] Robô 2 - LIBERANDO robots_mutex
+[00:04:45.538] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:45.552] Robô 3 - LIBERANDO robots_mutex
+[00:04:45.610] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:45.617] Robô 4 - LIBERANDO robots_mutex
+[00:04:45.817] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:45.819] Tecla -1 pressionada.
+[00:04:45.821] Robô 2 - LIBERANDO robots_mutex
+[00:04:45.823] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:45.830] Robô 3 - LIBERANDO robots_mutex
+[00:04:45.833] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:45.839] Robô 1 - LIBERANDO robots_mutex
+[00:04:45.911] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:45.917] Robô 4 - LIBERANDO robots_mutex
+[00:04:46.034] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:46.041] Robô 3 - LIBERANDO robots_mutex
+[00:04:46.052] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:46.061] Robô 2 - LIBERANDO robots_mutex
+[00:04:46.178] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:46.184] Tecla -1 pressionada.
+[00:04:46.186] Robô 1 - LIBERANDO robots_mutex
+[00:04:46.189] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:46.195] Robô 4 - LIBERANDO robots_mutex
+[00:04:46.245] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:46.251] Robô 3 - LIBERANDO robots_mutex
+[00:04:46.265] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:46.273] Robô 2 - LIBERANDO robots_mutex
+[00:04:46.391] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:46.397] Robô 1 - LIBERANDO robots_mutex
+[00:04:46.401] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:46.407] Robô 4 - LIBERANDO robots_mutex
+[00:04:46.490] Tecla -1 pressionada.
+[00:04:46.572] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:46.576] Robô 3 - LIBERANDO robots_mutex
+[00:04:46.578] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:46.582] Robô 2 - LIBERANDO robots_mutex
+[00:04:46.661] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:46.667] Robô 1 - LIBERANDO robots_mutex
+[00:04:46.837] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:46.839] Tecla -1 pressionada.
+[00:04:46.844] Robô 4 - LIBERANDO robots_mutex
+[00:04:46.847] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:46.852] Robô 3 - LIBERANDO robots_mutex
+[00:04:46.863] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:46.868] Robô 2 - LIBERANDO robots_mutex
+[00:04:46.871] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:46.878] Robô 1 - LIBERANDO robots_mutex
+[00:04:47.125] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:47.128] Tecla -1 pressionada.
+[00:04:47.131] Robô 4 - LIBERANDO robots_mutex
+[00:04:47.133] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:47.140] Robô 3 - LIBERANDO robots_mutex
+[00:04:47.141] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:47.144] Robô 2 - LIBERANDO robots_mutex
+[00:04:47.146] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:47.150] Robô 1 - LIBERANDO robots_mutex
+[00:04:47.387] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:47.390] Tecla -1 pressionada.
+[00:04:47.392] Robô 4 - LIBERANDO robots_mutex
+[00:04:47.394] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:47.401] Robô 3 - LIBERANDO robots_mutex
+[00:04:47.403] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:47.406] Robô 2 - LIBERANDO robots_mutex
+[00:04:47.407] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:47.412] Robô 1 - LIBERANDO robots_mutex
+[00:04:47.635] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:47.637] Tecla -1 pressionada.
+[00:04:47.639] Robô 3 - LIBERANDO robots_mutex
+[00:04:47.641] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:47.644] Robô 2 - LIBERANDO robots_mutex
+[00:04:47.646] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:47.652] Robô 1 - LIBERANDO robots_mutex
+[00:04:47.656] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:47.660] Robô 4 - LIBERANDO robots_mutex
+[00:04:47.906] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:47.909] Tecla -1 pressionada.
+[00:04:47.912] Robô 3 - LIBERANDO robots_mutex
+[00:04:47.915] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:47.921] Robô 2 - LIBERANDO robots_mutex
+[00:04:47.923] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:47.926] Robô 1 - LIBERANDO robots_mutex
+[00:04:47.927] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:47.933] Robô 4 - LIBERANDO robots_mutex
+[00:04:48.116] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:48.122] Robô 3 - LIBERANDO robots_mutex
+[00:04:48.209] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:48.212] Tecla -1 pressionada.
+[00:04:48.216] Robô 4 - LIBERANDO robots_mutex
+[00:04:48.218] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:48.225] Robô 2 - LIBERANDO robots_mutex
+[00:04:48.234] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:48.240] Robô 1 - LIBERANDO robots_mutex
+[00:04:48.327] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:48.333] Robô 3 - LIBERANDO robots_mutex
+[00:04:48.460] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:48.463] Tecla -1 pressionada.
+[00:04:48.465] Robô 4 - LIBERANDO robots_mutex
+[00:04:48.468] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:48.473] Robô 2 - LIBERANDO robots_mutex
+[00:04:48.524] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:48.530] Robô 1 - LIBERANDO robots_mutex
+[00:04:48.622] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:48.627] Robô 3 - LIBERANDO robots_mutex
+[00:04:48.668] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:48.674] Robô 4 - LIBERANDO robots_mutex
+[00:04:48.786] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:48.788] Tecla -1 pressionada.
+[00:04:48.790] Robô 2 - LIBERANDO robots_mutex
+[00:04:48.822] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:48.827] Robô 1 - LIBERANDO robots_mutex
+[00:04:48.830] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:48.835] Robô 3 - LIBERANDO robots_mutex
+[00:04:48.877] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:48.883] Robô 4 - LIBERANDO robots_mutex
+[00:04:49.020] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:49.023] Tecla -1 pressionada.
+[00:04:49.027] Robô 2 - LIBERANDO robots_mutex
+[00:04:49.030] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:49.035] Robô 1 - LIBERANDO robots_mutex
+[00:04:49.038] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:49.045] Robô 3 - LIBERANDO robots_mutex
+[00:04:49.086] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:49.090] Robô 4 - LIBERANDO robots_mutex
+[00:04:49.256] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:49.258] Tecla -1 pressionada.
+[00:04:49.262] Robô 2 - LIBERANDO robots_mutex
+[00:04:49.266] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:49.272] Robô 1 - LIBERANDO robots_mutex
+[00:04:49.277] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:49.284] Robô 3 - LIBERANDO robots_mutex
+[00:04:49.295] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:49.301] Robô 4 - LIBERANDO robots_mutex
+[00:04:49.541] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:49.543] Tecla -1 pressionada.
+[00:04:49.545] Robô 2 - LIBERANDO robots_mutex
+[00:04:49.547] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:49.551] Robô 1 - LIBERANDO robots_mutex
+[00:04:49.553] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:49.559] Robô 3 - LIBERANDO robots_mutex
+[00:04:49.561] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:49.564] Robô 4 - LIBERANDO robots_mutex
+[00:04:49.790] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:49.793] Tecla -1 pressionada.
+[00:04:49.797] Robô 1 - LIBERANDO robots_mutex
+[00:04:49.800] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:49.806] Robô 3 - LIBERANDO robots_mutex
+[00:04:49.809] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:49.814] Robô 4 - LIBERANDO robots_mutex
+[00:04:49.816] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:49.822] Robô 2 - LIBERANDO robots_mutex
+[00:04:50.049] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:50.052] Tecla -1 pressionada.
+[00:04:50.059] Robô 1 - LIBERANDO robots_mutex
+[00:04:50.062] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:50.065] Robô 3 - LIBERANDO robots_mutex
+[00:04:50.067] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:50.074] Robô 4 - LIBERANDO robots_mutex
+[00:04:50.076] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:50.080] Robô 2 - LIBERANDO robots_mutex
+[00:04:50.347] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:50.350] Tecla -1 pressionada.
+[00:04:50.353] Robô 1 - LIBERANDO robots_mutex
+[00:04:50.356] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:50.367] Robô 4 - LIBERANDO robots_mutex
+[00:04:50.370] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:50.379] Robô 2 - LIBERANDO robots_mutex
+[00:04:50.382] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:50.393] Robô 3 - LIBERANDO robots_mutex
+[00:04:50.557] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:50.564] Robô 1 - LIBERANDO robots_mutex
+[00:04:50.634] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:50.641] Robô 2 - LIBERANDO robots_mutex
+[00:04:50.680] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:50.687] Robô 4 - LIBERANDO robots_mutex
+[00:04:50.800] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:50.804] Tecla -1 pressionada.
+[00:04:50.807] Robô 3 - LIBERANDO robots_mutex
+[00:04:50.835] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:50.843] Robô 1 - LIBERANDO robots_mutex
+[00:04:50.846] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:50.853] Robô 2 - LIBERANDO robots_mutex
+[00:04:50.890] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:50.900] Robô 4 - LIBERANDO robots_mutex
+[00:04:51.113] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:51.116] Tecla -1 pressionada.
+[00:04:51.119] Robô 3 - LIBERANDO robots_mutex
+[00:04:51.122] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:51.129] Robô 1 - LIBERANDO robots_mutex
+[00:04:51.132] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:51.139] Robô 2 - LIBERANDO robots_mutex
+[00:04:51.142] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:51.150] Robô 4 - LIBERANDO robots_mutex
+[00:04:51.433] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:51.437] Tecla -1 pressionada.
+[00:04:51.439] Robô 3 - LIBERANDO robots_mutex
+[00:04:51.442] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:51.447] Robô 1 - LIBERANDO robots_mutex
+[00:04:51.450] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:51.457] Robô 2 - LIBERANDO robots_mutex
+[00:04:51.459] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:51.464] Robô 4 - LIBERANDO robots_mutex
+[00:04:51.646] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:51.656] Robô 3 - LIBERANDO robots_mutex
+[00:04:51.658] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:51.663] Robô 1 - LIBERANDO robots_mutex
+[00:04:51.752] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:51.755] Tecla -1 pressionada.
+[00:04:51.757] Robô 2 - LIBERANDO robots_mutex
+[00:04:51.759] Robô 4 - robots_mutex ADQUIRIDO
+[00:04:51.768] Robô 4 - LIBERANDO robots_mutex
+[00:04:51.798] Robô 4 - ERRO no processo principal: 'Robot' object has no attribute 'find_robot_at_position'
+[00:04:51.799] Robô 4 - Finalizando processo
+[00:04:51.859] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:51.865] Robô 3 - LIBERANDO robots_mutex
+[00:04:51.868] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:51.875] Robô 1 - LIBERANDO robots_mutex
+[00:04:51.960] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:51.965] Robô 2 - LIBERANDO robots_mutex
+[00:04:52.065] Tecla -1 pressionada.
+[00:04:52.069] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:52.076] Robô 3 - LIBERANDO robots_mutex
+[00:04:52.144] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:52.150] Robô 1 - LIBERANDO robots_mutex
+[00:04:52.168] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:52.180] Robô 2 - LIBERANDO robots_mutex
+[00:04:52.416] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:52.419] Tecla -1 pressionada.
+[00:04:52.422] Robô 3 - LIBERANDO robots_mutex
+[00:04:52.425] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:52.431] Robô 1 - LIBERANDO robots_mutex
+[00:04:52.433] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:52.439] Robô 2 - LIBERANDO robots_mutex
+[00:04:52.739] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:52.743] Tecla -1 pressionada.
+[00:04:52.746] Robô 3 - LIBERANDO robots_mutex
+[00:04:52.749] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:52.754] Robô 1 - LIBERANDO robots_mutex
+[00:04:52.756] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:52.764] Robô 2 - LIBERANDO robots_mutex
+[00:04:53.057] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:53.060] Tecla -1 pressionada.
+[00:04:53.063] Robô 3 - LIBERANDO robots_mutex
+[00:04:53.066] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:53.072] Robô 1 - LIBERANDO robots_mutex
+[00:04:53.074] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:53.081] Robô 2 - LIBERANDO robots_mutex
+[00:04:53.267] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:53.273] Robô 3 - LIBERANDO robots_mutex
+[00:04:53.277] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:53.283] Robô 1 - LIBERANDO robots_mutex
+[00:04:53.418] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:53.421] Tecla -1 pressionada.
+[00:04:53.424] Robô 2 - LIBERANDO robots_mutex
+[00:04:53.511] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:53.518] Robô 3 - LIBERANDO robots_mutex
+[00:04:53.629] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:53.636] Robô 2 - LIBERANDO robots_mutex
+[00:04:53.827] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:53.830] Tecla -1 pressionada.
+[00:04:53.833] Robô 1 - LIBERANDO robots_mutex
+[00:04:53.835] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:53.843] Robô 3 - LIBERANDO robots_mutex
+[00:04:53.924] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:53.931] Robô 2 - LIBERANDO robots_mutex
+[00:04:54.036] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:54.044] Robô 1 - LIBERANDO robots_mutex
+[00:04:54.048] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:54.054] Robô 3 - LIBERANDO robots_mutex
+[00:04:54.158] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:54.160] Tecla -1 pressionada.
+[00:04:54.164] Robô 2 - LIBERANDO robots_mutex
+[00:04:54.250] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:54.257] Robô 1 - LIBERANDO robots_mutex
+[00:04:54.261] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:54.271] Robô 3 - LIBERANDO robots_mutex
+[00:04:54.368] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:54.375] Robô 2 - LIBERANDO robots_mutex
+[00:04:54.490] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:54.493] Tecla -1 pressionada.
+[00:04:54.495] Robô 1 - LIBERANDO robots_mutex
+[00:04:54.497] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:54.503] Robô 3 - LIBERANDO robots_mutex
+[00:04:54.579] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:54.586] Robô 2 - LIBERANDO robots_mutex
+[00:04:54.698] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:54.707] Robô 1 - LIBERANDO robots_mutex
+[00:04:54.797] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:54.800] Tecla -1 pressionada.
+[00:04:54.802] Robô 3 - LIBERANDO robots_mutex
+[00:04:54.804] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:54.810] Robô 2 - LIBERANDO robots_mutex
+[00:04:54.910] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:54.917] Robô 1 - LIBERANDO robots_mutex
+[00:04:55.097] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:55.102] Tecla -1 pressionada.
+[00:04:55.104] Robô 3 - LIBERANDO robots_mutex
+[00:04:55.107] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:55.113] Robô 2 - LIBERANDO robots_mutex
+[00:04:55.120] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:55.125] Robô 1 - LIBERANDO robots_mutex
+[00:04:55.384] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:55.388] Tecla -1 pressionada.
+[00:04:55.394] Robô 3 - LIBERANDO robots_mutex
+[00:04:55.398] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:55.404] Robô 2 - LIBERANDO robots_mutex
+[00:04:55.407] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:55.416] Robô 1 - LIBERANDO robots_mutex
+[00:04:55.680] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:55.683] Tecla -1 pressionada.
+[00:04:55.687] Robô 3 - LIBERANDO robots_mutex
+[00:04:55.690] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:55.695] Robô 2 - LIBERANDO robots_mutex
+[00:04:55.697] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:55.702] Robô 1 - LIBERANDO robots_mutex
+[00:04:55.969] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:55.972] Tecla -1 pressionada.
+[00:04:55.976] Robô 3 - LIBERANDO robots_mutex
+[00:04:55.978] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:55.984] Robô 2 - LIBERANDO robots_mutex
+[00:04:55.985] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:55.989] Robô 1 - LIBERANDO robots_mutex
+[00:04:56.187] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:56.195] Robô 2 - LIBERANDO robots_mutex
+[00:04:56.306] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:56.309] Tecla -1 pressionada.
+[00:04:56.312] Robô 3 - LIBERANDO robots_mutex
+[00:04:56.314] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:56.320] Robô 1 - LIBERANDO robots_mutex
+[00:04:56.399] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:56.411] Robô 2 - LIBERANDO robots_mutex
+[00:04:56.592] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:56.596] Tecla -1 pressionada.
+[00:04:56.598] Robô 3 - LIBERANDO robots_mutex
+[00:04:56.601] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:56.607] Robô 1 - LIBERANDO robots_mutex
+[00:04:56.614] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:56.621] Robô 2 - LIBERANDO robots_mutex
+[00:04:56.898] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:56.900] Tecla -1 pressionada.
+[00:04:56.904] Robô 3 - LIBERANDO robots_mutex
+[00:04:56.907] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:56.913] Robô 1 - LIBERANDO robots_mutex
+[00:04:56.915] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:56.921] Robô 2 - LIBERANDO robots_mutex
+[00:04:57.246] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:57.249] Tecla -1 pressionada.
+[00:04:57.251] Robô 3 - LIBERANDO robots_mutex
+[00:04:57.254] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:57.261] Robô 1 - LIBERANDO robots_mutex
+[00:04:57.264] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:57.269] Robô 2 - LIBERANDO robots_mutex
+[00:04:57.552] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:57.555] Tecla -1 pressionada.
+[00:04:57.561] Robô 3 - LIBERANDO robots_mutex
+[00:04:57.564] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:57.568] Robô 1 - LIBERANDO robots_mutex
+[00:04:57.571] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:57.577] Robô 2 - LIBERANDO robots_mutex
+[00:04:57.858] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:57.860] Tecla -1 pressionada.
+[00:04:57.866] Robô 3 - LIBERANDO robots_mutex
+[00:04:57.869] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:57.876] Robô 1 - LIBERANDO robots_mutex
+[00:04:57.878] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:57.885] Robô 2 - LIBERANDO robots_mutex
+[00:04:58.158] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:58.160] Tecla -1 pressionada.
+[00:04:58.163] Robô 1 - LIBERANDO robots_mutex
+[00:04:58.166] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:58.174] Robô 2 - LIBERANDO robots_mutex
+[00:04:58.178] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:58.185] Robô 3 - LIBERANDO robots_mutex
+[00:04:58.461] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:58.465] Tecla -1 pressionada.
+[00:04:58.468] Robô 1 - LIBERANDO robots_mutex
+[00:04:58.471] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:58.477] Robô 2 - LIBERANDO robots_mutex
+[00:04:58.479] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:58.487] Robô 3 - LIBERANDO robots_mutex
+[00:04:58.680] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:58.688] Robô 2 - LIBERANDO robots_mutex
+[00:04:58.691] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:58.699] Robô 3 - LIBERANDO robots_mutex
+[00:04:58.817] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:58.820] Tecla -1 pressionada.
+[00:04:58.822] Robô 1 - LIBERANDO robots_mutex
+[00:04:58.892] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:58.899] Robô 2 - LIBERANDO robots_mutex
+[00:04:58.903] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:58.910] Robô 3 - LIBERANDO robots_mutex
+[00:04:59.024] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:59.032] Robô 1 - LIBERANDO robots_mutex
+[00:04:59.159] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:59.161] Tecla -1 pressionada.
+[00:04:59.165] Robô 2 - LIBERANDO robots_mutex
+[00:04:59.175] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:59.179] Robô 3 - LIBERANDO robots_mutex
+[00:04:59.235] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:59.244] Robô 1 - LIBERANDO robots_mutex
+[00:04:59.369] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:59.379] Robô 2 - LIBERANDO robots_mutex
+[00:04:59.383] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:59.390] Robô 3 - LIBERANDO robots_mutex
+[00:04:59.620] Robô 1 - robots_mutex ADQUIRIDO
+[00:04:59.624] Tecla -1 pressionada.
+[00:04:59.638] Robô 1 - LIBERANDO robots_mutex
+[00:04:59.641] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:59.649] Robô 2 - LIBERANDO robots_mutex
+[00:04:59.652] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:59.661] Robô 3 - LIBERANDO robots_mutex
+[00:04:59.853] Robô 2 - robots_mutex ADQUIRIDO
+[00:04:59.859] Robô 2 - LIBERANDO robots_mutex
+[00:04:59.864] Robô 3 - robots_mutex ADQUIRIDO
+[00:04:59.871] Robô 3 - LIBERANDO robots_mutex
+[00:05:00.006] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:00.010] Tecla -1 pressionada.
+[00:05:00.016] Robô 1 - LIBERANDO robots_mutex
+[00:05:00.062] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:00.070] Robô 2 - LIBERANDO robots_mutex
+[00:05:00.074] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:00.085] Robô 3 - LIBERANDO robots_mutex
+[00:05:00.221] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:00.230] Robô 1 - LIBERANDO robots_mutex
+[00:05:00.369] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:00.371] Tecla -1 pressionada.
+[00:05:00.374] Robô 2 - LIBERANDO robots_mutex
+[00:05:00.376] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:00.382] Robô 3 - LIBERANDO robots_mutex
+[00:05:00.434] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:00.440] Robô 1 - LIBERANDO robots_mutex
+[00:05:00.576] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:00.584] Robô 2 - LIBERANDO robots_mutex
+[00:05:00.587] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:00.595] Robô 3 - LIBERANDO robots_mutex
+[00:05:00.753] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:00.755] Tecla -1 pressionada.
+[00:05:00.758] Robô 1 - LIBERANDO robots_mutex
+[00:05:00.788] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:00.794] Robô 2 - LIBERANDO robots_mutex
+[00:05:00.798] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:00.806] Robô 3 - LIBERANDO robots_mutex
+[00:05:01.094] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:01.096] Tecla -1 pressionada.
+[00:05:01.100] Robô 1 - LIBERANDO robots_mutex
+[00:05:01.103] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:01.109] Robô 2 - LIBERANDO robots_mutex
+[00:05:01.112] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:01.118] Robô 3 - LIBERANDO robots_mutex
+[00:05:01.419] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:01.422] Tecla -1 pressionada.
+[00:05:01.425] Robô 1 - LIBERANDO robots_mutex
+[00:05:01.427] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:01.434] Robô 2 - LIBERANDO robots_mutex
+[00:05:01.437] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:01.443] Robô 3 - LIBERANDO robots_mutex
+[00:05:01.628] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:01.637] Robô 1 - LIBERANDO robots_mutex
+[00:05:01.641] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:01.651] Robô 2 - LIBERANDO robots_mutex
+[00:05:01.656] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:01.670] Robô 3 - LIBERANDO robots_mutex
+[00:05:01.797] Tecla -1 pressionada.
+[00:05:01.842] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:01.847] Robô 1 - LIBERANDO robots_mutex
+[00:05:01.856] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:01.864] Robô 2 - LIBERANDO robots_mutex
+[00:05:01.941] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:01.949] Robô 3 - LIBERANDO robots_mutex
+[00:05:02.050] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:02.058] Robô 1 - LIBERANDO robots_mutex
+[00:05:02.199] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:02.203] Tecla -1 pressionada.
+[00:05:02.207] Robô 2 - LIBERANDO robots_mutex
+[00:05:02.209] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:02.217] Robô 3 - LIBERANDO robots_mutex
+[00:05:02.297] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:02.306] Robô 1 - LIBERANDO robots_mutex
+[00:05:02.421] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:02.429] Robô 3 - LIBERANDO robots_mutex
+[00:05:02.514] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:02.528] Robô 2 - LIBERANDO robots_mutex
+[00:05:02.534] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:02.543] Robô 1 - LIBERANDO robots_mutex
+[00:05:02.666] Tecla -1 pressionada.
+[00:05:02.746] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:02.754] Robô 3 - LIBERANDO robots_mutex
+[00:05:02.758] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:02.769] Robô 2 - LIBERANDO robots_mutex
+[00:05:03.076] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:03.079] Tecla -1 pressionada.
+[00:05:03.083] Robô 1 - LIBERANDO robots_mutex
+[00:05:03.086] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:03.093] Robô 3 - LIBERANDO robots_mutex
+[00:05:03.096] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:03.103] Robô 2 - LIBERANDO robots_mutex
+[00:05:03.287] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:03.295] Robô 1 - LIBERANDO robots_mutex
+[00:05:03.299] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:03.308] Robô 3 - LIBERANDO robots_mutex
+[00:05:03.313] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:03.321] Robô 2 - LIBERANDO robots_mutex
+[00:05:03.501] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:03.507] Tecla -1 pressionada.
+[00:05:03.509] Robô 1 - LIBERANDO robots_mutex
+[00:05:03.519] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:03.546] Robô 3 - LIBERANDO robots_mutex
+[00:05:03.550] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:03.564] Robô 2 - LIBERANDO robots_mutex
+[00:05:03.719] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:03.726] Robô 1 - LIBERANDO robots_mutex
+[00:05:03.770] Robô 2 - robots_mutex ADQUIRIDO
+[00:05:03.778] Robô 2 - LIBERANDO robots_mutex
+[00:05:03.988] Robô 3 - robots_mutex ADQUIRIDO
+[00:05:03.991] Tecla -1 pressionada.
+[00:05:03.996] Robô 3 - LIBERANDO robots_mutex
+[00:05:04.002] Robô 1 - robots_mutex ADQUIRIDO
+[00:05:04.009] Robô 1 - LIBERANDO robots_mutex
