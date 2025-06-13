@@ -135,3 +135,13 @@ class SharedGameState:
 
     def set_flags(self, flags_dict):
         self.flags.update(flags_dict)
+
+    def take_grid_snapshot(self):
+        snapshot = []
+        for y in range(GRID_HEIGHT):
+            row = []
+            for x in range(GRID_WIDTH):
+                cell_value = self.get_grid_cell(x, y)
+                row.append(cell_value)
+            snapshot.append(row)
+        return snapshot

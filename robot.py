@@ -183,6 +183,7 @@ class Robot(multiprocessing.Process):
     def sense_act(self):
         log(f"Robo {self.id} - Iniciando ciclo sense_act")
         while self.running:
+            grid_snapshot = self.take_grid_snapshot()
             with self.shared_state.robots_mutex:
                 log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
                 robot_data = self.shared_state.get_robot_data(self.id)
@@ -190,29 +191,66 @@ class Robot(multiprocessing.Process):
             if not self.validate_robot_data(robot_data):
                 break
             
-            dx, dy = 0, 0
-            if self.is_player:
-                try:
-                    dx, dy = self.direction_queue.get_nowait()
-                except:
-                    pass 
-            else:
-                if random.random() < 0.8:  #80% de chance de ir pra bateria
-                    direction = self.find_nearest_battery_direction(robot_data)
-                    if direction:
-                        dx, dy = direction
-                        log(f"Robo {self.id} - Robo decidiu ir para bateria: {direction}")
-                    else:
-                        dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
-                        log(f"Robo {self.id} - Robo movendo para: {(dx, dy)}")
-                else:
-                    dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
-                    log(f"Robo {self.id} - Robo movendo para: {(dx, dy)}")
-
-            if dx != 0 or dy != 0:
-                self.try_move(dx, dy, robot_data)
+            actions = self.decide_actions(grid_snapshot, robot_data)
+            for action in actions:
+                self.execute_action(action, robot_data)
+                with self.shared_state.robots_mutex:
+                    log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
+                    robot_data = self.shared_state.get_robot_data(self.id)
+                    log(f"Robo {self.id} - LIBERANDO robots_mutex")
+                    if not self.validate_robot_data(robot_data):
+                        log(f"Robo {self.id} - Morreu durante execução de ação, finalizando")
+                        return
             
             time.sleep(0.2)
+
+    def decide_actions(self, grid_snapshot, robot_data):
+        actions = []
+        if self.is_player:
+            try:
+                dx, dy = self.direction_queue.get_nowait()
+                actions.append(('move', dx, dy))
+            except:
+                pass 
+        else:
+            directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (0, 0)]
+            if random.random() < 0.8:  #80% de chance de ir pra bateria
+                direction = self.find_nearest_battery_direction(robot_data)
+                if direction:
+                    dx, dy = direction
+                    if random.random() < 0.5:
+                        log(f"Robo {self.id} - Robo decidiu ir para bateria: {direction}")
+                        actions.append(('move_to_battery', dx, dy))
+                    else:
+                        log(f"Robo {self.id} - Robo movendo para: {direction}")
+                        actions.append(('move', dx, dy))
+                else:
+                    dx, dy = random.choice(directions)
+                    log(f"Robo {self.id} - Robo movendo para: {(dx, dy)}")
+                    actions.append(('move', dx, dy))
+            else:
+                dx, dy = random.choice(directions)
+                if random.random() < 0.4:
+                    log(f"Robo {self.id} - Robo movendo para bateria: {(dx, dy)}")
+                    actions.append(('move_to_battery', dx, dy))
+                else:
+                    log(f"Robo {self.id} - Robo movimento aleatório: {(dx, dy)}")
+                    actions.append(('move', dx, dy))
+        return actions
+
+    def execute_action(self, action, robot_data):
+        action_type = action[0]
+        if action_type == 'move':
+            dx, dy = action[1], action[2]
+            if dx != 0 or dy != 0:
+                self.try_move(dx, dy, robot_data)
+        elif action_type == 'move_to_battery':
+            dx, dy = action[1], action[2]
+            if dx != 0 or dy != 0:
+                self.try_move(dx, dy, robot_data)
+
+    def take_grid_snapshot(self):
+        return self.shared_state.take_grid_snapshot()
 
     def find_nearest_battery_direction(self, robot_data):
         robot_x, robot_y = robot_data['x'], robot_data['y']
