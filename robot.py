@@ -117,7 +117,6 @@ class Robot(multiprocessing.Process):
         with self.shared_state.grid_mutex:
             log(f"Robo {self.id} - grid_mutex ADQUIRIDO")
             target_cell = self.shared_state.get_grid_cell(new_x, new_y)
-            log(f"Robo {self.id} - Célula de destino ({new_x},{new_y}): '{target_cell}'")
 
             if target_cell == EMPTY_SYMBOL:
                 self.perform_move(old_x, old_y, new_x, new_y)
@@ -139,6 +138,51 @@ class Robot(multiprocessing.Process):
                     self.initiate_duel(other_robot_id, old_x, old_y, new_x, new_y)
             
             log(f"Robo {self.id} - LIBERANDO grid_mutex")
+
+    def try_move_to_battery(self, old_x, old_y, new_x, new_y):
+        battery_id = self.find_battery_at_position(new_x, new_y)
+        if battery_id is None: #n achou bateria
+            return
+        
+        log(f"Robo {self.id} - Tentando mover para bateria {battery_id} em ({new_x},{new_y})")
+        time.sleep(0.01 + random.uniform(0, 0.02))
+        self.acquire_battery_mutex(battery_id)
+        time.sleep(0.02 + random.uniform(0, 0.03))
+
+        try:
+            log(f"Robo {self.id} - ADQUIRINDO grid_mutex para mover para bateria {battery_id}")
+            with self.shared_state.grid_mutex:
+                log(f"Robo {self.id} - grid_mutex ADQUIRIDO")
+                self.execute_move_onto_battery_core(old_x, old_y, new_x, new_y, battery_id)
+                log(f"Robo {self.id} - LIBERANDO grid_mutex")
+        except Exception as e:
+            log(f"Robo {self.id} - Erro ao mover para bateria {battery_id}: {e}")
+            if self.current_battery_id == battery_id:
+                self.release_battery_mutex()
+
+    def execute_move_onto_battery_core(self, old_x, old_y, new_x, new_y, battery_id):
+        log(f"Robo {self.id} - Movimento para bateria {battery_id} de ({old_x},{old_y}) para ({new_x},{new_y})")
+        try:
+            robot_data = self.update_robot_state(self.id, new_x, new_y, -1)
+            if not robot_data:
+                if self.current_battery_id == battery_id: 
+                    self.release_battery_mutex()
+                return
+
+            if robot_data['status'] == 0:
+                self.handle_robot_death(old_x, was_on_battery=self.is_on_battery(old_x, old_y))
+                self.update_grid_cell(new_x, new_y, True)
+                return
+
+            self.update_grid_cell(old_x, old_y, self.is_on_battery(old_x, old_y))
+            self.shared_state.set_grid_cell(new_x, new_y, self.get_robot_symbol())
+            log(f"Robo {self.id} - Movimento para bateria {battery_id} realizado com sucesso")
+
+        except Exception as e:
+            log(f"Robo {self.id} - ERRO durante movimento para bateria {battery_id}: {e}")
+            if self.current_battery_id == battery_id:
+                self.release_battery_mutex()
+            raise
 
     def perform_move(self, old_x, old_y, new_x, new_y):
         was_on_battery = self.is_on_battery(old_x, old_y)
@@ -242,12 +286,21 @@ class Robot(multiprocessing.Process):
         action_type = action[0]
         if action_type == 'move':
             dx, dy = action[1], action[2]
+            movement_delay = (robot_data['V'] * 0.200)
+            log(f"Robo {self.id} - Executando movimento ({dx},{dy}) com delay {movement_delay:.3f}s")
+            time.sleep(movement_delay)
             if dx != 0 or dy != 0:
                 self.try_move(dx, dy, robot_data)
         elif action_type == 'move_to_battery':
             dx, dy = action[1], action[2]
-            if dx != 0 or dy != 0:
-                self.try_move(dx, dy, robot_data)
+            movement_delay = (robot_data['V'] * 0.200)
+            log(f"Robo {self.id} - Executando movimento para bateria ({dx},{dy}) com delay {movement_delay:.3f}s")
+            time.sleep(movement_delay)
+            old_x, old_y = robot_data['x'], robot_data['y']
+            new_x, new_y = old_x + dx, old_y + dy
+            
+            if 0 < new_x < GRID_WIDTH-1 and 0 < new_y < GRID_HEIGHT-1:
+                self.try_move_to_battery(old_x, old_y, new_x, new_y)
 
     def take_grid_snapshot(self):
         return self.shared_state.take_grid_snapshot()
