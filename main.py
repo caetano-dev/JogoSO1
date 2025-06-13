@@ -18,13 +18,26 @@ def clearLog():
     path = os.path.join(os.path.dirname(__file__), "log.txt")
     with open(path, "w") as f:
         f.write("")
+
+def update_alive_count(shared_state, num_robots):
+    with shared_state.robots_mutex:
+        alive_count = 0
+        for robot_id in range(num_robots):
+            robot_data = shared_state.get_robot_data(robot_id)
+            if robot_data and robot_data['status'] == 1:
+                alive_count += 1
         
+        flags = shared_state.get_flags()
+        flags['alive_count'] = alive_count
+        shared_state.set_flags(flags)
+        return alive_count
 
 def main(stdscr):
     curses.curs_set(0)
     stdscr.nodelay(True)
 
     shared_objects = create_shared_state()
+    shared_state = SharedGameState(shared_objects)
     
     robot_processes = []
     for i in range(NUM_ROBOTS):
@@ -35,18 +48,19 @@ def main(stdscr):
         log(f"Robo numero {i} criado")
     
     player_robot = robot_processes[0]
-    viewer = Viewer(SharedGameState(shared_objects))
+    viewer = Viewer(shared_state)
     
     log("Jogo iniciado")
     
     running = True
     while running:
+        update_alive_count(shared_state, NUM_ROBOTS)
         viewer.display_grid(stdscr)
         
         key = stdscr.getch()
         log(f"Tecla {key} pressionada.")
         
-        if key == ord('q'):
+        if key == ord('q') or key == ord('Q'):
             running = False
             log("Jogo esta sendo encerrado, obrigado por jogar <3")
         
