@@ -46,7 +46,7 @@ def main(stdscr):
         key = stdscr.getch()
         log(f"Tecla {key} pressionada.")
         
-        if key == ord('q') or key == ord('Q'):
+        if key == ord('q'):
             running = False
             log("Jogo esta sendo encerrado, obrigado por jogar <3")
         
