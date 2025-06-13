@@ -215,7 +215,7 @@ class Robot(multiprocessing.Process):
         else:
             directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (0, 0)]
             if random.random() < 0.8:  #80% de chance de ir pra bateria
-                direction = self.find_nearest_battery_direction(robot_data)
+                direction = self.find_nearest_battery_direction(grid_snapshot, robot_data)
                 if direction:
                     dx, dy = direction
                     if random.random() < 0.5:
@@ -252,24 +252,25 @@ class Robot(multiprocessing.Process):
     def take_grid_snapshot(self):
         return self.shared_state.take_grid_snapshot()
 
-    def find_nearest_battery_direction(self, robot_data):
+    def find_nearest_battery_direction(self, grid_snapshot, robot_data):
         robot_x, robot_y = robot_data['x'], robot_data['y']
         min_distance = float('inf')
         best_direction = None
+        battery_count = 0
         
-        for battery_idx in range(NUM_BATTERIES):
-            battery_data = self.shared_state.get_battery_data(battery_idx)
-            if battery_data and battery_data['x'] > 0:
-                bx, by = battery_data['x'], battery_data['y']
-                distance = abs(bx - robot_x) + abs(by - robot_y)
-                if distance < min_distance:
-                    min_distance = distance
-                    dx = 0 if bx == robot_x else (1 if bx > robot_x else -1)
-                    dy = 0 if by == robot_y else (1 if by > robot_y else -1)
-                    best_direction = (dx, 0) if abs(bx - robot_x) >= abs(by - robot_y) else (0, dy)
+        for y_coord in range(len(grid_snapshot)):
+            for x_coord in range(len(grid_snapshot[0])):
+                if grid_snapshot[y_coord][x_coord] == BATTERY_SYMBOL:
+                    battery_count += 1
+                    distance = abs(x_coord - robot_x) + abs(y_coord - robot_y)
+                    if distance < min_distance:
+                        min_distance = distance
+                        dx = 0 if x_coord == robot_x else (1 if x_coord > robot_x else -1)
+                        dy = 0 if y_coord == robot_y else (1 if y_coord > robot_y else -1)
+                        best_direction = (dx, 0) if abs(x_coord - robot_x) >= abs(y_coord - robot_y) else (0, dy)
         
-        if best_direction:
-            log(f"Robo {self.id} - Encontrou uma bateria. Indo na direção {best_direction}")
+        if best_direction and battery_count > 0:
+            log(f"Robo {self.id} - Encontrou {battery_count} baterias, indo para mais próxima (distância {min_distance})")
         return best_direction
 
     def find_battery_at_position(self, x, y):
