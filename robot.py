@@ -197,13 +197,42 @@ class Robot(multiprocessing.Process):
                 except:
                     pass 
             else:
-                if random.random() < 0.2: 
+                if random.random() < 0.8:  #80% de chance de ir pra bateria
+                    direction = self.find_nearest_battery_direction(robot_data)
+                    if direction:
+                        dx, dy = direction
+                        log(f"Robo {self.id} - Robo decidiu ir para bateria: {direction}")
+                    else:
+                        dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
+                        log(f"Robo {self.id} - Robo movendo para: {(dx, dy)}")
+                else:
                     dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
+                    log(f"Robo {self.id} - Robo movendo para: {(dx, dy)}")
 
             if dx != 0 or dy != 0:
                 self.try_move(dx, dy, robot_data)
             
             time.sleep(0.2)
+
+    def find_nearest_battery_direction(self, robot_data):
+        robot_x, robot_y = robot_data['x'], robot_data['y']
+        min_distance = float('inf')
+        best_direction = None
+        
+        for battery_idx in range(NUM_BATTERIES):
+            battery_data = self.shared_state.get_battery_data(battery_idx)
+            if battery_data and battery_data['x'] > 0:
+                bx, by = battery_data['x'], battery_data['y']
+                distance = abs(bx - robot_x) + abs(by - robot_y)
+                if distance < min_distance:
+                    min_distance = distance
+                    dx = 0 if bx == robot_x else (1 if bx > robot_x else -1)
+                    dy = 0 if by == robot_y else (1 if by > robot_y else -1)
+                    best_direction = (dx, 0) if abs(bx - robot_x) >= abs(by - robot_y) else (0, dy)
+        
+        if best_direction:
+            log(f"Robo {self.id} - Encontrou uma bateria. Indo na direção {best_direction}")
+        return best_direction
 
     def find_battery_at_position(self, x, y):
         for battery_idx in range(NUM_BATTERIES):
