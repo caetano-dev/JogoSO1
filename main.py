@@ -20,19 +20,27 @@ def clearLog():
         f.write("")
 
 def update_alive_count(shared_state, num_robots):
+    log("MAIN - ADQUIRINDO robots_mutex para contar robos vivos")
     with shared_state.robots_mutex:
+        log("MAIN - robots_mutex ADQUIRIDO")
         alive_count = 0
         for robot_id in range(num_robots):
             robot_data = shared_state.get_robot_data(robot_id)
             if robot_data and robot_data['status'] == 1:
                 alive_count += 1
         
-        flags = shared_state.get_flags()
-        flags['alive_count'] = alive_count
-        shared_state.set_flags(flags)
-        return alive_count
+        log("MAIN - LIBERANDO robots_mutex")
+    
+    flags = shared_state.get_flags()
+    if flags.get('alive_count', -1) != alive_count:
+        log(f"JOGO - Robos vivos: {alive_count}")
+    
+    flags['alive_count'] = alive_count
+    shared_state.set_flags(flags)
+    return alive_count
 
 def main(stdscr):
+    log("MAIN - Iniciando jogo de robos")
     curses.curs_set(0)
     stdscr.nodelay(True)
 
@@ -40,15 +48,19 @@ def main(stdscr):
     shared_state = SharedGameState(shared_objects)
     
     robot_processes = []
+    log(f"MAIN - Criando {NUM_ROBOTS} processos de robos")
     for i in range(NUM_ROBOTS):
         is_player = (i == 0)
         robot = Robot(i, is_player, shared_objects)
         robot_processes.append(robot)
         robot.start()
-        log(f"Robo numero {i} criado")
+        log(f"MAIN - Robo {i} {'(JOGADOR)' if is_player else '(IA)'} iniciado")
     
     player_robot = robot_processes[0]
     viewer = Viewer(shared_state)
+    time.sleep(1)
+
+    log("MAIN - Interface grafica iniciada - jogo em execucao")
     
     log("Jogo iniciado")
     
@@ -58,34 +70,31 @@ def main(stdscr):
         viewer.display_grid(stdscr)
         
         key = stdscr.getch()
-        log(f"Tecla {key} pressionada.")
         
         if key == ord('q') or key == ord('Q'):
             running = False
-            log("Jogo esta sendo encerrado, obrigado por jogar <3")
+            log("MAIN - Usuario pressionou 'q' - encerrando jogo")
         
         if key == curses.KEY_UP:
             player_robot.set_direction(0, -1)
-            log(f"Tecla {key} pressionada.")
-            log("Robo do jogador se moveu para cima.")
         elif key == curses.KEY_DOWN:
             player_robot.set_direction(0, 1)
-            log(f"Tecla {key} pressionada.")
-            log("Robo do jogador se moveu para baixo.")
         elif key == curses.KEY_LEFT:
             player_robot.set_direction(-1, 0)
-            log(f"Tecla {key} pressionada.")
-            log("Robo do jogador se moveu para a esquerda.")
         elif key == curses.KEY_RIGHT:
             player_robot.set_direction(1, 0)
-            log(f"Tecla {key} pressionada.")
-            log("Robo do jogador se moveu para a direita.")
             
-        curses.napms(50)
+        curses.napms(25)
 
+    log("MAIN - Finalizando processos de robos")
     for robot in robot_processes:
-        robot.terminate()
+        robot.running = False
+    for robot in robot_processes:
         robot.join()
+        if robot.is_alive():
+            log(f"MAIN - Forçando termino do robo {robot.id}")
+            robot.terminate()
+    log("MAIN - Jogo finalizado")
 
 if __name__ == "__main__":
     clearLog()

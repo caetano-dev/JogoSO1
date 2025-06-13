@@ -33,14 +33,14 @@ class Robot(multiprocessing.Process):
         self.direction_queue = multiprocessing.Queue() if is_player else None
         
         robot_type = "JOGADOR" if is_player else "IA"
-        log(f"Robô {robot_id} ({robot_type}) criado - F:{self.F}, E:{self.E}, V:{self.V}")
+        log(f"Robo {robot_id} ({robot_type}) criado - F:{self.F}, E:{self.E}, V:{self.V}")
 
     def get_robot_symbol(self):
         return PLAYER_SYMBOL if self.is_player else str(self.id)
 
     def attach_shared_memory(self):
         self.shared_state = SharedGameState(self.shared_objects)
-        log(f"Robô {self.id} - Memória compartilhada anexada")
+        log(f"Robo {self.id} - Memória compartilhada anexada")
 
     def validate_robot_data(self, robot_data):
         return robot_data and robot_data['status'] == 1
@@ -113,11 +113,11 @@ class Robot(multiprocessing.Process):
         if not (0 < new_x < GRID_WIDTH - 1 and 0 < new_y < GRID_HEIGHT - 1):
             return
 
-        log(f"Robô {self.id} - ADQUIRINDO grid_mutex para mover de ({old_x},{old_y}) para ({new_x},{new_y})")
+        log(f"Robo {self.id} - ADQUIRINDO grid_mutex para mover de ({old_x},{old_y}) para ({new_x},{new_y})")
         with self.shared_state.grid_mutex:
-            log(f"Robô {self.id} - grid_mutex ADQUIRIDO")
+            log(f"Robo {self.id} - grid_mutex ADQUIRIDO")
             target_cell = self.shared_state.get_grid_cell(new_x, new_y)
-            log(f"Robô {self.id} - Célula de destino ({new_x},{new_y}): '{target_cell}'")
+            log(f"Robo {self.id} - Célula de destino ({new_x},{new_y}): '{target_cell}'")
 
             if target_cell == EMPTY_SYMBOL:
                 self.perform_move(old_x, old_y, new_x, new_y)
@@ -125,7 +125,7 @@ class Robot(multiprocessing.Process):
             elif target_cell == BATTERY_SYMBOL:
                 battery_id = self.find_battery_at_position(new_x, new_y)
                 if battery_id is not None:
-                    log(f"Robô {self.id} - Encontrou bateria {battery_id}, adquirindo mutex")
+                    log(f"Robo {self.id} - Encontrou bateria {battery_id}, adquirindo mutex")
                     time.sleep(0.02)
                     self.acquire_battery_mutex(battery_id)
                     self.perform_move(old_x, old_y, new_x, new_y)
@@ -135,14 +135,14 @@ class Robot(multiprocessing.Process):
                     return 
                 other_robot_id = self.find_robot_at_position(new_x, new_y)
                 if other_robot_id is not None and other_robot_id != self.id:
-                    log(f"Robô {self.id} - DUELO iniciado com robô {other_robot_id}")
+                    log(f"Robo {self.id} - DUELO iniciado com robo {other_robot_id}")
                     self.initiate_duel(other_robot_id, old_x, old_y, new_x, new_y)
             
-            log(f"Robô {self.id} - LIBERANDO grid_mutex")
+            log(f"Robo {self.id} - LIBERANDO grid_mutex")
 
     def perform_move(self, old_x, old_y, new_x, new_y):
         was_on_battery = self.is_on_battery(old_x, old_y)
-        log(f"Robô {self.id} - Movimento normal de ({old_x},{old_y}) para ({new_x},{new_y}), estava em bateria: {was_on_battery}")
+        log(f"Robo {self.id} - Movimento normal de ({old_x},{old_y}) para ({new_x},{new_y}), estava em bateria: {was_on_battery}")
         
         robot_data = self.update_robot_state(self.id, new_x, new_y, -0.5)
         if not robot_data:
@@ -156,15 +156,15 @@ class Robot(multiprocessing.Process):
         self.shared_state.set_grid_cell(new_x, new_y, self.get_robot_symbol())
 
         if was_on_battery:
-            log(f"Robô {self.id} - Saiu da bateria, liberando mutex")
+            log(f"Robo {self.id} - Saiu da bateria, liberando mutex")
             self.release_battery_mutex()
 
     def update_robot_state(self, robot_id, new_x=None, new_y=None, energy_difference=0, new_status=None):
         with self.shared_state.robots_mutex:
-            log(f"Robô {self.id} - robots_mutex ADQUIRIDO")
+            log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
             robot_data = self.shared_state.get_robot_data(robot_id)
             if not self.validate_robot_data(robot_data):
-                log(f"Robô {self.id} - LIBERANDO robots_mutex (dados inválidos)")
+                log(f"Robo {self.id} - LIBERANDO robots_mutex (dados invalidos)")
                 return None
             
             if new_x is not None: robot_data['x'] = new_x
@@ -174,19 +174,19 @@ class Robot(multiprocessing.Process):
             if new_status is not None: robot_data['status'] = new_status
             if robot_data['E'] <= 0: 
                 robot_data['status'] = 0
-                log(f"Robô {robot_id} - MORREU por falta de energia")
+                log(f"Robo {robot_id} - MORREU por falta de energia")
             
             self.shared_state.set_robot_data(robot_id, robot_data)
-            log(f"Robô {self.id} - LIBERANDO robots_mutex")
+            log(f"Robo {self.id} - LIBERANDO robots_mutex")
             return robot_data
 
     def sense_act(self):
-        log(f"Robô {self.id} - Iniciando ciclo sense_act")
+        log(f"Robo {self.id} - Iniciando ciclo sense_act")
         while self.running:
             with self.shared_state.robots_mutex:
-                log(f"Robô {self.id} - robots_mutex ADQUIRIDO")
+                log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
                 robot_data = self.shared_state.get_robot_data(self.id)
-                log(f"Robô {self.id} - LIBERANDO robots_mutex")
+                log(f"Robo {self.id} - LIBERANDO robots_mutex")
             if not self.validate_robot_data(robot_data):
                 break
             
@@ -235,7 +235,7 @@ class Robot(multiprocessing.Process):
             self.shared_state.set_grid_cell(x, y, EMPTY_SYMBOL)
 
     def handle_robot_death(self, x, y, was_on_battery):
-        log(f"Robô {self.id} - Processando morte na posição ({x},{y})")
+        log(f"Robo {self.id} - Processando morte na posição ({x},{y})")
         self.update_grid_cell(x, y, was_on_battery)
         if self.current_battery_id is not None:
             self.release_battery_mutex()
@@ -243,14 +243,14 @@ class Robot(multiprocessing.Process):
     def acquire_battery_mutex(self, battery_id):
         if battery_id is not None and self.current_battery_id != battery_id:
             if self.current_battery_id is not None:
-                log(f"Robô {self.id} - Liberando mutex da bateria {self.current_battery_id} antes de adquirir bateria {battery_id}")
+                log(f"Robo {self.id} - Liberando mutex da bateria {self.current_battery_id} antes de adquirir bateria {battery_id}")
                 self.release_battery_mutex()
             time.sleep(0.01 + random.uniform(0, 0.02))
-            log(f"Robô {self.id} - TENTANDO ADQUIRIR battery_mutex da bateria {battery_id}")
+            log(f"Robo {self.id} - TENTANDO ADQUIRIR battery_mutex da bateria {battery_id}")
             self.shared_state.battery_mutexes[battery_id].acquire()
             self.current_battery_id = battery_id
             self.current_battery_mutex = self.shared_state.battery_mutexes[battery_id]
-            log(f"Robô {self.id} - battery_mutex da bateria {battery_id} ADQUIRIDO COM SUCESSO")
+            log(f"Robo {self.id} - battery_mutex da bateria {battery_id} ADQUIRIDO COM SUCESSO")
     
     def initiate_duel(self, other_robot_id, old_x, old_y, new_x, new_y):
         with self.shared_state.robots_mutex: # ja temos o grid mutex
@@ -295,43 +295,43 @@ class Robot(multiprocessing.Process):
     def release_battery_mutex(self):
         if self.current_battery_mutex is not None:
             try:
-                log(f"Robô {self.id} - LIBERANDO battery_mutex da bateria {self.current_battery_id}")
+                log(f"Robo {self.id} - LIBERANDO battery_mutex da bateria {self.current_battery_id}")
                 self.current_battery_mutex.release()
-                log(f"Robô {self.id} - battery_mutex da bateria {self.current_battery_id} LIBERADO COM SUCESSO")
+                log(f"Robo {self.id} - battery_mutex da bateria {self.current_battery_id} LIBERADO COM SUCESSO")
             except Exception as e:
-                log(f"Robô {self.id} - ERRO ao liberar battery_mutex da bateria {self.current_battery_id}: {e}")
+                log(f"Robo {self.id} - ERRO ao liberar battery_mutex da bateria {self.current_battery_id}: {e}")
                 pass
             finally:
                 old_battery_id = self.current_battery_id
                 self.current_battery_id = None
                 self.current_battery_mutex = None
-                log(f"Robô {self.id} - Referências do battery_mutex da bateria {old_battery_id} limpas")
+                log(f"Robo {self.id} - Referências do battery_mutex da bateria {old_battery_id} limpas")
 
     def housekeeping(self):
-        log(f"Robô {self.id} - Thread housekeeping iniciada")
+        log(f"Robo {self.id} - Thread housekeeping iniciada")
         while self.running:
             time.sleep(0.4 + random.uniform(0, 0.1))
             robot_data = self.update_robot_state(self.id)
             if not robot_data:
-                log(f"Robô {self.id} - Housekeeping: robô morto, encerrando thread")
+                log(f"Robo {self.id} - Housekeeping: robo morto, encerrando thread")
                 break
                 
             on_battery_now = self.is_on_battery(robot_data['x'], robot_data['y'])
             battery_id_under_robot = self.find_battery_at_position(robot_data['x'], robot_data['y'])
 
             if on_battery_now and self.current_battery_id == battery_id_under_robot:
-                log(f"Robô {self.id} - Housekeeping: carregando energia na bateria {battery_id_under_robot}")
+                log(f"Robo {self.id} - Housekeeping: carregando energia na bateria {battery_id_under_robot}")
                 self.update_robot_state(self.id, energy_difference=5)
             else:
                 updated_data = self.update_robot_state(self.id, energy_difference=-0.5)
                 if updated_data and updated_data['status'] == 0:
-                    log(f"Robô {self.id} - Housekeeping: robô morreu")
+                    log(f"Robo {self.id} - Housekeeping: robo morreu")
                     with self.shared_state.grid_mutex:
                         self.handle_robot_death(robot_data['x'], robot_data['y'], on_battery_now)
                     break
 
     def run(self):
-        log(f"Robô {self.id} - Processo iniciado")
+        log(f"Robo {self.id} - Processo iniciado")
         housekeeping_thread = None
         try:
             self.attach_shared_memory()
@@ -340,20 +340,20 @@ class Robot(multiprocessing.Process):
             housekeeping_thread = threading.Thread(target=self.housekeeping, daemon=True)
             housekeeping_thread.start()
             
-            log(f"Robô {self.id} - Aguardando inicialização do arena")
+            log(f"Robo {self.id} - Aguardando inicialização do arena")
             while not self.shared_state.get_flags()['init_done']:
                 time.sleep(0.1)
             
-            log(f"Robô {self.id} - Arena inicializada, começando sense_act")
+            log(f"Robo {self.id} - Arena inicializada, começando sense_act")
             self.sense_act()
         except Exception as e:
-            log(f"Robô {self.id} - ERRO no processo principal: {e}")
+            log(f"Robo {self.id} - ERRO no processo principal: {e}")
             pass
         finally:
-            log(f"Robô {self.id} - Finalizando processo")
+            log(f"Robo {self.id} - Finalizando processo")
             self.running = False
             if housekeeping_thread and housekeeping_thread.is_alive():
                 housekeeping_thread.join(timeout=0.2)
             if self.current_battery_id is not None:
-                log(f"Robô {self.id} - Liberando mutex final da bateria {self.current_battery_id}")
+                log(f"Robo {self.id} - Liberando mutex final da bateria {self.current_battery_id}")
                 self.release_battery_mutex()

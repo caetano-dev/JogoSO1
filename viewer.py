@@ -27,7 +27,7 @@ class Viewer:
     def format_game_status_message(self, flags):
         if flags['game_over']:
             if flags['winner'] >= 0:
-                return f"Fim - Vencedor: Robô {flags['winner']}"
+                return f"Fim - Vencedor: Robo {flags['winner']}"
             else:
                 return "Fim - Empate"
         return ""
@@ -51,11 +51,11 @@ class Viewer:
                 if robot_data and GRID_HEIGHT + 1 < max_y:
                     status = "alive" if robot_data['status'] == 1 else "dead"
                     charge_indicator = " ⚡" if self.is_robot_on_battery(robot_data['x'], robot_data['y']) else ""
-                    info = f"Jogador (P): Energia={robot_data['E']}, Força={robot_data['F']}, Velocidade={robot_data['V']}, Status={status}{charge_indicator}"
+                    info = f"Jogador (P): Energia={robot_data['E']}, Forca={robot_data['F']}, Velocidade={robot_data['V']}, Status={status}{charge_indicator}"
                     stdscr.addstr(GRID_HEIGHT + 1, 0, info[:max_x-1])
                 
                 # mostra outros robos
-                other_robots = [f" Robô {i}: E={data['E']}, F={data['F']}, V={data['V']}{' ⚡' if self.is_robot_on_battery(data['x'], data['y']) else ''}"
+                other_robots = [f" Robo {i}: E={data['E']}, F={data['F']}, V={data['V']}{' ⚡' if self.is_robot_on_battery(data['x'], data['y']) else ''}"
                               for i in range(1, NUM_ROBOTS) 
                               if (data := self.shared_state.get_robot_data(i)) and data['status'] == 1]
                 if other_robots and GRID_HEIGHT + 2 < max_y:
@@ -64,7 +64,7 @@ class Viewer:
         # mostra status do jogo
         if GRID_HEIGHT + 3 < max_y:
             flags = self.shared_state.get_flags()
-            status_info = f"Robôs vivos: {flags['alive_count']}"
+            status_info = f"Robos vivos: {flags['alive_count']}"
             game_status = self.format_game_status_message(flags)
             if game_status:
                 status_info += f" | {game_status}"
