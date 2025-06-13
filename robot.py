@@ -1,4 +1,5 @@
 import multiprocessing
+import threading
 import time
 import random
 from config import *
@@ -20,6 +21,7 @@ class Robot(multiprocessing.Process):
         self.is_player = is_player
         self.shared_objects = shared_objects
         self.shared_state = None
+        self.running = True
         
         self.F = random.randint(9, 10)
         self.E = random.randint(95, 100)
@@ -180,18 +182,13 @@ class Robot(multiprocessing.Process):
 
     def sense_act(self):
         log(f"Robô {self.id} - Iniciando ciclo sense_act")
-        while True:
+        while self.running:
             with self.shared_state.robots_mutex:
                 log(f"Robô {self.id} - robots_mutex ADQUIRIDO")
                 robot_data = self.shared_state.get_robot_data(self.id)
                 log(f"Robô {self.id} - LIBERANDO robots_mutex")
             if not self.validate_robot_data(robot_data):
                 break
-            
-            if self.current_battery_id is not None:
-                battery_data = self.shared_state.get_battery_data(self.current_battery_id)
-                if battery_data and self.is_on_battery(robot_data['x'], robot_data['y']):
-                    self.update_robot_state(self.id, energy_difference=5)
             
             dx, dy = 0, 0
             if self.is_player:
@@ -310,12 +307,38 @@ class Robot(multiprocessing.Process):
                 self.current_battery_mutex = None
                 log(f"Robô {self.id} - Referências do battery_mutex da bateria {old_battery_id} limpas")
 
+    def housekeeping(self):
+        log(f"Robô {self.id} - Thread housekeeping iniciada")
+        while self.running:
+            time.sleep(0.4 + random.uniform(0, 0.1))
+            robot_data = self.update_robot_state(self.id)
+            if not robot_data:
+                log(f"Robô {self.id} - Housekeeping: robô morto, encerrando thread")
+                break
+                
+            on_battery_now = self.is_on_battery(robot_data['x'], robot_data['y'])
+            battery_id_under_robot = self.find_battery_at_position(robot_data['x'], robot_data['y'])
+
+            if on_battery_now and self.current_battery_id == battery_id_under_robot:
+                log(f"Robô {self.id} - Housekeeping: carregando energia na bateria {battery_id_under_robot}")
+                self.update_robot_state(self.id, energy_difference=5)
+            else:
+                updated_data = self.update_robot_state(self.id, energy_difference=-0.5)
+                if updated_data and updated_data['status'] == 0:
+                    log(f"Robô {self.id} - Housekeeping: robô morreu")
+                    with self.shared_state.grid_mutex:
+                        self.handle_robot_death(robot_data['x'], robot_data['y'], on_battery_now)
+                    break
+
     def run(self):
         log(f"Robô {self.id} - Processo iniciado")
+        housekeeping_thread = None
         try:
             self.attach_shared_memory()
             time.sleep(0.01 * self.id)
             self.initialize_arena_if_needed()
+            housekeeping_thread = threading.Thread(target=self.housekeeping, daemon=True)
+            housekeeping_thread.start()
             
             log(f"Robô {self.id} - Aguardando inicialização do arena")
             while not self.shared_state.get_flags()['init_done']:
@@ -328,6 +351,9 @@ class Robot(multiprocessing.Process):
             pass
         finally:
             log(f"Robô {self.id} - Finalizando processo")
+            self.running = False
+            if housekeeping_thread and housekeeping_thread.is_alive():
+                housekeeping_thread.join(timeout=0.2)
             if self.current_battery_id is not None:
                 log(f"Robô {self.id} - Liberando mutex final da bateria {self.current_battery_id}")
                 self.release_battery_mutex()
