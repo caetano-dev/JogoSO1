@@ -23,19 +23,37 @@ def update_alive_count(shared_state, num_robots):
     log("MAIN - ADQUIRINDO robots_mutex para contar robos vivos")
     with shared_state.robots_mutex:
         log("MAIN - robots_mutex ADQUIRIDO")
-        alive_count = 0
+        alive_robots = []
         for robot_id in range(num_robots):
             robot_data = shared_state.get_robot_data(robot_id)
             if robot_data and robot_data['status'] == 1:
-                alive_count += 1
+                alive_robots.append((robot_id, robot_data))
         
+        alive_count = len(alive_robots)
+        if alive_count == 1:
+            winner_id = alive_robots[0][0]
+        else:
+            winner_id = -1
         log("MAIN - LIBERANDO robots_mutex")
     
     flags = shared_state.get_flags()
+    if alive_count <= 1:
+        game_over_status = 1
+        if alive_count == 1:
+            log(f"JOGO - Robo {winner_id} ganhou.")
+        else:
+            log(f"JOGO - Fim de jogo - empate")
+    else:
+        game_over_status = 0
+    
     if flags.get('alive_count', -1) != alive_count:
         log(f"JOGO - Robos vivos: {alive_count}")
-    
-    flags['alive_count'] = alive_count
+        
+    flags.update({
+        'alive_count': alive_count,
+        'game_over': game_over_status,
+        'winner': winner_id
+    })
     shared_state.set_flags(flags)
     return alive_count
 
@@ -63,17 +81,33 @@ def main(stdscr):
     log("MAIN - Interface grafica iniciada - jogo em execucao")
     
     log("Jogo iniciado")
-    
-    running = True
-    while running:
+
+    while True:
         update_alive_count(shared_state, NUM_ROBOTS)
         viewer.display_grid(stdscr)
         
-        key = stdscr.getch()
+        flags = shared_state.get_flags()
+        if flags['game_over']:
+            game_status = viewer.format_game_status_message(flags)
+            winner_msg = game_status
+
+            if flags['winner'] == 0:
+                winner_msg += " (voce ganhou!)"
+                log("MAIN - voce ganhou!")
+            else:
+                log("MAIN - o adversario ganhou")
+
+            stdscr.addstr(GRID_HEIGHT + 3, 0, winner_msg)
+            stdscr.addstr(GRID_HEIGHT + 4, 0, "Pressione qualquer tecla para sair...")
+            stdscr.refresh()
+            stdscr.nodelay(False)
+            stdscr.getch()
+            break
         
+        key = stdscr.getch()
         if key == ord('q') or key == ord('Q'):
-            running = False
             log("MAIN - Usuario pressionou 'q' - encerrando jogo")
+            break
         
         if key == curses.KEY_UP:
             player_robot.set_direction(0, -1)
