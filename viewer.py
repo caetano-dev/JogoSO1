@@ -20,7 +20,9 @@ class Viewer:
             battery_data = self.shared_state.get_battery_data(battery_id)
             if battery_data:
                 bx, by = battery_data['x'], battery_data['y']
-                if x == bx and y == by:
+#                if x == bx and y == by:
+                if (x == bx and y == by) or (x == bx+1 and y == by): # 2 celulas por bateria
+
                     return True
         return False
     

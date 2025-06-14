@@ -48,11 +48,14 @@ class Robot(multiprocessing.Process):
     def place_batteries(self):
         for battery_idx in range(NUM_BATTERIES):
             for _ in range(100):
-                x = random.randint(1, GRID_WIDTH - 2)
+#                x = random.randint(1, GRID_WIDTH - 2)
+                x = random.randint(1, GRID_WIDTH - 3) #2 celulas por bateria
                 y = random.randint(1, GRID_HEIGHT - 2)
                 
                 with self.shared_state.grid_mutex:
-                    if self.shared_state.get_grid_cell(x, y) == EMPTY_SYMBOL:
+#                    if self.shared_state.get_grid_cell(x, y) == EMPTY_SYMBOL:
+                    if (self.shared_state.get_grid_cell(x, y) == EMPTY_SYMBOL and # 2 celulas por bateria
+                        self.shared_state.get_grid_cell(x + 1, y) == EMPTY_SYMBOL): # 2 celular por bateria
                         with self.shared_state.battery_mutexes[battery_idx]:
                             battery_data = {
                                 'x': x, 
@@ -61,8 +64,8 @@ class Robot(multiprocessing.Process):
                                 'owner': -1
                             }
                             self.shared_state.set_battery_data(battery_idx, battery_data)
-                        
-                        self.shared_state.set_grid_cell(x, y, BATTERY_SYMBOL)
+                        self.shared_state.set_grid_cell(x, y, BATTERY_SYMBOL) # mander
+                        self.shared_state.set_grid_cell(x + 1, y, BATTERY_SYMBOL) # 2 celulas por bateria
                         break
 
     def initialize_arena_if_needed(self):
@@ -331,7 +334,8 @@ class Robot(multiprocessing.Process):
             battery_data = self.shared_state.get_battery_data(battery_idx)
             if battery_data and battery_data['x'] > 0:
                 bx, by = battery_data['x'], battery_data['y']
-                if x == bx and y == by:
+#                if x == bx and y == by:
+                if (x == bx and y == by) or (x == bx+1 and y == by): #2 celulas pra bateria
                     return battery_idx
         return None
 
