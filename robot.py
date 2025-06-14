@@ -132,7 +132,7 @@ class Robot(multiprocessing.Process):
                     self.log_deadlock_risk(f"Tentando adquirir battery_mutex já tendo grid_mutex", battery_id)
                     time.sleep(0.02)
                     self.acquire_battery_mutex(battery_id)
-                    self.perform_move(old_x, old_y, new_x, new_y)
+                    self.execute_move_onto_battery_core(old_x, old_y, new_x, new_y, battery_id)
 
             elif target_cell.isdigit() or target_cell == PLAYER_SYMBOL:
                 if self.find_battery_at_position(new_x, new_y) is not None: 
@@ -171,7 +171,7 @@ class Robot(multiprocessing.Process):
     def execute_move_onto_battery_core(self, old_x, old_y, new_x, new_y, battery_id):
         log(f"Robo {self.id} - Movimento para bateria {battery_id} de ({old_x},{old_y}) para ({new_x},{new_y})")
         try:
-            robot_data = self.update_robot_state(self.id, new_x, new_y, -1)
+            robot_data = self.update_robot_state(self.id, new_x, new_y, -0.5)
             if not robot_data:
                 if self.current_battery_id == battery_id: 
                     self.release_battery_mutex()
