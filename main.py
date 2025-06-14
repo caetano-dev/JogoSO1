@@ -20,9 +20,9 @@ def clearLog():
         f.write("")
 
 def update_alive_count(shared_state, num_robots):
-    log("MAIN - ADQUIRINDO robots_mutex para contar robos vivos")
+#    log("MAIN - ADQUIRINDO robots_mutex para contar robos vivos")
     with shared_state.robots_mutex:
-        log("MAIN - robots_mutex ADQUIRIDO")
+        #log("MAIN - robots_mutex ADQUIRIDO")
         alive_robots = []
         for robot_id in range(num_robots):
             robot_data = shared_state.get_robot_data(robot_id)
@@ -34,7 +34,7 @@ def update_alive_count(shared_state, num_robots):
             winner_id = alive_robots[0][0]
         else:
             winner_id = -1
-        log("MAIN - LIBERANDO robots_mutex")
+    #    log("MAIN - LIBERANDO robots_mutex")
     
     flags = shared_state.get_flags()
     if alive_count <= 1:

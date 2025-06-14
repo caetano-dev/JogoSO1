@@ -140,7 +140,7 @@ class Robot(multiprocessing.Process):
                 other_robot_id = self.find_robot_at_position(new_x, new_y)
                 if other_robot_id is not None and other_robot_id != self.id:
                     log(f"Robo {self.id} - DUELO iniciado com robo {other_robot_id}")
-                    self.log_deadlock_risk(f"Tentando adquirir robots_mutex já tendo grid_mutex para duelo")
+                   # self.log_deadlock_risk(f"Tentando adquirir robots_mutex já tendo grid_mutex para duelo")
                     self.initiate_duel(other_robot_id, old_x, old_y, new_x, new_y)
             
             log(f"Robo {self.id} - LIBERANDO grid_mutex")
@@ -213,10 +213,10 @@ class Robot(multiprocessing.Process):
 
     def update_robot_state(self, robot_id, new_x=None, new_y=None, energy_difference=0, new_status=None):
         with self.shared_state.robots_mutex:
-            log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
+#            log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
             robot_data = self.shared_state.get_robot_data(robot_id)
             if not self.validate_robot_data(robot_data):
-                log(f"Robo {self.id} - LIBERANDO robots_mutex (dados invalidos)")
+#                log(f"Robo {self.id} - LIBERANDO robots_mutex (dados invalidos)")
                 return None
             
             if new_x is not None: robot_data['x'] = new_x
@@ -229,7 +229,7 @@ class Robot(multiprocessing.Process):
                 log(f"Robo {robot_id} - MORREU por falta de energia")
             
             self.shared_state.set_robot_data(robot_id, robot_data)
-            log(f"Robo {self.id} - LIBERANDO robots_mutex")
+#            log(f"Robo {self.id} - LIBERANDO robots_mutex")
             return robot_data
 
     def sense_act(self):
@@ -237,9 +237,9 @@ class Robot(multiprocessing.Process):
         while self.running:
             grid_snapshot = self.take_grid_snapshot()
             with self.shared_state.robots_mutex:
-                log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
+#                log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
                 robot_data = self.shared_state.get_robot_data(self.id)
-                log(f"Robo {self.id} - LIBERANDO robots_mutex")
+#                log(f"Robo {self.id} - LIBERANDO robots_mutex")
             if not self.validate_robot_data(robot_data):
                 break
             
@@ -247,9 +247,9 @@ class Robot(multiprocessing.Process):
             for action in actions:
                 self.execute_action(action, robot_data)
                 with self.shared_state.robots_mutex:
-                    log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
+#                    log(f"Robo {self.id} - robots_mutex ADQUIRIDO")
                     robot_data = self.shared_state.get_robot_data(self.id)
-                    log(f"Robo {self.id} - LIBERANDO robots_mutex")
+#                    log(f"Robo {self.id} - LIBERANDO robots_mutex")
                     if not self.validate_robot_data(robot_data):
                         log(f"Robo {self.id} - Morreu durante execução de ação, finalizando")
                         return
