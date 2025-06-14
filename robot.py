@@ -185,7 +185,7 @@ class Robot(multiprocessing.Process):
     def execute_move_onto_battery_core(self, old_x, old_y, new_x, new_y, battery_id):
         log(f"Robo {self.id} - Movimento para bateria {battery_id} de ({old_x},{old_y}) para ({new_x},{new_y})")
         try:
-            robot_data = self.update_robot_state(self.id, new_x, new_y, -1)
+            robot_data = self.update_robot_state(self.id, new_x, new_y, -0.5)
             if not robot_data:
                 if self.current_battery_id == battery_id: 
                     self.release_battery_mutex()
