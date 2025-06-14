@@ -24,7 +24,7 @@ class Robot(multiprocessing.Process):
         self.running = True
         
         self.F = random.randint(9, 10)
-        self.E = random.randint(95, 100)
+        self.E = min(MAX_ENERGY, random.randint(95, 100))
         self.V = random.randint(4, 5)
         
         self.current_battery_id = None
@@ -96,7 +96,7 @@ class Robot(multiprocessing.Process):
                                 'x': x, 
                                 'y': y,
                                 'F': self.F if robot_idx == self.id else random.randint(6, 10),
-                                'E': self.E if robot_idx == self.id else random.randint(80, 100),
+                                'E': min(MAX_ENERGY, self.E if robot_idx == self.id else random.randint(80, 100)),
                                 'V': self.V if robot_idx == self.id else random.randint(3, 5),
                                 'status': 1
                             })
@@ -217,7 +217,7 @@ class Robot(multiprocessing.Process):
             if new_x is not None: robot_data['x'] = new_x
             if new_y is not None: robot_data['y'] = new_y
             if energy_difference != 0: 
-                robot_data['E'] = max(0, robot_data['E'] + energy_difference)
+                robot_data['E'] = max(0, min(MAX_ENERGY, robot_data['E'] + energy_difference))
             if new_status is not None: robot_data['status'] = new_status
             if robot_data['E'] <= 0: 
                 robot_data['status'] = 0
@@ -391,7 +391,7 @@ class Robot(multiprocessing.Process):
                 
                 my_data['x'] = new_x
                 my_data['y'] = new_y
-                my_data['E'] = max(0, my_data['E'] - 1)
+                my_data['E'] = max(0, min(MAX_ENERGY, my_data['E'] - 1))
                 if my_data['E'] <= 0:
                     my_data['status'] = 0
                 self.shared_state.set_robot_data(self.id, my_data)
