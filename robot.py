@@ -115,9 +115,25 @@ class Robot(multiprocessing.Process):
 
         if not (0 < new_x < GRID_WIDTH - 1 and 0 < new_y < GRID_HEIGHT - 1):
             return
+        
+        target_cell = self.shared_state.get_grid_cell(new_x, new_y)
+        battery_id = None
+        if target_cell == BATTERY_SYMBOL:
+            battery_id = self.find_battery_at_position(new_x, new_y) #pegar mutex da bateria antes
+            if battery_id is not None:
+                log(f"Robô {self.id} - PREVENÇÃO DEADLOCK: Adquirindo battery_mutex antes de grid_mutex")
+                time.sleep(0.02 + random.uniform(0, 0.03))
+                if not self.acquire_battery_mutex(battery_id):
+                    log(f"Robô {self.id} - FALHA ao adquirir battery_mutex")
+                    return
 
         log(f"Robo {self.id} - ADQUIRINDO grid_mutex para mover de ({old_x},{old_y}) para ({new_x},{new_y})")
-        self.log_deadlock_risk(f"Adquirindo grid_mutex primeiro")
+
+        if battery_id is not None:
+            log(f"PREVENÇÃO DEADLOCK: Robô {self.id} - Seguindo ordem consistente: battery_mutex → grid_mutex")
+        else:
+            self.log_deadlock_risk(f"Adquirindo grid_mutex primeiro")
+        
         with self.shared_state.grid_mutex:
             log(f"Robo {self.id} - grid_mutex ADQUIRIDO")
             target_cell = self.shared_state.get_grid_cell(new_x, new_y)
@@ -126,13 +142,9 @@ class Robot(multiprocessing.Process):
                 self.perform_move(old_x, old_y, new_x, new_y)
 
             elif target_cell == BATTERY_SYMBOL:
-                battery_id = self.find_battery_at_position(new_x, new_y)
                 if battery_id is not None:
-                    log(f"Robo {self.id} - Encontrou bateria {battery_id}, adquirindo mutex")
-                    self.log_deadlock_risk(f"Tentando adquirir battery_mutex já tendo grid_mutex", battery_id)
-                    time.sleep(0.02)
-                    self.acquire_battery_mutex(battery_id)
-                    self.perform_move(old_x, old_y, new_x, new_y)
+                    log(f"Robô {self.id} - Movendo para bateria {battery_id} (já tem mutex)")
+                    self.execute_move_onto_battery_core(old_x, old_y, new_x, new_y, battery_id)
 
             elif target_cell.isdigit() or target_cell == PLAYER_SYMBOL:
                 if self.find_battery_at_position(new_x, new_y) is not None: 
@@ -153,11 +165,13 @@ class Robot(multiprocessing.Process):
         log(f"Robo {self.id} - Tentando mover para bateria {battery_id} em ({new_x},{new_y})")
         self.log_deadlock_risk(f"Tentando adquirir battery_mutex antes de grid_mutex", battery_id)
         time.sleep(0.01 + random.uniform(0, 0.02))
-        self.acquire_battery_mutex(battery_id)
+        if not self.acquire_battery_mutex(battery_id):
+            log(f"Robô {self.id} - FALHA ao adquirir battery_mutex")
+            return
         time.sleep(0.02 + random.uniform(0, 0.03))
 
         try:
-            log(f"Robo {self.id} - ADQUIRINDO grid_mutex para mover para bateria {battery_id}")
+            log(f"PREVININDO DEADLOCK: Robô {self.id} - Seguindo ordem consistente: battery_mutex → grid_mutex")
             self.log_deadlock_risk(f"Tentando adquirir grid_mutex já tendo battery_mutex {battery_id}")            
             with self.shared_state.grid_mutex:
                 log(f"Robo {self.id} - grid_mutex ADQUIRIDO")
@@ -382,10 +396,22 @@ class Robot(multiprocessing.Process):
                 self.release_battery_mutex()
             time.sleep(0.01 + random.uniform(0, 0.02))
             log(f"Robo {self.id} - TENTANDO ADQUIRIR battery_mutex da bateria {battery_id}")
-            self.shared_state.battery_mutexes[battery_id].acquire()
+
+            if self.is_player:
+                acquired = self.shared_state.battery_mutexes[battery_id].acquire(timeout=0.5)
+                if not acquired:
+                    log(f"Robô {self.id} - TIMEOUT ao adquirir battery_mutex da bateria {battery_id} - cancelando movimento")
+                    return False
+            else:
+                self.shared_state.battery_mutexes[battery_id].acquire()
+
             self.current_battery_id = battery_id
             self.current_battery_mutex = self.shared_state.battery_mutexes[battery_id]
             log(f"Robo {self.id} - battery_mutex da bateria {battery_id} ADQUIRIDO COM SUCESSO")
+
+            return True
+        else:
+            return True #ja tem o mutex da bateria
     
     def initiate_duel(self, other_robot_id, old_x, old_y, new_x, new_y):
         with self.shared_state.robots_mutex: # ja temos o grid mutex
