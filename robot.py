@@ -22,18 +22,12 @@ class Robot(multiprocessing.Process):
         self.shared_objects = shared_objects
         self.shared_state = None
         self.running = True
-        
-        self.F = random.randint(9, 10)
-        self.E = random.randint(95, 100)
-        self.V = random.randint(4, 5)
-        
         self.current_battery_id = None
         self.current_battery_mutex = None
-        
         self.direction_queue = multiprocessing.Queue() if is_player else None
         
         robot_type = "JOGADOR" if is_player else "IA"
-        log(f"Robo {robot_id} ({robot_type}) criado - F:{self.F}, E:{self.E}, V:{self.V}")
+        log(f"Robo {robot_id} ({robot_type}) criado")
 
     def get_robot_symbol(self):
         return PLAYER_SYMBOL if self.is_player else str(self.id)
@@ -95,9 +89,9 @@ class Robot(multiprocessing.Process):
                                 'id': robot_idx, 
                                 'x': x, 
                                 'y': y,
-                                'F': self.F if robot_idx == self.id else random.randint(6, 10),
-                                'E': min(MAX_ENERGY, self.E if robot_idx == self.id else random.randint(80, 100)),
-                                'V': self.V if robot_idx == self.id else random.randint(3, 5),
+                                'F': random.randint(1, 10),
+                                'E': random.randint(10, 100),
+                                'V': random.randint(1, 5),
                                 'status': 1
                             })
                         self.shared_state.set_grid_cell(x, y, PLAYER_SYMBOL if robot_idx == 0 else str(robot_idx))
@@ -456,9 +450,9 @@ class Robot(multiprocessing.Process):
 
             if on_battery_now and self.current_battery_id == battery_id_under_robot:
                 log(f"Robo {self.id} - Housekeeping: carregando energia na bateria {battery_id_under_robot}")
-                self.update_robot_state(self.id, energy_difference=5)
+                self.update_robot_state(self.id, energy_difference=20)
             else:
-                updated_data = self.update_robot_state(self.id, energy_difference=-0.5)
+                updated_data = self.update_robot_state(self.id, energy_difference=-1)
                 if updated_data and updated_data['status'] == 0:
                     log(f"Robo {self.id} - Housekeeping: robo morreu")
                     with self.shared_state.grid_mutex:
