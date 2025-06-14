@@ -24,7 +24,7 @@ class Robot(multiprocessing.Process):
         self.running = True
         
         self.F = random.randint(9, 10)
-        self.E = min(MAX_ENERGY, random.randint(95, 100))
+        self.E = random.randint(95, 100)
         self.V = random.randint(4, 5)
         
         self.current_battery_id = None
@@ -354,13 +354,18 @@ class Robot(multiprocessing.Process):
                 return robot_idx
         return None
 
+    def restore_battery_cells(self, x, y):
+        battery_id = self.find_battery_at_position(x, y)
+        if battery_id is not None:
+            battery_data = self.shared_state.get_battery_data(battery_id)
+            if battery_data and battery_data['x'] > 0:
+                bx, by = battery_data['x'], battery_data['y']
+                self.shared_state.set_grid_cell(bx, by, BATTERY_SYMBOL) #manter
+                self.shared_state.set_grid_cell(bx+1, by, BATTERY_SYMBOL) # 2 celulas
+
     def update_grid_cell(self, x, y, was_on_battery):
         if was_on_battery:
-            battery_id = self.find_battery_at_position(x, y)
-            if battery_id is not None:
-                self.shared_state.set_grid_cell(x, y, BATTERY_SYMBOL)
-            else:
-                self.shared_state.set_grid_cell(x, y, EMPTY_SYMBOL)
+            self.restore_battery_cells(x, y)
         else:
             self.shared_state.set_grid_cell(x, y, EMPTY_SYMBOL)
 
