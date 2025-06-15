@@ -11,12 +11,58 @@ Professor
 
  ## <span style="color: #8B008B"></span>
 
-
 Antes de tudo, precisamos ressaltar que essa prevenção está numa branch separada, chamada de 'preventDeadlock', e não na main.<br>
+
+## <span style="color: #8B008B">Como executar o programa</span>
+
+### <span style="color: #8B008B">Pré-requisitos</span>
+
+- Python 3.7 ou superior
+- Sistema operacional que suporte a biblioteca `curses` (Linux, macOS, ou Windows com WSL)
+
+### <span style="color: #8B008B">Instruções de execução</span>
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/caetano-dev/JogoSO1.git
+   ```
+
+2. **Navegue até o diretório do projeto:**
+   ```bash
+    cd JogoSO1
+    ```
+
+3. **Execute o programa principal:**
+   ```bash
+   python3 main.py
+   ```
+   ou
+   ```bash
+   python main.py
+   ```
+
+4. **Controles do jogo:**
+   - Setas: Movimentar o robô jogador (P)
+   - Q: Sair do jogo
+   - O jogo roda automaticamente até que apenas um robô sobreviva ou todos morram
+
+### <span style="color: #8B008B">Arquivos de saída</span>
+
+**log.txt**: Arquivo de log as principais ações dos robôs e mutexes.
+O log é limpo automaticamente a cada execução
+
+### <span style="color: #8B008B">Observações importantes</span>
+
+O terminal precisa ter tamanho suficiente para exibir o grid completo (mínimo 40x25 caracteres)
+Em sistemas Windows, recomenda-se usar WSL ou um terminal compatível com curses
+Para testar a versão sem deadlock, mude para a branch `preventDeadlock` com 
+```bash
+git checkout preventDeadlock
+```
 
 ### <span style="color: #8B008B">Como isso funciona?</span>
 
-Durante o desenvolvimento do programa, identificamos que era possível a ocorrência de um **deadlock clássico** em situações onde múltiplos robôs competem pelos mesmos recursos compartilhados: as baterias e o grid do jogo.
+Durante o desenvolvimento do programa, identificamos que era possível a ocorrência de um deadlock em situações onde múltiplos robôs competem pelos mesmos recursos compartilhados: as baterias e o grid do jogo.
 
 #### <span style="color: #8B008B">Cenário do Deadlock</span>
 
