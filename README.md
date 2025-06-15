@@ -18,13 +18,27 @@ Antes de tudo, precisamos ressaltar que essa prevenção está numa branch separ
 
 Durante o desenvolvimento do programa, percebemos que era possível a ocorrência de um deadlock na situação de ter um robô querendo entrar em uma bateria que já tem um outro robô, enquanto esse que está na bateria está tentando sair.
 Isso acontecia pois não faziamos a obtenção dos mutexes na ordem correta, então poderia acontecer essa situação em que eles se travariam.
-Para tratamento disso, mudamos para garantir que o sistema apenas pegue o mutex da bateria apenas quando tiver o mutex do tabuleiro.
-Todas essas coisas estão presentes na classe robot.py, nas funções 'try_move' e 'try_move_to_battery'.
-Além disso, como na 'versão final' (presente na branch 'main'), estamos com os momentos em que podem ocorrer o deadlock com a mensagem abaixo.
+Para tratamento disso, mudamos para garantir que o sistema apenas pegue o mutex da bateria quando já tiver o mutex do tabuleiro.
+Todas essas coisas estão presentes na classe robot.py, nas funções 'try_move' e 'try_move_to_battery'. Os movimentos dos robôs que podem causar deadlock recebem um tratamento especial, para facilitar a vizualização do que está acontecendo no log.
+
+Exemplo de deadlock: 
+
+Robô 0 adquire grid_mutex e tenta se mover para a bateria 1, enquanto o robô 4 adquire battery_mutex da bateria 1 e tenta se mover para o grid_mutex. 
+
 ```
-[12:15:16.359] RISCO DE DEADLOCK: Robo {idDoRobo} - Adquirindo grid_mutex primeiro
-[12:15:16.359] RISCO DE DEADLOCK: Robo {idDoRobo} - Já possui mutex da bateria {idDaBateria}
+[12:15:15.793] Robo 0 - grid_mutex ADQUIRIDO
+[12:15:15.796] Robo 0 - Encontrou bateria 1, adquirindo mutex
+[12:15:15.796] RISCO DE DEADLOCK: Robo 0 - Tentando adquirir battery_mutex já tendo grid_mutex
+[12:15:15.848] Robo 0 - TENTANDO ADQUIRIR battery_mutex da bateria 1
 ```
+
+```
+[12:15:16.033] Robo 4 - ADQUIRINDO grid_mutex para mover de (2,12) para (3,12)
+[12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
+```
+
+depois disso, o deadlock ocorre e nenhum outro robô consegue se mover, e o jogo fica travado.
 
 ## <span style="color: #8B008B">O que é o que?</span>
 
@@ -44,7 +58,7 @@ Responsável por administrar tudo relacionados aos robôs, como inicializar com 
 
 É aonde estarão todos os dados que necessitam ser compartilhados através de diferentes classes do programa, para manter esses dados 'centralizados' e evitar algum erro de transferência inconsistente ou uma ação não ter os dados necessários para alguma ação.
 
- ## <span style="color: #8B008B">O cilco de funcionamento</span>
+ ## <span style="color: #8B008B">O ciclo de funcionamento</span>
 
 Logo após iniciar a execução, você verá a tela abaixo:
 
