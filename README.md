@@ -112,4 +112,96 @@ Logo após iniciar a execução, você verá a tela abaixo:
 
 ![alt text](image-1.png)
 
-A partir disso, você verá o status de cara robô, como energia, força e velocidade, além de ver se um robô está em uma bateria recebendo carga, pelo ícone de relâmpago do lado de cada um. 
+A partir disso, você verá o status de cara robô, como energia, força e velocidade, além de ver se um robô está em uma bateria recebendo carga, pelo ícone de relâmpago do lado de cada um.
+
+## <span style="color: #8B008B">Principais Funções do Sistema</span>
+
+### <span style="color: #8B008B">main.py - Funções Principais</span>
+
+#### **`main(stdscr)`**
+Função principal que gerencia todo o ciclo de vida do jogo. Inicializa o estado compartilhado, cria e inicia os processos dos robôs, gerencia a interface gráfica usando curses e processa inputs do usuário. Também é responsável por finalizar todos os processos quando o jogo termina.
+
+#### **`update_alive_count(shared_state, num_robots)`**
+Conta quantos robôs ainda estão vivos no jogo, determina se há um vencedor ou empate, e atualiza as flags do jogo. Esta função é chamada continuamente para ver se o jogo acabou.
+
+### <span style="color: #8B008B">robot.py - Funções Principais</span>
+
+#### **`__init__(self, robot_id, is_player, shared_objects)`**
+Construtor da classe Robot que inicializa um robô com ID único, determina se é controlado pelo jogador ou não e configura as estruturas necessárias para comunicação entre processos.
+
+#### **`attach_shared_memory(self)`**
+Anexa o robô ao estado de memória compartilhada, permitindo que ele acesse e modifique dados compartilhados como o grid, estado dos robôs e baterias.
+
+#### **`initialize_arena_if_needed(self)`**
+Inicializa o arena do jogo apenas uma vez. O primeiro robô a chamar esta função coloca as baterias no mapa e inicializa os dados compartilhados de todos os robôs em posições aleatórias.
+
+#### **`place_batteries(self)`**
+Posiciona aleatoriamente as baterias no mapa, garantindo que cada bateria ocupe 2 células horizontais e não sobreponha com as barreiras.
+
+#### **`sense_act(self)`**
+Loop principal de decisão e ação do robô. Ela analisa o ambiente, decide as próximas ações (movimento ou coleta de bateria) e as executa.
+
+#### **`try_move(self, dx, dy, robot_data_snapshot)`**
+Tenta mover o robô para uma nova posição. Verifica colisões, gerencia movimentos para baterias, e inicia duelos quando encontra outros robôs. Esta função é onde o deadlock pode ocorrer devido à ordem de aquisição de mutexes.
+
+#### **`try_move_to_battery(self, old_x, old_y, new_x, new_y)`**
+Versão especializada de movimento que primeiro adquire o mutex da bateria antes do mutex do grid.
+
+#### **`initiate_duel(self, other_robot_id, old_x, old_y, new_x, new_y)`**
+Gerencia o combate entre dois robôs quando eles ocupam a mesma posição. Calcula o poder de cada robô (2×Força + Energia) e determina o vencedor, podendo resultar em empate onde ambos morrem.
+
+#### **`acquire_battery_mutex(self, battery_id)`** / **`release_battery_mutex(self)`**
+Funções que gerenciam a aquisição e liberação segura dos mutexes das baterias, garantindo que apenas um robô possa interagir com uma bateria específica por vez.
+
+#### **`housekeeping(self)`**
+Thread separada que roda em paralelo ao loop principal, responsável por atualizar a energia do robô. 
+
+#### **`update_robot_state(self, robot_id, new_x=None, new_y=None, energy_difference=0, new_status=None)`**
+Função central para modificar o estado de um robô. Atualiza posição, energia e status, verificando automaticamente se o robô morreu por falta de energia.
+
+#### **`find_nearest_battery_direction(self, grid_snapshot, robot_data)`**
+Analisa o grid para encontrar a bateria mais próxima e retornando a direção para se mover em direção a ela. Serve apenas para robôs que não são controlados pelo jogador.
+
+### <span style="color: #8B008B">shared_memory.py - Funções Principais</span>
+
+#### **`create_shared_state()`**
+Cria e inicializa todas as estruturas de dados compartilhadas usando multiprocessing.Manager(). Configura o grid com bordas e obstáculos, inicializa arrays para robôs e baterias, e cria todos os mutexes necessários.
+
+#### **`get_grid_cell(self, x, y)` / `set_grid_cell(self, x, y, value)`**
+Funções para ler e escrever células individuais do grid. Incluem verificação de limites para evitar acessos inválidos.
+
+#### **`get_robot_data(self, robot_id)` / `set_robot_data(self, robot_id, robot_data)`**
+Gerenciam o acesso aos dados dos robôs (posição, energia, força, velocidade, status).
+
+#### **`get_battery_data(self, battery_id)` / `set_battery_data(self, battery_id, battery_data)`**
+Controlam o acesso às informações das baterias (posição, estado de coleta, proprietário atual).
+
+#### **`take_grid_snapshot(self)`**
+Cria uma cópia completa do estado atual do grid para análise.
+
+### <span style="color: #8B008B">viewer.py - Funções Principais</span>
+
+#### **`display_grid(self, stdscr)`**
+Função principal de renderização que desenha o grid do jogo, status dos robôs, contadores e mensagens de controle na tela.
+
+#### **`is_robot_on_battery(self, x, y)`**
+Verifica se um robô está posicionado em uma bateria para mostrar o indicador de carregamento (⚡) na interface.
+
+#### **`format_game_status_message(self, flags)`**
+Formata as mensagens de fim de jogo (vitória ou empate) baseado no estado atual das flags do jogo.
+
+## <span style="color: #8B008B">Fluxo de Execução</span>
+
+### **Ordem de Execução:**
+1. **main.py** limpa logs e inicializa estruturas compartilhadas
+2. Cria e inicia **NUM_ROBOTS** processos Robot
+3. Cada robô anexa à memória compartilhada e inicializa o arena (apenas o primeiro)
+4. Robôs começam seus loops **sense_act()** e threads **housekeeping()**
+5. **main()** entra no loop de interface gráfica e processa inputs do usuário
+6. **update_alive_count()** verifica continuamente condições de fim de jogo
+
+### **Mutexes Utilizados:**
+- `init_mutex`: Garante inicialização única do arena
+- `grid_mutex`: Protege modificações no grid do jogo  
+- `robots_mutex`: Sincroniza atualizações nos dados dos robôs
+- `battery_mutexes[]`: Array de mutexes individuais para cada bateria 
