@@ -11,12 +11,10 @@ Professor
 
  ## <span style="color: #8B008B"></span>
 
-  ## <span style="color: #8B008B">Prevenção do Deadlock</span>
 
 Antes de tudo, precisamos ressaltar que essa prevenção está numa branch separada, chamada de 'preventDeadlock', e não na main.<br>
- ### <span style="color: #8B008B">Como isso funciona?</span>
 
-### <span style="color: #8B008B">Como o Deadlock Acontece</span>
+### <span style="color: #8B008B">Como isso funciona?</span>
 
 Durante o desenvolvimento do programa, identificamos que era possível a ocorrência de um **deadlock clássico** em situações onde múltiplos robôs competem pelos mesmos recursos compartilhados: as baterias e o grid do jogo.
 
