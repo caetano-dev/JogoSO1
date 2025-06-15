@@ -16,15 +16,33 @@ Professor
 Antes de tudo, precisamos ressaltar que essa prevenção está numa branch separada, chamada de 'preventDeadlock', e não na main.<br>
  ### <span style="color: #8B008B">Como isso funciona?</span>
 
-Durante o desenvolvimento do programa, percebemos que era possível a ocorrência de um deadlock na situação de ter um robô querendo entrar em uma bateria que já tem um outro robô, enquanto esse que está na bateria está tentando sair.
-Isso acontecia pois não faziamos a obtenção dos mutexes na ordem correta, então poderia acontecer essa situação em que eles se travariam.
-Para tratamento disso, mudamos para garantir que o sistema apenas pegue o mutex da bateria quando já tiver o mutex do tabuleiro.
-Todas essas coisas estão presentes na classe robot.py, nas funções 'try_move' e 'try_move_to_battery'. Os movimentos dos robôs que podem causar deadlock recebem um tratamento especial, para facilitar a vizualização do que está acontecendo no log.
+### <span style="color: #8B008B">Como o Deadlock Acontece</span>
 
-Exemplo de deadlock: 
+Durante o desenvolvimento do programa, identificamos que era possível a ocorrência de um **deadlock clássico** em situações onde múltiplos robôs competem pelos mesmos recursos compartilhados: as baterias e o grid do jogo.
 
-Robô 0 adquire grid_mutex e tenta se mover para a bateria 1, enquanto o robô 4 adquire battery_mutex da bateria 1 e tenta se mover para o grid_mutex. 
+#### <span style="color: #8B008B">Cenário do Deadlock</span>
 
+O deadlock ocorre quando dois ou mais robôs adquirem mutexes em ordens diferentes, criando uma dependência circular:
+
+1. Robô A adquire o `grid_mutex` e depois tenta adquirir o `battery_mutex` de uma bateria específica
+2. Robô B já possui o `battery_mutex` da mesma bateria e tenta adquirir o `grid_mutex`
+3. Resultado: Robô A espera pelo mutex que Robô B possui, enquanto Robô B espera pelo mutex que Robô A possui
+
+Esta situação cria uma **espera circular** onde nenhum dos robôs pode prosseguir, travando todo o sistema.
+
+#### <span style="color: #8B008B">Condições para Deadlock</span>
+
+O deadlock acontece quando todas as quatro condições são satisfeitas:
+- Exclusão mútua: Os mutexes só podem ser possuídos por um robô por vez
+- Posse e espera: Robôs mantêm recursos enquanto esperam por outros
+- Não preempção: Mutexes não podem ser forçadamente liberados
+- Espera circular: Existe um ciclo de dependências entre os robôs
+
+### <span style="color: #8B008B">Exemplo de Deadlock Detectado</span>
+
+Robô 0 adquire `grid_mutex` e tenta se mover para a bateria 1, enquanto o robô 4 já possui `battery_mutex` da bateria 1 e tenta adquirir o `grid_mutex`: 
+
+**Robô 0 (possui grid_mutex, quer battery_mutex):**
 ```
 [12:15:15.793] Robo 0 - grid_mutex ADQUIRIDO
 [12:15:15.796] Robo 0 - Encontrou bateria 1, adquirindo mutex
@@ -32,13 +50,45 @@ Robô 0 adquire grid_mutex e tenta se mover para a bateria 1, enquanto o robô 4
 [12:15:15.848] Robo 0 - TENTANDO ADQUIRIR battery_mutex da bateria 1
 ```
 
+**Robô 4 (possui battery_mutex, quer grid_mutex):**
 ```
 [12:15:16.033] Robo 4 - ADQUIRINDO grid_mutex para mover de (2,12) para (3,12)
 [12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
 [12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
 ```
 
-depois disso, o deadlock ocorre e nenhum outro robô consegue se mover, e o jogo fica travado.
+**Resultado**: O deadlock ocorre e nenhum outro robô consegue se mover, causando o travamento completo do jogo.
+
+### <span style="color: #8B008B">Prevenção Implementada</span>
+
+Para resolver este problema, fizemos a aquisição ordenada de recursos:
+
+#### <span style="color: #8B008B">Ordem consistente para mutexes</span>
+
+Todos os robôs agora seguem a mesma ordem de aquisição: `battery_mutex` → `grid_mutex`
+
+```python
+#Ordem consistente em ambas as funções try_move e try_move_to_battery
+if not self.acquire_battery_mutex(battery_id): #Se não conseguir adquirir o mutex da bateria, não prossegue
+    #...
+    return
+try:
+    #...
+    with self.shared_state.grid_mutex: #Adquire o mutex do grid
+        # Processa movimento
+```
+
+Esta implementação está presente nas funções `try_move` e `try_move_to_battery` da classe `robot.py`, garantindo que não hajam deadlocks.
+
+Nos logs:
+
+```
+[19:14:20.152] Robo 1 - TENTANDO ADQUIRIR battery_mutex da bateria 1
+[19:14:20.152] Robo 1 - battery_mutex da bateria 1 ADQUIRIDO COM SUCESSO
+[19:14:20.152] Robo 1 - ADQUIRINDO grid_mutex para mover de (15,4) para (15,3)
+[19:14:20.152] PREVENÇÃO DEADLOCK: Robô 1 - Seguindo ordem consistente: battery_mutex → grid_mutex
+[19:14:20.153] Robo 1 - grid_mutex ADQUIRIDO
+```
 
 ## <span style="color: #8B008B">O que é o que?</span>
 
