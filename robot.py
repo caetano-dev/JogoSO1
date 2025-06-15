@@ -157,7 +157,7 @@ class Robot(multiprocessing.Process):
             return
         
         log(f"Robo {self.id} - Tentando mover para bateria {battery_id} em ({new_x},{new_y})")
-        self.log_deadlock_risk(f"Tentando adquirir battery_mutex antes de grid_mutex", battery_id)
+        #self.log_deadlock_risk(f"Tentando adquirir battery_mutex antes de grid_mutex", battery_id)
         time.sleep(0.01 + random.uniform(0, 0.02))
         if not self.acquire_battery_mutex(battery_id):
             log(f"Robô {self.id} - FALHA ao adquirir battery_mutex")
