@@ -43,3 +43,11 @@ Responsável por administrar tudo relacionados aos robôs, como inicializar com 
 ### <span style="color: #8B008B"> - shared_memory.py</span>
 
 É aonde estarão todos os dados que necessitam ser compartilhados através de diferentes classes do programa, para manter esses dados 'centralizados' e evitar algum erro de transferência inconsistente ou uma ação não ter os dados necessários para alguma ação.
+
+ ## <span style="color: #8B008B">O cilco de funcionamento</span>
+
+Logo após iniciar a execução, você verá a tela abaixo:
+
+![alt text](image-1.png)
+
+A partir disso, você verá o status de cara robô, como energia, força e velocidade, além de ver se um robô está em uma bateria recebendo carga, pelo ícone de relâmpago do lado de cada um. 
