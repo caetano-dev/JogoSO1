@@ -94,29 +94,7 @@ Nos logs:
 
 É a classe que é responsável por inicializar o programa. Logo de cara ela limpa um possível arquivo de log já existente, para poder manter a consistência de o log só retratar uma única execução. Além disso, ela inicializa o grid na memória compartilhada, instancia os robôs e fica responsável por administrar todo o processo, de forma que está sempre esperando um input do usuário para ou movimentar o player (através de inputs nas teclas de seta enviados para a classe robot.py) ou encerrar o jogo manualmente (através do input da tecla 'q'). Por fim, também é responsável por atualizar os estados do jogo como um todo.
 
-### <span style="color: #8B008B"> - viewer.py</span>
-
-É a classe responsável por printar o jogo na tela, como o mapa, os status dos robos e a mensagem final do jogo, se é Vitória ou Empate.
-
-### <span style="color: #8B008B"> - robot.py</span>
-
-Responsável por administrar tudo relacionados aos robôs, como inicializar com robôs atributos aleatórios, inicializar e anexar a memória compartilhada a cada robô, inicializar as baterias do mapa, realizar o movimentos dos robôs, atualizar o estado do robô, as ações referentes às baterias no mapa e lidar com os duelos entre robôs, além de uma forma rudimentar de 'IA', para tomar as decisões para os robôs não controlados pelo jogados e documentar os riscos de deadlock nas ações dos robôs. 
-
-### <span style="color: #8B008B"> - shared_memory.py</span>
-
-É aonde estarão todos os dados que necessitam ser compartilhados através de diferentes classes do programa, para manter esses dados 'centralizados' e evitar algum erro de transferência inconsistente ou uma ação não ter os dados necessários para alguma ação.
-
- ## <span style="color: #8B008B">O ciclo de funcionamento</span>
-
-Logo após iniciar a execução, você verá a tela abaixo:
-
-![alt text](image-1.png)
-
-A partir disso, você verá o status de cara robô, como energia, força e velocidade, além de ver se um robô está em uma bateria recebendo carga, pelo ícone de relâmpago do lado de cada um.
-
-## <span style="color: #8B008B">Principais Funções do Sistema</span>
-
-### <span style="color: #8B008B">main.py - Funções Principais</span>
+funções principais:
 
 #### **`main(stdscr)`**
 Função principal que gerencia todo o ciclo de vida do jogo. Inicializa o estado compartilhado, cria e inicia os processos dos robôs, gerencia a interface gráfica usando curses e processa inputs do usuário. Também é responsável por finalizar todos os processos quando o jogo termina.
@@ -124,7 +102,27 @@ Função principal que gerencia todo o ciclo de vida do jogo. Inicializa o estad
 #### **`update_alive_count(shared_state, num_robots)`**
 Conta quantos robôs ainda estão vivos no jogo, determina se há um vencedor ou empate, e atualiza as flags do jogo. Esta função é chamada continuamente para ver se o jogo acabou.
 
-### <span style="color: #8B008B">robot.py - Funções Principais</span>
+### <span style="color: #8B008B"> - viewer.py</span>
+
+É a classe responsável por printar o jogo na tela, como o mapa, os status dos robos e a mensagem final do jogo, se é Vitória ou Empate.
+
+funções principais:
+
+#### **`display_grid(self, stdscr)`**
+Função principal de renderização que desenha o grid do jogo, status dos robôs, contadores e mensagens de controle na tela.
+
+#### **`is_robot_on_battery(self, x, y)`**
+Verifica se um robô está posicionado em uma bateria para mostrar o indicador de carregamento (⚡) na interface.
+
+#### **`format_game_status_message(self, flags)`**
+Formata as mensagens de fim de jogo (vitória ou empate) baseado no estado atual das flags do jogo.
+
+
+### <span style="color: #8B008B"> - robot.py</span>
+
+Responsável por administrar tudo relacionados aos robôs, como inicializar com robôs atributos aleatórios, inicializar e anexar a memória compartilhada a cada robô, inicializar as baterias do mapa, realizar o movimentos dos robôs, atualizar o estado do robô, as ações referentes às baterias no mapa e lidar com os duelos entre robôs, além de uma forma rudimentar de 'IA', para tomar as decisões para os robôs não controlados pelo jogados e documentar os riscos de deadlock nas ações dos robôs. 
+
+funções principais:
 
 #### **`__init__(self, robot_id, is_player, shared_objects)`**
 Construtor da classe Robot que inicializa um robô com ID único, determina se é controlado pelo jogador ou não e configura as estruturas necessárias para comunicação entre processos.
@@ -162,7 +160,11 @@ Função central para modificar o estado de um robô. Atualiza posição, energi
 #### **`find_nearest_battery_direction(self, grid_snapshot, robot_data)`**
 Analisa o grid para encontrar a bateria mais próxima e retornando a direção para se mover em direção a ela. Serve apenas para robôs que não são controlados pelo jogador.
 
-### <span style="color: #8B008B">shared_memory.py - Funções Principais</span>
+### <span style="color: #8B008B"> - shared_memory.py</span>
+
+É aonde estarão todos os dados que necessitam ser compartilhados através de diferentes classes do programa, para manter esses dados 'centralizados' e evitar algum erro de transferência inconsistente ou uma ação não ter os dados necessários para alguma ação.
+
+funções principais:
 
 #### **`create_shared_state()`**
 Cria e inicializa todas as estruturas de dados compartilhadas usando multiprocessing.Manager(). Configura o grid com bordas e obstáculos, inicializa arrays para robôs e baterias, e cria todos os mutexes necessários.
@@ -179,16 +181,13 @@ Controlam o acesso às informações das baterias (posição, estado de coleta, 
 #### **`take_grid_snapshot(self)`**
 Cria uma cópia completa do estado atual do grid para análise.
 
-### <span style="color: #8B008B">viewer.py - Funções Principais</span>
+ ## <span style="color: #8B008B">O ciclo de funcionamento</span>
 
-#### **`display_grid(self, stdscr)`**
-Função principal de renderização que desenha o grid do jogo, status dos robôs, contadores e mensagens de controle na tela.
+Logo após iniciar a execução, você verá a tela abaixo:
 
-#### **`is_robot_on_battery(self, x, y)`**
-Verifica se um robô está posicionado em uma bateria para mostrar o indicador de carregamento (⚡) na interface.
+![alt text](image-1.png)
 
-#### **`format_game_status_message(self, flags)`**
-Formata as mensagens de fim de jogo (vitória ou empate) baseado no estado atual das flags do jogo.
+A partir disso, você verá o status de cara robô, como energia, força e velocidade, além de ver se um robô está em uma bateria recebendo carga, pelo ícone de relâmpago do lado de cada um.
 
 ## <span style="color: #8B008B">Fluxo de Execução</span>
 
