@@ -1,633 +1,1494 @@
-[12:15:09.859] MAIN - Iniciando jogo de robos
-[12:15:09.974] MAIN - Criando 5 processos de robos
-[12:15:09.975] Robo 0 (JOGADOR) criado
-[12:15:09.976] MAIN - Robo 0 (JOGADOR) iniciado
-[12:15:09.976] Robo 1 (IA) criado
-[12:15:09.977] MAIN - Robo 1 (IA) iniciado
-[12:15:09.978] Robo 2 (IA) criado
-[12:15:09.978] MAIN - Robo 2 (IA) iniciado
-[12:15:09.979] Robo 3 (IA) criado
-[12:15:09.980] MAIN - Robo 3 (IA) iniciado
-[12:15:09.980] Robo 4 (IA) criado
-[12:15:09.981] MAIN - Robo 4 (IA) iniciado
-[12:15:10.044] Robo 1 - Processo iniciado
-[12:15:10.045] Robo 1 - Memória compartilhada anexada
-[12:15:10.045] Robo 3 - Processo iniciado
-[12:15:10.045] Robo 3 - Memória compartilhada anexada
-[12:15:10.048] Robo 2 - Processo iniciado
-[12:15:10.048] Robo 2 - Memória compartilhada anexada
-[12:15:10.048] Robo 0 - Processo iniciado
-[12:15:10.049] Robo 0 - Memória compartilhada anexada
-[12:15:10.049] Robo 4 - Processo iniciado
-[12:15:10.049] Robo 4 - Memória compartilhada anexada
-[12:15:10.062] Robo 0 - Thread housekeeping iniciada
-[12:15:10.062] Robo 0 - Aguardando inicialização do arena
-[12:15:10.063] Robo 1 - Thread housekeeping iniciada
-[12:15:10.063] Robo 0 - Arena inicializada, começando sense_act
-[12:15:10.063] Robo 1 - Aguardando inicialização do arena
-[12:15:10.063] Robo 0 - Iniciando ciclo sense_act
-[12:15:10.063] Robo 1 - Arena inicializada, começando sense_act
-[12:15:10.063] Robo 1 - Iniciando ciclo sense_act
-[12:15:10.070] Robo 2 - Thread housekeeping iniciada
-[12:15:10.070] Robo 2 - Aguardando inicialização do arena
-[12:15:10.070] Robo 2 - Arena inicializada, começando sense_act
-[12:15:10.070] Robo 2 - Iniciando ciclo sense_act
-[12:15:10.081] Robo 3 - Aguardando inicialização do arena
-[12:15:10.081] Robo 3 - Thread housekeeping iniciada
-[12:15:10.082] Robo 3 - Arena inicializada, começando sense_act
-[12:15:10.082] Robo 3 - Iniciando ciclo sense_act
-[12:15:10.096] Robo 4 - Thread housekeeping iniciada
-[12:15:10.096] Robo 4 - Aguardando inicialização do arena
-[12:15:10.096] Robo 4 - Arena inicializada, começando sense_act
-[12:15:10.096] Robo 4 - Iniciando ciclo sense_act
-[12:15:10.131] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 2)
-[12:15:10.131] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:10.131] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.400s
-[12:15:10.142] Robo 2 - Robo movimento aleatório: (0, 1)
-[12:15:10.142] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:10.148] Robo 3 - Encontrou 20 baterias, indo para mais próxima (distância 2)
-[12:15:10.148] Robo 3 - Robo movendo para: (0, 1)
-[12:15:10.148] Robo 3 - Executando movimento (0,1) com delay 0.200s
-[12:15:10.152] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 2)
-[12:15:10.152] Robo 4 - Robo movendo para: (0, 1)
-[12:15:10.152] Robo 4 - Executando movimento (0,1) com delay 0.200s
-[12:15:10.353] Robo 4 - ADQUIRINDO grid_mutex para mover de (3,10) para (3,11)
-[12:15:10.353] Robo 3 - ADQUIRINDO grid_mutex para mover de (31,7) para (31,8)
-[12:15:10.353] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:10.353] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:10.353] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:10.366] Robo 4 - Movimento normal de (3,10) para (3,11), estava em bateria: False
-[12:15:10.368] Robo 4 - LIBERANDO grid_mutex
-[12:15:10.369] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:10.377] Robo 3 - Movimento normal de (31,7) para (31,8), estava em bateria: False
-[12:15:10.379] Robo 3 - LIBERANDO grid_mutex
-[12:15:10.546] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,10) para (18,11)
-[12:15:10.546] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:10.547] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:10.566] Robo 2 - Movimento normal de (18,10) para (18,11), estava em bateria: False
-[12:15:10.569] Robo 2 - LIBERANDO grid_mutex
-[12:15:10.656] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 1)
-[12:15:10.656] Robo 4 - Robo decidiu ir para bateria: (0, 1)
-[12:15:10.657] Robo 4 - Executando movimento para bateria (0,1) com delay 0.200s
-[12:15:10.661] Robo 3 - Encontrou 20 baterias, indo para mais próxima (distância 1)
-[12:15:10.661] Robo 3 - Robo decidiu ir para bateria: (0, 1)
-[12:15:10.661] Robo 3 - Executando movimento para bateria (0,1) com delay 0.200s
-[12:15:10.780] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 2)
-[12:15:10.781] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:10.781] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.400s
-[12:15:10.800] Robo 2 - Encontrou 20 baterias, indo para mais próxima (distância 7)
-[12:15:10.800] Robo 2 - Robo movendo para: (0, 1)
-[12:15:10.800] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:10.864] Robo 4 - Tentando mover para bateria 1 em (3,12)
-[12:15:10.864] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:10.864] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:10.875] Robo 3 - Tentando mover para bateria 8 em (31,9)
-[12:15:10.875] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:10.875] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:10.916] Robo 3 - TENTANDO ADQUIRIR battery_mutex da bateria 8
-[12:15:10.916] Robo 3 - battery_mutex da bateria 8 ADQUIRIDO COM SUCESSO
-[12:15:10.917] Robo 4 - TENTANDO ADQUIRIR battery_mutex da bateria 1
-[12:15:10.917] Robo 4 - battery_mutex da bateria 1 ADQUIRIDO COM SUCESSO
-[12:15:10.950] Robo 3 - ADQUIRINDO grid_mutex para mover para bateria 8
-[12:15:10.950] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir grid_mutex já tendo battery_mutex 8
-[12:15:10.950] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:10.950] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:10.950] Robo 3 - Movimento para bateria 8 de (31,8) para (31,9)
-[12:15:10.964] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:10.964] Robo 3 - LIBERANDO grid_mutex
-[12:15:10.966] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:10.966] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:10.966] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:10.966] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:10.966] Robo 4 - Movimento para bateria 1 de (3,11) para (3,12)
-[12:15:10.975] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:10.975] Robo 4 - LIBERANDO grid_mutex
-[12:15:10.986] MAIN - Interface grafica iniciada - jogo em execucao
-[12:15:10.986] Jogo iniciado
-[12:15:11.114] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:11.165] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:11.205] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,11) para (18,12)
-[12:15:11.205] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:11.206] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:11.211] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:11.212] Robo 3 - Robo movendo para: (1, 0)
-[12:15:11.212] Robo 3 - Executando movimento (1,0) com delay 0.200s
-[12:15:11.222] Robo 2 - Movimento normal de (18,11) para (18,12), estava em bateria: False
-[12:15:11.225] Robo 2 - LIBERANDO grid_mutex
-[12:15:11.235] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:11.235] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:11.235] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:11.413] Robo 3 - ADQUIRINDO grid_mutex para mover de (31,9) para (32,9)
-[12:15:11.413] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:11.413] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:11.414] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:11.428] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:11.428] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:11.428] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:11.428] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:11.442] Robo 4 - Tentando mover para bateria 1 em (2,12)
-[12:15:11.442] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:11.442] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:11.442] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:11.452] Robo 3 - Movimento para bateria 8 de (31,9) para (32,9)
-[12:15:11.463] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 2)
-[12:15:11.463] Robo 1 - Robo movendo para: (-1, 0)
-[12:15:11.464] Robo 1 - Executando movimento (-1,0) com delay 0.400s
-[12:15:11.491] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:11.491] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:11.491] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:11.491] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 6)
-[12:15:11.491] Robo 2 - Robo movendo para: (0, 1)
-[12:15:11.491] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:11.493] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:11.493] Robo 3 - LIBERANDO grid_mutex
-[12:15:11.493] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:11.493] Robo 4 - Movimento para bateria 1 de (3,12) para (2,12)
-[12:15:11.506] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:11.506] Robo 4 - LIBERANDO grid_mutex
-[12:15:11.596] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:11.655] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:11.755] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:11.755] Robo 3 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:11.756] Robo 3 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:11.759] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:11.759] Robo 4 - Robo movendo para: (1, 0)
-[12:15:11.759] Robo 4 - Executando movimento (1,0) com delay 0.200s
-[12:15:11.869] Robo 1 - ADQUIRINDO grid_mutex para mover de (38,16) para (37,16)
-[12:15:11.869] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
-[12:15:11.869] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:11.883] Robo 1 - Movimento normal de (38,16) para (37,16), estava em bateria: False
-[12:15:11.887] Robo 1 - LIBERANDO grid_mutex
-[12:15:11.894] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,12) para (18,13)
-[12:15:11.894] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:11.894] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:11.904] Robo 2 - Movimento normal de (18,12) para (18,13), estava em bateria: False
-[12:15:11.906] Robo 2 - LIBERANDO grid_mutex
-[12:15:11.964] Robo 4 - ADQUIRINDO grid_mutex para mover de (2,12) para (3,12)
-[12:15:11.965] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:11.965] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:11.965] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:11.969] Robo 4 - Encontrou bateria 1, adquirindo mutex
-[12:15:11.969] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:11.969] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:11.969] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:11.975] Robo 3 - Tentando mover para bateria 8 em (31,9)
-[12:15:11.975] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:11.975] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:11.975] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:11.994] Robo 4 - Movimento para bateria 1 de (2,12) para (3,12)
-[12:15:12.002] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:12.002] Robo 4 - LIBERANDO grid_mutex
-[12:15:12.035] Robo 3 - ADQUIRINDO grid_mutex para mover para bateria 8
-[12:15:12.035] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir grid_mutex já tendo battery_mutex 8
-[12:15:12.035] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:12.035] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:12.036] Robo 3 - Movimento para bateria 8 de (32,9) para (31,9)
-[12:15:12.067] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:12.067] Robo 3 - LIBERANDO grid_mutex
-[12:15:12.104] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:12.124] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:12.189] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:12.189] Robo 1 - Robo decidiu ir para bateria: (0, 1)
-[12:15:12.190] Robo 1 - Executando movimento para bateria (0,1) com delay 0.400s
-[12:15:12.190] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 5)
-[12:15:12.190] Robo 2 - Robo movendo para: (0, 1)
-[12:15:12.191] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:12.237] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
-[12:15:12.237] Robo 4 - Robo movendo para: (-1, 0)
-[12:15:12.237] Robo 4 - Executando movimento (-1,0) com delay 0.200s
-[12:15:12.294] Robo 3 - Robo movimento aleatório: (1, 0)
-[12:15:12.295] Robo 3 - Executando movimento (1,0) com delay 0.200s
-[12:15:12.442] Robo 4 - ADQUIRINDO grid_mutex para mover de (3,12) para (2,12)
-[12:15:12.443] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:12.443] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:12.443] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:12.445] Robo 4 - Encontrou bateria 1, adquirindo mutex
-[12:15:12.445] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:12.445] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:12.445] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:12.471] Robo 4 - Movimento para bateria 1 de (3,12) para (2,12)
-[12:15:12.476] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:12.476] Robo 4 - LIBERANDO grid_mutex
-[12:15:12.500] Robo 3 - ADQUIRINDO grid_mutex para mover de (31,9) para (32,9)
-[12:15:12.500] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:12.500] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:12.500] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:12.512] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:12.512] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:12.513] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:12.513] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:12.537] Robo 3 - Movimento para bateria 8 de (31,9) para (32,9)
-[12:15:12.557] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:12.570] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:12.570] Robo 3 - LIBERANDO grid_mutex
-[12:15:12.595] Robo 1 - Tentando mover para bateria 3 em (37,17)
-[12:15:12.595] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:12.595] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 3
-[12:15:12.595] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,13) para (18,14)
-[12:15:12.595] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:12.595] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:12.610] Robo 2 - Movimento normal de (18,13) para (18,14), estava em bateria: False
-[12:15:12.614] Robo 2 - LIBERANDO grid_mutex
-[12:15:12.625] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:12.643] Robo 1 - TENTANDO ADQUIRIR battery_mutex da bateria 3
-[12:15:12.644] Robo 1 - battery_mutex da bateria 3 ADQUIRIDO COM SUCESSO
-[12:15:12.671] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 3
-[12:15:12.672] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 3
-[12:15:12.672] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:12.672] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:12.672] Robo 1 - Movimento para bateria 3 de (37,16) para (37,17)
-[12:15:12.683] Robo 1 - Movimento para bateria 3 realizado com sucesso
-[12:15:12.683] Robo 1 - LIBERANDO grid_mutex
-[12:15:12.710] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:12.710] Robo 4 - Robo movendo para: (1, 0)
-[12:15:12.710] Robo 4 - Executando movimento (1,0) com delay 0.200s
-[12:15:12.823] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:12.823] Robo 3 - Robo movendo para: (-1, 0)
-[12:15:12.824] Robo 3 - Executando movimento (-1,0) com delay 0.200s
-[12:15:12.845] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 4)
-[12:15:12.846] Robo 2 - Robo decidiu ir para bateria: (0, 1)
-[12:15:12.846] Robo 2 - Executando movimento para bateria (0,1) com delay 0.400s
-[12:15:12.915] Robo 4 - ADQUIRINDO grid_mutex para mover de (2,12) para (3,12)
-[12:15:12.915] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:12.916] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:12.916] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:12.920] Robo 4 - Encontrou bateria 1, adquirindo mutex
-[12:15:12.920] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:12.920] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:12.920] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:12.926] Robo 0 - Executando movimento (0,1) com delay 0.200s
-[12:15:12.938] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:12.938] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:12.938] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.400s
-[12:15:12.943] Robo 4 - Movimento para bateria 1 de (2,12) para (3,12)
-[12:15:12.948] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:12.948] Robo 4 - LIBERANDO grid_mutex
-[12:15:13.020] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:13.026] Robo 3 - ADQUIRINDO grid_mutex para mover de (32,9) para (31,9)
-[12:15:13.026] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:13.026] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:13.026] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:13.032] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:13.032] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:13.032] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:13.032] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:13.049] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:13.055] Robo 3 - Movimento para bateria 8 de (32,9) para (31,9)
-[12:15:13.076] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:13.076] Robo 3 - LIBERANDO grid_mutex
-[12:15:13.111] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:13.130] Robo 0 - ADQUIRINDO grid_mutex para mover de (1,9) para (1,10)
-[12:15:13.130] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:13.131] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:13.140] Robo 0 - Movimento normal de (1,9) para (1,10), estava em bateria: False
-[12:15:13.142] Robo 0 - LIBERANDO grid_mutex
-[12:15:13.189] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:13.189] Robo 4 - Robo movendo para: (-1, 0)
-[12:15:13.189] Robo 4 - Executando movimento (-1,0) com delay 0.200s
-[12:15:13.329] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:13.329] Robo 3 - Robo decidiu ir para bateria: (1, 0)
-[12:15:13.329] Robo 3 - Executando movimento para bateria (1,0) com delay 0.200s
-[12:15:13.347] Robo 1 - Tentando mover para bateria 3 em (36,17)
-[12:15:13.347] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:13.347] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 3
-[12:15:13.347] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:13.391] Robo 4 - ADQUIRINDO grid_mutex para mover de (3,12) para (2,12)
-[12:15:13.391] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:13.391] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:13.392] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:13.393] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 3
-[12:15:13.393] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 3
-[12:15:13.393] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:13.394] Robo 4 - Encontrou bateria 1, adquirindo mutex
-[12:15:13.394] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:13.394] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:13.394] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:13.419] Robo 4 - Movimento para bateria 1 de (3,12) para (2,12)
-[12:15:13.438] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:13.438] Robo 4 - LIBERANDO grid_mutex
-[12:15:13.439] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:13.439] Robo 1 - Movimento para bateria 3 de (37,17) para (36,17)
-[12:15:13.454] Robo 1 - Movimento para bateria 3 realizado com sucesso
-[12:15:13.454] Robo 1 - LIBERANDO grid_mutex
-[12:15:13.499] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:13.507] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 4)
-[12:15:13.507] Robo 2 - Robo decidiu ir para bateria: (0, 1)
-[12:15:13.507] Robo 2 - Executando movimento para bateria (0,1) com delay 0.400s
-[12:15:13.544] Robo 3 - Tentando mover para bateria 8 em (32,9)
-[12:15:13.544] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:13.544] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:13.544] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:13.551] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:13.597] Robo 3 - ADQUIRINDO grid_mutex para mover para bateria 8
-[12:15:13.597] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir grid_mutex já tendo battery_mutex 8
-[12:15:13.597] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:13.598] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:13.598] Robo 3 - Movimento para bateria 8 de (31,9) para (32,9)
-[12:15:13.624] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:13.635] Robo 0 - Executando movimento (0,1) com delay 0.200s
-[12:15:13.637] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:13.637] Robo 3 - LIBERANDO grid_mutex
-[12:15:13.680] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:13.680] Robo 4 - Robo decidiu ir para bateria: (1, 0)
-[12:15:13.680] Robo 4 - Executando movimento para bateria (1,0) com delay 0.200s
-[12:15:13.694] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:13.694] Robo 1 - Robo decidiu ir para bateria: (1, 0)
-[12:15:13.695] Robo 1 - Executando movimento para bateria (1,0) com delay 0.400s
-[12:15:13.838] Robo 0 - ADQUIRINDO grid_mutex para mover de (1,10) para (1,11)
-[12:15:13.838] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:13.839] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:13.848] Robo 0 - Movimento normal de (1,10) para (1,11), estava em bateria: False
-[12:15:13.851] Robo 0 - LIBERANDO grid_mutex
-[12:15:13.868] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:13.868] Robo 3 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:13.868] Robo 3 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:13.888] Robo 4 - Tentando mover para bateria 1 em (3,12)
-[12:15:13.888] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:13.888] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:13.888] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:13.961] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:13.969] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:13.969] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:13.969] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:13.970] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:13.970] Robo 4 - Movimento para bateria 1 de (2,12) para (3,12)
-[12:15:13.977] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:13.977] Robo 4 - LIBERANDO grid_mutex
-[12:15:14.011] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:14.078] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:14.089] Robo 3 - Tentando mover para bateria 8 em (31,9)
-[12:15:14.089] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:14.089] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:14.089] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:14.105] Robo 1 - Tentando mover para bateria 3 em (37,17)
-[12:15:14.105] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:14.105] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 3
-[12:15:14.105] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:14.109] Robo 0 - Executando movimento (1,0) com delay 0.200s
-[12:15:14.158] Robo 3 - ADQUIRINDO grid_mutex para mover para bateria 8
-[12:15:14.158] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir grid_mutex já tendo battery_mutex 8
-[12:15:14.158] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:14.158] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:14.158] Robo 3 - Movimento para bateria 8 de (32,9) para (31,9)
-[12:15:14.159] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 4)
-[12:15:14.159] Robo 2 - Robo movendo para: (0, 1)
-[12:15:14.159] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:14.178] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 3
-[12:15:14.178] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 3
-[12:15:14.178] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:14.180] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:14.180] Robo 3 - LIBERANDO grid_mutex
-[12:15:14.180] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:14.180] Robo 1 - Movimento para bateria 3 de (36,17) para (37,17)
-[12:15:14.216] Robo 1 - Movimento para bateria 3 realizado com sucesso
-[12:15:14.216] Robo 1 - LIBERANDO grid_mutex
-[12:15:14.221] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:14.221] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:14.221] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:14.314] Robo 0 - ADQUIRINDO grid_mutex para mover de (1,11) para (2,11)
-[12:15:14.315] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:14.315] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:14.329] Robo 0 - Movimento normal de (1,11) para (2,11), estava em bateria: False
-[12:15:14.332] Robo 0 - LIBERANDO grid_mutex
-[12:15:14.425] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:14.426] Robo 4 - Tentando mover para bateria 1 em (2,12)
-[12:15:14.427] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:14.427] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:14.427] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:14.467] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:14.467] Robo 3 - Robo movendo para: (1, 0)
-[12:15:14.467] Robo 3 - Executando movimento (1,0) com delay 0.200s
-[12:15:14.474] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:14.484] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:14.484] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:14.484] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:14.485] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:14.485] Robo 4 - Movimento para bateria 1 de (3,12) para (2,12)
-[12:15:14.495] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:14.495] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:14.495] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.400s
-[12:15:14.499] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:14.499] Robo 4 - LIBERANDO grid_mutex
-[12:15:14.564] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,14) para (18,15)
-[12:15:14.564] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:14.564] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:14.586] Robo 2 - Movimento normal de (18,14) para (18,15), estava em bateria: False
-[12:15:14.592] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:14.602] Robo 2 - LIBERANDO grid_mutex
-[12:15:14.603] Robo 0 - Executando movimento (1,0) com delay 0.200s
-[12:15:14.667] Robo 3 - ADQUIRINDO grid_mutex para mover de (31,9) para (32,9)
-[12:15:14.667] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:14.667] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:14.668] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:14.678] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:14.678] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:14.678] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:14.678] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:14.703] Robo 3 - Movimento para bateria 8 de (31,9) para (32,9)
-[12:15:14.727] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:14.727] Robo 3 - LIBERANDO grid_mutex
-[12:15:14.743] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:14.743] Robo 4 - Robo decidiu ir para bateria: (1, 0)
-[12:15:14.744] Robo 4 - Executando movimento para bateria (1,0) com delay 0.200s
-[12:15:14.804] Robo 0 - ADQUIRINDO grid_mutex para mover de (2,11) para (3,11)
-[12:15:14.804] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:14.805] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:14.825] Robo 0 - Movimento normal de (2,11) para (3,11), estava em bateria: False
-[12:15:14.829] Robo 0 - LIBERANDO grid_mutex
-[12:15:14.860] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 3)
-[12:15:14.860] Robo 2 - Robo movendo para: (0, 1)
-[12:15:14.860] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:14.899] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:14.904] Robo 1 - Tentando mover para bateria 3 em (36,17)
-[12:15:14.904] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:14.904] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 3
-[12:15:14.904] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:14.947] Robo 4 - Tentando mover para bateria 1 em (3,12)
-[12:15:14.947] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:14.947] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:14.947] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:14.966] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 3
-[12:15:14.966] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 3
-[12:15:14.966] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:14.967] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:14.967] Robo 1 - Movimento para bateria 3 de (37,17) para (36,17)
-[12:15:14.974] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:14.974] Robo 3 - Robo movendo para: (-1, 0)
-[12:15:14.974] Robo 3 - Executando movimento (-1,0) com delay 0.200s
-[12:15:14.981] Robo 1 - Movimento para bateria 3 realizado com sucesso
-[12:15:14.981] Robo 1 - LIBERANDO grid_mutex
-[12:15:14.992] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:15.024] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:15.024] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:15.024] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:15.025] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:15.025] Robo 4 - Movimento para bateria 1 de (2,12) para (3,12)
-[12:15:15.038] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:15.039] Robo 4 - LIBERANDO grid_mutex
-[12:15:15.044] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:15.078] Robo 0 - Executando movimento (0,1) com delay 0.200s
-[12:15:15.179] Robo 3 - ADQUIRINDO grid_mutex para mover de (32,9) para (31,9)
-[12:15:15.179] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:15.179] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:15.180] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:15.186] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:15.186] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:15.186] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:15.186] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:15.207] Robo 3 - Movimento para bateria 8 de (32,9) para (31,9)
-[12:15:15.218] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:15.218] Robo 1 - Robo decidiu ir para bateria: (1, 0)
-[12:15:15.218] Robo 1 - Executando movimento para bateria (1,0) com delay 0.400s
-[12:15:15.231] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:15.231] Robo 3 - LIBERANDO grid_mutex
-[12:15:15.262] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,15) para (18,16)
-[12:15:15.262] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:15.262] Robo 2 - grid_mutex ADQUIRIDO
-[12:15:15.272] Robo 2 - Movimento normal de (18,15) para (18,16), estava em bateria: False
-[12:15:15.275] Robo 2 - LIBERANDO grid_mutex
-[12:15:15.278] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:15.278] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:15.278] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:15.281] Robo 0 - ADQUIRINDO grid_mutex para mover de (3,11) para (3,12)
-[12:15:15.281] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:15.281] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:15.418] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:15.487] Robo 4 - Tentando mover para bateria 1 em (2,12)
-[12:15:15.487] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:15.487] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 1
-[12:15:15.487] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:15.534] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:15.534] Robo 3 - Robo movendo para: (1, 0)
-[12:15:15.535] Robo 3 - Executando movimento (1,0) com delay 0.200s
-[12:15:15.548] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:15.555] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 2)
-[12:15:15.555] Robo 2 - Robo decidiu ir para bateria: (0, 1)
-[12:15:15.555] Robo 2 - Executando movimento para bateria (0,1) com delay 0.400s
-[12:15:15.560] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:15.563] Robo 0 - Executando movimento (0,1) com delay 0.200s
-[12:15:15.565] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 1
-[12:15:15.565] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 1
-[12:15:15.566] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:15.566] Robo 4 - grid_mutex ADQUIRIDO
-[12:15:15.566] Robo 4 - Movimento para bateria 1 de (3,12) para (2,12)
-[12:15:15.573] Robo 4 - Movimento para bateria 1 realizado com sucesso
-[12:15:15.573] Robo 4 - LIBERANDO grid_mutex
-[12:15:15.626] Robo 1 - Tentando mover para bateria 3 em (37,17)
-[12:15:15.626] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:15.627] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 3
-[12:15:15.627] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:15.696] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 3
-[12:15:15.696] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 3
-[12:15:15.696] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:15.696] Robo 1 - grid_mutex ADQUIRIDO
-[12:15:15.696] Robo 1 - Movimento para bateria 3 de (36,17) para (37,17)
-[12:15:15.704] Robo 1 - Movimento para bateria 3 realizado com sucesso
-[12:15:15.704] Robo 1 - LIBERANDO grid_mutex
-[12:15:15.740] Robo 3 - ADQUIRINDO grid_mutex para mover de (31,9) para (32,9)
-[12:15:15.740] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
-[12:15:15.740] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:15.740] Robo 3 - grid_mutex ADQUIRIDO
-[12:15:15.749] Robo 3 - Encontrou bateria 8, adquirindo mutex
-[12:15:15.749] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:15.749] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:15.749] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:15.768] Robo 0 - ADQUIRINDO grid_mutex para mover de (3,11) para (3,12)
-[12:15:15.768] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
-[12:15:15.774] Robo 3 - Movimento para bateria 8 de (31,9) para (32,9)
-[12:15:15.792] Robo 3 - Movimento para bateria 8 realizado com sucesso
-[12:15:15.792] Robo 3 - LIBERANDO grid_mutex
-[12:15:15.793] Robo 0 - grid_mutex ADQUIRIDO
-[12:15:15.796] Robo 0 - Encontrou bateria 1, adquirindo mutex
-[12:15:15.796] RISCO DE DEADLOCK: Robo 0 - Tentando adquirir battery_mutex já tendo grid_mutex
-[12:15:15.796] RISCO DE DEADLOCK: Robo 0 - Tentando acessar bateria 1
-[12:15:15.828] Robo 4 - Robo movimento aleatório: (1, 0)
-[12:15:15.829] Robo 4 - Executando movimento (1,0) com delay 0.200s
-[12:15:15.848] Robo 0 - TENTANDO ADQUIRIR battery_mutex da bateria 1
-[12:15:15.903] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:15.954] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:15.954] Robo 1 - Robo movendo para: (-1, 0)
-[12:15:15.954] Robo 1 - Executando movimento (-1,0) com delay 0.400s
-[12:15:16.033] Robo 4 - ADQUIRINDO grid_mutex para mover de (2,12) para (3,12)
-[12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
-[12:15:16.033] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 1
-[12:15:16.041] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 1)
-[12:15:16.041] Robo 3 - Robo decidiu ir para bateria: (-1, 0)
-[12:15:16.041] Robo 3 - Executando movimento para bateria (-1,0) com delay 0.200s
-[12:15:16.056] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:16.057] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:16.212] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 2)
-[12:15:16.213] Robo 2 - Robo decidiu ir para bateria: (0, 1)
-[12:15:16.213] Robo 2 - Executando movimento para bateria (0,1) com delay 0.400s
-[12:15:16.255] Robo 3 - Tentando mover para bateria 8 em (31,9)
-[12:15:16.255] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir battery_mutex antes de grid_mutex
-[12:15:16.255] RISCO DE DEADLOCK: Robo 3 - Tentando acessar bateria 8
-[12:15:16.255] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:16.319] Robo 3 - ADQUIRINDO grid_mutex para mover para bateria 8
-[12:15:16.320] RISCO DE DEADLOCK: Robo 3 - Tentando adquirir grid_mutex já tendo battery_mutex 8
-[12:15:16.320] RISCO DE DEADLOCK: Robo 3 - Já possui mutex da bateria 8
-[12:15:16.326] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:16.359] Robo 1 - ADQUIRINDO grid_mutex para mover de (37,17) para (36,17)
-[12:15:16.359] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
-[12:15:16.359] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 3
-[12:15:16.490] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:16.522] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:16.779] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:16.906] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 2)
-[12:15:16.907] Robo 2 - Robo movendo para: (0, 1)
-[12:15:16.907] Robo 2 - Executando movimento (0,1) com delay 0.400s
-[12:15:16.965] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:17.013] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:17.237] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:17.311] Robo 2 - ADQUIRINDO grid_mutex para mover de (18,16) para (18,17)
-[12:15:17.311] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
-[12:15:17.457] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:17.466] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:17.693] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:17.884] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:17.944] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:18.115] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:18.359] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:18.396] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:18.574] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:18.827] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:18.864] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:19.073] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:19.300] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:19.338] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:19.447] MAIN - Usuario pressionou 'q' - encerrando jogo
-[12:15:19.447] MAIN - Finalizando processos de robos
-[12:15:19.549] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:19.815] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:19.827] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:20.010] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:20.319] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:20.332] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:20.456] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:20.762] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:20.834] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:20.963] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:21.202] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:21.353] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:21.377] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:21.695] Robo 1 - Housekeeping: carregando energia na bateria 3
-[12:15:21.808] Robo 3 - Housekeeping: carregando energia na bateria 8
-[12:15:21.885] Robo 4 - Housekeeping: carregando energia na bateria 1
-[12:15:22.060] Robo 3 - Finalizando processo
-[12:15:22.060] Robo 4 - Finalizando processo
-[12:15:22.060] Robo 2 - Finalizando processo
-[12:15:22.060] Robo 1 - Finalizando processo
-[12:15:22.077] Robo 0 - ERRO no processo principal: 
-[12:15:22.077] Robo 0 - Finalizando processo
-[12:15:22.110] Robo 1 - Liberando mutex final da bateria 3
-[12:15:22.110] Robo 1 - LIBERANDO battery_mutex da bateria 3
-[12:15:22.110] Robo 1 - ERRO ao liberar battery_mutex da bateria 3: [Errno 32] Broken pipe
-[12:15:22.110] Robo 1 - Referências do battery_mutex da bateria 3 limpas
-[12:15:22.265] Robo 4 - Liberando mutex final da bateria 1
-[12:15:22.265] Robo 4 - LIBERANDO battery_mutex da bateria 1
-[12:15:22.266] Robo 4 - ERRO ao liberar battery_mutex da bateria 1: [Errno 32] Broken pipe
-[12:15:22.266] Robo 4 - Referências do battery_mutex da bateria 1 limpas
-[12:15:22.266] Robo 3 - Liberando mutex final da bateria 8
-[12:15:22.267] Robo 3 - LIBERANDO battery_mutex da bateria 8
-[12:15:22.267] Robo 3 - ERRO ao liberar battery_mutex da bateria 8: [Errno 32] Broken pipe
-[12:15:22.267] Robo 3 - Referências do battery_mutex da bateria 8 limpas
+[18:52:33.739] MAIN - Iniciando jogo de robos
+[18:52:33.855] MAIN - Criando 5 processos de robos
+[18:52:33.856] Robo 0 (JOGADOR) criado
+[18:52:33.857] MAIN - Robo 0 (JOGADOR) iniciado
+[18:52:33.857] Robo 1 (IA) criado
+[18:52:33.858] MAIN - Robo 1 (IA) iniciado
+[18:52:33.858] Robo 2 (IA) criado
+[18:52:33.859] MAIN - Robo 2 (IA) iniciado
+[18:52:33.860] Robo 3 (IA) criado
+[18:52:33.861] MAIN - Robo 3 (IA) iniciado
+[18:52:33.861] Robo 4 (IA) criado
+[18:52:33.862] MAIN - Robo 4 (IA) iniciado
+[18:52:33.926] Robo 3 - Processo iniciado
+[18:52:33.926] Robo 3 - Memória compartilhada anexada
+[18:52:33.927] Robo 4 - Processo iniciado
+[18:52:33.927] Robo 4 - Memória compartilhada anexada
+[18:52:33.928] Robo 0 - Processo iniciado
+[18:52:33.928] Robo 0 - Memória compartilhada anexada
+[18:52:33.929] Robo 1 - Processo iniciado
+[18:52:33.929] Robo 1 - Memória compartilhada anexada
+[18:52:33.930] Robo 2 - Processo iniciado
+[18:52:33.930] Robo 2 - Memória compartilhada anexada
+[18:52:33.941] Robo 0 - Thread housekeeping iniciada
+[18:52:33.941] Robo 0 - Aguardando inicialização do arena
+[18:52:33.941] Robo 0 - Arena inicializada, começando sense_act
+[18:52:33.941] Robo 0 - Iniciando ciclo sense_act
+[18:52:33.942] Robo 1 - Thread housekeeping iniciada
+[18:52:33.942] Robo 1 - Aguardando inicialização do arena
+[18:52:33.942] Robo 1 - Arena inicializada, começando sense_act
+[18:52:33.942] Robo 1 - Iniciando ciclo sense_act
+[18:52:33.954] Robo 2 - Thread housekeeping iniciada
+[18:52:33.954] Robo 2 - Aguardando inicialização do arena
+[18:52:33.955] Robo 2 - Arena inicializada, começando sense_act
+[18:52:33.955] Robo 2 - Iniciando ciclo sense_act
+[18:52:33.962] Robo 3 - Thread housekeeping iniciada
+[18:52:33.962] Robo 3 - Aguardando inicialização do arena
+[18:52:33.963] Robo 3 - Arena inicializada, começando sense_act
+[18:52:33.963] Robo 3 - Iniciando ciclo sense_act
+[18:52:33.974] Robo 4 - Thread housekeeping iniciada
+[18:52:33.974] Robo 4 - Aguardando inicialização do arena
+[18:52:33.975] Robo 4 - Arena inicializada, começando sense_act
+[18:52:33.975] Robo 4 - Iniciando ciclo sense_act
+[18:52:33.996] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 5)
+[18:52:33.996] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:33.997] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:34.018] Robo 2 - Encontrou 20 baterias, indo para mais próxima (distância 2)
+[18:52:34.018] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:34.018] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:34.023] Robo 3 - Encontrou 20 baterias, indo para mais próxima (distância 7)
+[18:52:34.023] Robo 3 - Robo movendo para: (0, -1)
+[18:52:34.023] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:34.026] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 6)
+[18:52:34.026] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:34.026] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:34.431] Robo 4 - ADQUIRINDO grid_mutex para mover de (37,3) para (36,3)
+[18:52:34.431] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:34.431] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:34.461] Robo 4 - Movimento normal de (37,3) para (36,3), estava em bateria: False
+[18:52:34.470] Robo 4 - LIBERANDO grid_mutex
+[18:52:34.512] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 5)
+[18:52:34.512] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:34.512] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:34.623] Robo 2 - ADQUIRINDO grid_mutex para mover de (25,15) para (24,15)
+[18:52:34.623] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:34.624] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:34.631] Robo 2 - Movimento normal de (25,15) para (24,15), estava em bateria: False
+[18:52:34.633] Robo 2 - LIBERANDO grid_mutex
+[18:52:34.706] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 5)
+[18:52:34.706] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:34.707] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:34.828] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:34.829] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:34.829] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:34.829] Robo 3 - LIBERANDO grid_mutex
+[18:52:34.863] MAIN - Interface grafica iniciada - jogo em execucao
+[18:52:34.863] Jogo iniciado
+[18:52:34.864] Robo 2 - Encontrou 20 baterias, indo para mais próxima (distância 1)
+[18:52:34.864] Robo 2 - Robo movendo para: (0, -1)
+[18:52:34.864] Robo 2 - Executando movimento (0,-1) com delay 0.600s
+[18:52:35.011] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 5)
+[18:52:35.011] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:35.012] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:35.092] Robo 3 - Encontrou 20 baterias, indo para mais próxima (distância 7)
+[18:52:35.092] Robo 3 - Robo movendo para: (0, -1)
+[18:52:35.093] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:35.217] Robo 1 - ADQUIRINDO grid_mutex para mover de (13,7) para (12,7)
+[18:52:35.217] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:35.217] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:35.227] Robo 1 - Movimento normal de (13,7) para (12,7), estava em bateria: False
+[18:52:35.230] Robo 1 - LIBERANDO grid_mutex
+[18:52:35.380] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 5)
+[18:52:35.381] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:35.381] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:35.469] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,15) para (24,14)
+[18:52:35.469] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:35.469] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:35.483] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:35.483] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:35.483] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:35.485] Robo 1 - Encontrou 20 baterias, indo para mais próxima (distância 4)
+[18:52:35.485] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:35.486] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:35.536] Robo 2 - TENTANDO ADQUIRIR battery_mutex da bateria 9
+[18:52:35.537] Robo 2 - battery_mutex da bateria 9 ADQUIRIDO COM SUCESSO
+[18:52:35.537] Robo 2 - Movimento para bateria 9 de (24,15) para (24,14)
+[18:52:35.556] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:35.556] Robo 2 - LIBERANDO grid_mutex
+[18:52:35.811] Robo 2 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:35.812] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:35.812] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:35.895] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:35.895] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:35.896] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:35.896] Robo 3 - LIBERANDO grid_mutex
+[18:52:35.932] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:35.943] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:35.943] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:35.943] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:36.053] Robo 4 - Robo movendo para bateria: (-1, 0)
+[18:52:36.053] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:36.146] Robo 3 - Robo movendo para bateria: (-1, 0)
+[18:52:36.146] Robo 3 - Executando movimento para bateria (-1,0) com delay 0.800s
+[18:52:36.149] Robo 1 - ADQUIRINDO grid_mutex para mover de (12,7) para (11,7)
+[18:52:36.149] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:36.149] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:36.158] Robo 1 - Movimento normal de (12,7) para (11,7), estava em bateria: False
+[18:52:36.161] Robo 1 - LIBERANDO grid_mutex
+[18:52:36.402] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:36.417] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:36.417] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:36.417] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:36.417] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:36.430] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:36.430] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:36.430] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:36.430] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:36.440] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 3)
+[18:52:36.440] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:36.440] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:36.455] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:36.484] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:36.484] Robo 2 - LIBERANDO grid_mutex
+[18:52:36.642] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:36.642] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:36.642] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:36.642] Robo 1 - LIBERANDO grid_mutex
+[18:52:36.757] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 5)
+[18:52:36.757] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:36.757] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:36.758] Robo 2 - Robo movimento aleatório: (0, -1)
+[18:52:36.758] Robo 2 - Executando movimento (0,-1) com delay 0.600s
+[18:52:36.884] Robo 1 - Robo movimento aleatório: (1, 0)
+[18:52:36.885] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:36.919] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:37.089] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (12,7)
+[18:52:37.089] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:37.089] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:37.100] Robo 1 - Movimento normal de (11,7) para (12,7), estava em bateria: False
+[18:52:37.102] Robo 1 - LIBERANDO grid_mutex
+[18:52:37.160] Robo 4 - ADQUIRINDO grid_mutex para mover de (36,3) para (35,3)
+[18:52:37.160] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:37.160] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:37.177] Robo 4 - Movimento normal de (36,3) para (35,3), estava em bateria: False
+[18:52:37.201] Robo 4 - LIBERANDO grid_mutex
+[18:52:37.204] Robo 3 - Robo movimento aleatório: (0, -1)
+[18:52:37.204] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:37.358] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:37.358] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:37.358] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:37.363] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (23,13)
+[18:52:37.363] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:37.363] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:37.363] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:37.373] Robo 2 - Movimento normal de (23,14) para (23,13), estava em bateria: True
+[18:52:37.387] Robo 2 - Saiu da bateria, liberando mutex
+[18:52:37.388] Robo 2 - LIBERANDO battery_mutex da bateria 9
+[18:52:37.388] Robo 2 - battery_mutex da bateria 9 LIBERADO COM SUCESSO
+[18:52:37.388] Robo 2 - Referências do battery_mutex da bateria 9 limpas
+[18:52:37.388] Robo 2 - LIBERANDO grid_mutex
+[18:52:37.447] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 4)
+[18:52:37.447] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:37.447] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:37.563] Robo 1 - ADQUIRINDO grid_mutex para mover de (12,7) para (11,7)
+[18:52:37.563] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:37.564] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:37.585] Robo 1 - Movimento normal de (12,7) para (11,7), estava em bateria: False
+[18:52:37.591] Robo 1 - LIBERANDO grid_mutex
+[18:52:37.660] Robo 2 - Encontrou 20 baterias, indo para mais próxima (distância 1)
+[18:52:37.660] Robo 2 - Robo movendo para: (0, 1)
+[18:52:37.660] Robo 2 - Executando movimento (0,1) com delay 0.600s
+[18:52:37.863] Robo 1 - Robo movimento aleatório: (1, 0)
+[18:52:37.863] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:38.010] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:38.010] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:38.010] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:38.010] Robo 3 - LIBERANDO grid_mutex
+[18:52:38.068] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (12,7)
+[18:52:38.068] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:38.069] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:38.081] Robo 1 - Movimento normal de (11,7) para (12,7), estava em bateria: False
+[18:52:38.092] Robo 1 - LIBERANDO grid_mutex
+[18:52:38.143] Robo 0 - Executando movimento (1,0) com delay 0.600s
+[18:52:38.145] Robo 4 - Encontrou 20 baterias, indo para mais próxima (distância 4)
+[18:52:38.145] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:38.145] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:38.243] Robo 3 - Encontrou 20 baterias, indo para mais próxima (distância 7)
+[18:52:38.243] Robo 3 - Robo movendo para: (0, -1)
+[18:52:38.244] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:38.261] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,13) para (23,14)
+[18:52:38.261] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:38.262] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:38.273] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:38.273] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:38.273] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:38.314] Robo 2 - TENTANDO ADQUIRIR battery_mutex da bateria 9
+[18:52:38.314] Robo 2 - battery_mutex da bateria 9 ADQUIRIDO COM SUCESSO
+[18:52:38.314] Robo 2 - Movimento para bateria 9 de (23,13) para (23,14)
+[18:52:38.337] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:38.337] Robo 2 - LIBERANDO grid_mutex
+[18:52:38.359] Robo 1 - Robo movimento aleatório: (1, 0)
+[18:52:38.359] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:38.415] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:38.550] Robo 4 - ADQUIRINDO grid_mutex para mover de (35,3) para (34,3)
+[18:52:38.550] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:38.551] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:38.562] Robo 1 - ADQUIRINDO grid_mutex para mover de (12,7) para (13,7)
+[18:52:38.562] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:38.567] Robo 4 - Movimento normal de (35,3) para (34,3), estava em bateria: False
+[18:52:38.600] Robo 4 - LIBERANDO grid_mutex
+[18:52:38.601] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:38.606] Robo 2 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:38.606] Robo 2 - Robo movendo para: (1, 0)
+[18:52:38.606] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:38.619] Robo 1 - Movimento normal de (12,7) para (13,7), estava em bateria: False
+[18:52:38.623] Robo 1 - LIBERANDO grid_mutex
+[18:52:38.748] Robo 0 - ADQUIRINDO grid_mutex para mover de (31,17) para (32,17)
+[18:52:38.749] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:38.749] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:38.759] Robo 0 - Movimento normal de (31,17) para (32,17), estava em bateria: False
+[18:52:38.789] Robo 0 - LIBERANDO grid_mutex
+[18:52:38.889] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:38.895] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 3)
+[18:52:38.895] Robo 4 - Robo decidiu ir para bateria: (0, -1)
+[18:52:38.895] Robo 4 - Executando movimento para bateria (0,-1) com delay 0.400s
+[18:52:38.937] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 5)
+[18:52:38.937] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:38.937] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:39.038] Robo 0 - Executando movimento (0,-1) com delay 0.600s
+[18:52:39.044] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:39.044] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:39.044] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:39.045] Robo 3 - LIBERANDO grid_mutex
+[18:52:39.138] Robo 1 - ADQUIRINDO grid_mutex para mover de (13,7) para (12,7)
+[18:52:39.138] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:39.138] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:39.147] Robo 1 - Movimento normal de (13,7) para (12,7), estava em bateria: False
+[18:52:39.150] Robo 1 - LIBERANDO grid_mutex
+[18:52:39.211] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (24,14)
+[18:52:39.211] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:39.211] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:39.211] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:39.223] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:39.223] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:39.223] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:39.223] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:39.248] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:39.276] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:39.276] Robo 2 - LIBERANDO grid_mutex
+[18:52:39.291] Robo 3 - Robo movimento aleatório: (0, -1)
+[18:52:39.291] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:39.369] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:39.394] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:39.394] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:39.394] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:39.553] Robo 2 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:39.553] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:39.553] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:39.577] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 3)
+[18:52:39.577] Robo 4 - Robo movendo para: (0, -1)
+[18:52:39.577] Robo 4 - Executando movimento (0,-1) com delay 0.400s
+[18:52:39.641] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,17) para (32,16)
+[18:52:39.641] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:39.642] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:39.653] Robo 0 - Movimento normal de (32,17) para (32,16), estava em bateria: False
+[18:52:39.657] Robo 0 - LIBERANDO grid_mutex
+[18:52:39.845] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:39.876] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:39.876] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:39.876] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:39.887] Robo 0 - Executando movimento (0,-1) com delay 0.600s
+[18:52:39.982] Robo 4 - ADQUIRINDO grid_mutex para mover de (34,3) para (34,2)
+[18:52:39.982] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:39.982] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:39.989] Robo 4 - Movimento normal de (34,3) para (34,2), estava em bateria: False
+[18:52:39.991] Robo 4 - LIBERANDO grid_mutex
+[18:52:40.094] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:40.094] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:40.094] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:40.094] Robo 3 - LIBERANDO grid_mutex
+[18:52:40.153] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:40.153] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:40.154] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:40.154] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:40.164] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:40.164] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:40.164] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:40.164] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:40.189] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:40.216] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:40.216] Robo 2 - LIBERANDO grid_mutex
+[18:52:40.285] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 2)
+[18:52:40.286] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:40.286] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:40.343] Robo 1 - Robo movendo para bateria: (0, 0)
+[18:52:40.344] Robo 1 - Executando movimento para bateria (0,0) com delay 0.200s
+[18:52:40.346] Robo 3 - Encontrou 19 baterias, indo para mais próxima (distância 7)
+[18:52:40.346] Robo 3 - Robo decidiu ir para bateria: (0, -1)
+[18:52:40.346] Robo 3 - Executando movimento para bateria (0,-1) com delay 0.800s
+[18:52:40.370] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:40.454] Robo 2 - Robo movendo para bateria: (0, 0)
+[18:52:40.454] Robo 2 - Executando movimento para bateria (0,0) com delay 0.600s
+[18:52:40.488] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,16) para (32,15)
+[18:52:40.488] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:40.488] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:40.495] Robo 0 - Movimento normal de (32,16) para (32,15), estava em bateria: False
+[18:52:40.497] Robo 0 - LIBERANDO grid_mutex
+[18:52:40.690] Robo 4 - ADQUIRINDO grid_mutex para mover de (34,2) para (33,2)
+[18:52:40.690] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:40.690] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:40.701] Robo 4 - Movimento normal de (34,2) para (33,2), estava em bateria: False
+[18:52:40.703] Robo 4 - LIBERANDO grid_mutex
+[18:52:40.808] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:40.809] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:40.809] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:40.878] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:40.941] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:40.941] Robo 4 - Robo movendo para: (0, -1)
+[18:52:40.941] Robo 4 - Executando movimento (0,-1) com delay 0.400s
+[18:52:41.072] Robo 2 - Tentando mover para bateria 9 em (23,14)
+[18:52:41.072] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:41.072] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:41.072] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:41.127] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:41.127] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:41.128] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:41.128] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:41.128] Robo 2 - Movimento para bateria 9 de (23,14) para (23,14)
+[18:52:41.153] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:41.153] Robo 2 - LIBERANDO grid_mutex
+[18:52:41.271] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 4)
+[18:52:41.271] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:41.271] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:41.346] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,2) para (33,1)
+[18:52:41.347] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:41.347] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:41.355] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:41.355] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:41.355] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:41.409] Robo 4 - TENTANDO ADQUIRIR battery_mutex da bateria 7
+[18:52:41.410] Robo 4 - battery_mutex da bateria 7 ADQUIRIDO COM SUCESSO
+[18:52:41.410] Robo 4 - Movimento para bateria 7 de (33,2) para (33,1)
+[18:52:41.432] Robo 2 - Robo movendo para bateria: (-1, 0)
+[18:52:41.432] Robo 2 - Executando movimento para bateria (-1,0) com delay 0.600s
+[18:52:41.439] Robo 3 - Encontrou 19 baterias, indo para mais próxima (distância 7)
+[18:52:41.439] Robo 3 - Robo movendo para: (0, -1)
+[18:52:41.439] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:41.454] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:41.454] Robo 4 - LIBERANDO grid_mutex
+[18:52:41.461] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:41.473] Robo 1 - ADQUIRINDO grid_mutex para mover de (12,7) para (11,7)
+[18:52:41.473] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:41.473] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:41.490] Robo 1 - Movimento normal de (12,7) para (11,7), estava em bateria: False
+[18:52:41.494] Robo 1 - LIBERANDO grid_mutex
+[18:52:41.498] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:41.740] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:41.740] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:41.741] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:41.742] Robo 0 - Executando movimento (0,-1) com delay 0.600s
+[18:52:41.744] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:41.744] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:41.744] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:41.940] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:41.947] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:41.949] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:41.950] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:41.950] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:41.950] Robo 1 - LIBERANDO grid_mutex
+[18:52:42.150] Robo 4 - Tentando mover para bateria 7 em (32,1)
+[18:52:42.151] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:42.151] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:42.151] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:42.215] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:42.215] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:42.215] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:42.215] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:42.216] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:42.216] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:42.216] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:42.216] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:42.230] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:42.230] Robo 4 - LIBERANDO grid_mutex
+[18:52:42.244] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:42.244] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:42.244] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:42.244] Robo 3 - LIBERANDO grid_mutex
+[18:52:42.324] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:42.324] Robo 2 - Robo decidiu ir para bateria: (1, 0)
+[18:52:42.325] Robo 2 - Executando movimento para bateria (1,0) com delay 0.600s
+[18:52:42.347] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,15) para (32,14)
+[18:52:42.347] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:42.347] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:42.353] Robo 0 - Movimento normal de (32,15) para (32,14), estava em bateria: False
+[18:52:42.355] Robo 0 - LIBERANDO grid_mutex
+[18:52:42.376] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:42.418] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:42.418] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:42.418] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:42.418] Robo 1 - LIBERANDO grid_mutex
+[18:52:42.433] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:42.464] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:42.464] Robo 4 - Robo movendo para: (1, 0)
+[18:52:42.464] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:42.518] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:42.518] Robo 3 - Robo movendo para: (0, -1)
+[18:52:42.518] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:42.653] Robo 1 - Robo movimento aleatório: (-1, 0)
+[18:52:42.653] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:42.839] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:42.854] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:42.854] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:42.854] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:42.854] Robo 1 - LIBERANDO grid_mutex
+[18:52:42.865] Robo 0 - Executando movimento (0,-1) com delay 0.600s
+[18:52:42.869] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:42.869] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:42.869] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:42.869] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:42.877] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:42.877] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:42.877] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:42.877] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:42.902] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:42.932] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:42.932] Robo 4 - LIBERANDO grid_mutex
+[18:52:42.933] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:42.940] Robo 2 - Tentando mover para bateria 9 em (24,14)
+[18:52:42.940] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:42.940] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:42.940] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:42.998] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:42.998] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:42.998] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:42.998] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:42.999] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:43.022] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:43.022] Robo 2 - LIBERANDO grid_mutex
+[18:52:43.100] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:43.100] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:43.101] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:43.193] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:43.193] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:43.193] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:43.292] Robo 2 - Robo movimento aleatório: (0, 0)
+[18:52:43.292] Robo 2 - Executando movimento (0,0) com delay 0.600s
+[18:52:43.304] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:43.304] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:43.304] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:43.304] Robo 1 - LIBERANDO grid_mutex
+[18:52:43.305] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:43.323] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:43.323] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:43.323] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:43.323] Robo 3 - LIBERANDO grid_mutex
+[18:52:43.422] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:43.466] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,14) para (32,13)
+[18:52:43.466] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:43.467] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:43.477] Robo 0 - Movimento normal de (32,14) para (32,13), estava em bateria: False
+[18:52:43.481] Robo 0 - LIBERANDO grid_mutex
+[18:52:43.543] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:43.544] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:43.544] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:43.583] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:43.584] Robo 3 - Robo decidiu ir para bateria: (0, -1)
+[18:52:43.584] Robo 3 - Executando movimento para bateria (0,-1) com delay 0.800s
+[18:52:43.598] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (32,1)
+[18:52:43.598] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:43.598] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:43.598] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:43.605] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:43.605] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:43.605] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:43.605] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:43.630] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:43.649] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:43.649] Robo 4 - LIBERANDO grid_mutex
+[18:52:43.789] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:43.881] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:43.910] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:43.910] Robo 4 - Robo decidiu ir para bateria: (1, 0)
+[18:52:43.910] Robo 4 - Executando movimento para bateria (1,0) com delay 0.400s
+[18:52:44.028] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:44.028] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:44.028] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:44.133] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:44.133] Robo 2 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:44.133] Robo 2 - Executando movimento para bateria (-1,0) com delay 0.600s
+[18:52:44.280] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:44.327] Robo 4 - Tentando mover para bateria 7 em (33,1)
+[18:52:44.327] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:44.327] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:44.327] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:44.332] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:44.399] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:44.399] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:44.399] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:44.400] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:44.400] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:44.430] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:44.430] Robo 4 - LIBERANDO grid_mutex
+[18:52:44.505] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:44.505] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:44.505] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:44.662] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:44.662] Robo 3 - Robo movendo para: (0, -1)
+[18:52:44.662] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:44.710] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:44.710] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:44.711] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:44.711] Robo 1 - LIBERANDO grid_mutex
+[18:52:44.725] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:44.725] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:44.725] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:44.739] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:44.746] Robo 2 - Tentando mover para bateria 9 em (23,14)
+[18:52:44.746] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:44.746] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:44.746] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:44.774] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:44.808] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:44.808] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:44.808] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:44.809] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:44.809] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:44.834] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:44.834] Robo 2 - LIBERANDO grid_mutex
+[18:52:44.982] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:44.983] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:44.983] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:44.985] Robo 0 - Executando movimento (1,0) com delay 0.600s
+[18:52:45.066] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:45.066] Robo 2 - Robo decidiu ir para bateria: (1, 0)
+[18:52:45.066] Robo 2 - Executando movimento para bateria (1,0) com delay 0.600s
+[18:52:45.130] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (32,1)
+[18:52:45.130] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:45.130] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:45.131] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:45.136] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:45.136] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:45.136] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:45.136] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:45.159] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:45.177] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:45.190] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:45.191] Robo 4 - LIBERANDO grid_mutex
+[18:52:45.224] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:45.447] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:45.447] Robo 4 - Robo movendo para: (1, 0)
+[18:52:45.447] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:45.450] Robo 1 - Robo movimento aleatório: (0, 0)
+[18:52:45.451] Robo 1 - Executando movimento (0,0) com delay 0.200s
+[18:52:45.467] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:45.467] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:45.468] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:45.468] Robo 3 - LIBERANDO grid_mutex
+[18:52:45.590] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,13) para (33,13)
+[18:52:45.591] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:45.591] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:45.600] Robo 0 - Encontrou bateria 8, adquirindo mutex
+[18:52:45.600] RISCO DE DEADLOCK: Robo 0 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:45.600] RISCO DE DEADLOCK: Robo 0 - Tentando acessar bateria 8
+[18:52:45.654] Robo 0 - TENTANDO ADQUIRIR battery_mutex da bateria 8
+[18:52:45.654] Robo 0 - battery_mutex da bateria 8 ADQUIRIDO COM SUCESSO
+[18:52:45.654] Robo 0 - Movimento para bateria 8 de (32,13) para (33,13)
+[18:52:45.663] Robo 0 - Movimento para bateria 8 realizado com sucesso
+[18:52:45.663] Robo 0 - LIBERANDO grid_mutex
+[18:52:45.706] Robo 2 - Tentando mover para bateria 9 em (24,14)
+[18:52:45.706] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:45.706] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:45.706] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:45.730] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:45.732] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:45.740] Robo 0 - Housekeeping: carregando energia na bateria 8
+[18:52:45.756] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:45.756] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:45.756] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:45.756] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:45.757] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:45.780] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 8)
+[18:52:45.780] Robo 3 - Robo movendo para: (0, -1)
+[18:52:45.780] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:45.796] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:45.796] Robo 2 - LIBERANDO grid_mutex
+[18:52:45.852] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:45.852] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:45.852] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:45.852] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:45.861] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:45.861] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:45.861] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:45.861] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:45.884] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:45.900] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 3)
+[18:52:45.901] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:45.901] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:45.913] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:45.913] Robo 4 - LIBERANDO grid_mutex
+[18:52:46.043] Robo 2 - Robo movimento aleatório: (-1, 0)
+[18:52:46.043] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:46.106] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:46.106] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:46.106] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:46.106] Robo 1 - LIBERANDO grid_mutex
+[18:52:46.187] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:46.187] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:46.187] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:46.223] Robo 0 - Housekeeping: carregando energia na bateria 8
+[18:52:46.228] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:46.250] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:46.343] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 3)
+[18:52:46.343] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:46.343] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:46.585] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:46.585] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:46.585] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:46.585] Robo 3 - LIBERANDO grid_mutex
+[18:52:46.600] Robo 4 - Tentando mover para bateria 7 em (32,1)
+[18:52:46.600] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:46.600] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:46.600] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:46.647] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:46.647] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:46.647] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:46.647] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:46.661] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:46.661] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:46.661] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:46.662] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:46.663] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:46.663] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:46.663] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:46.677] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:46.686] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:46.721] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:46.727] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:46.727] Robo 2 - LIBERANDO grid_mutex
+[18:52:46.727] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:46.728] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:46.745] Robo 0 - Housekeeping: carregando energia na bateria 8
+[18:52:46.756] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:46.756] Robo 4 - LIBERANDO grid_mutex
+[18:52:46.807] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 3)
+[18:52:46.807] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:46.807] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:46.817] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 8)
+[18:52:46.817] Robo 3 - Robo movendo para: (0, -1)
+[18:52:46.817] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:46.988] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:46.988] Robo 2 - Robo movendo para: (1, 0)
+[18:52:46.989] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:47.011] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:47.011] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:47.011] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:47.012] Robo 1 - LIBERANDO grid_mutex
+[18:52:47.025] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:47.025] Robo 4 - Robo decidiu ir para bateria: (1, 0)
+[18:52:47.025] Robo 4 - Executando movimento para bateria (1,0) com delay 0.400s
+[18:52:47.183] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:47.253] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:47.262] Robo 0 - Housekeeping: carregando energia na bateria 8
+[18:52:47.298] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 3)
+[18:52:47.298] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:47.298] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:47.438] Robo 4 - Tentando mover para bateria 7 em (33,1)
+[18:52:47.438] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:47.439] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:47.439] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:47.516] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:47.516] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:47.517] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:47.517] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:47.517] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:47.547] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:47.547] Robo 4 - LIBERANDO grid_mutex
+[18:52:47.594] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (24,14)
+[18:52:47.594] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:47.594] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:47.594] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:47.603] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:47.603] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:47.604] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:47.604] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:47.614] Robo 0 - Executando movimento (0,-1) com delay 0.600s
+[18:52:47.619] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:47.619] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:47.629] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:47.652] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:47.652] Robo 2 - LIBERANDO grid_mutex
+[18:52:47.652] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:47.652] Robo 3 - LIBERANDO grid_mutex
+[18:52:47.697] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:47.779] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:47.806] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 3)
+[18:52:47.806] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:47.806] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:47.810] Robo 4 - Robo movendo para bateria: (0, 1)
+[18:52:47.810] Robo 4 - Executando movimento para bateria (0,1) com delay 0.400s
+[18:52:47.820] Robo 0 - Housekeeping: carregando energia na bateria 8
+[18:52:47.917] Robo 3 - Encontrou 17 baterias, indo para mais próxima (distância 8)
+[18:52:47.918] Robo 3 - Robo decidiu ir para bateria: (0, -1)
+[18:52:47.918] Robo 3 - Executando movimento para bateria (0,-1) com delay 0.800s
+[18:52:47.918] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:47.919] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:47.919] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:48.208] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:48.216] Robo 0 - ADQUIRINDO grid_mutex para mover de (33,13) para (33,12)
+[18:52:48.216] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:48.216] RISCO DE DEADLOCK: Robo 0 - Já possui mutex da bateria 8
+[18:52:48.216] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:48.228] Robo 0 - Movimento normal de (33,13) para (33,12), estava em bateria: True
+[18:52:48.250] Robo 0 - Saiu da bateria, liberando mutex
+[18:52:48.250] Robo 0 - LIBERANDO battery_mutex da bateria 8
+[18:52:48.250] Robo 0 - battery_mutex da bateria 8 LIBERADO COM SUCESSO
+[18:52:48.250] Robo 0 - Referências do battery_mutex da bateria 8 limpas
+[18:52:48.250] Robo 0 - LIBERANDO grid_mutex
+[18:52:48.281] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:48.281] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:48.281] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:48.283] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:48.476] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:48.476] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:48.477] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:48.483] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:48.483] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:48.483] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:48.483] Robo 1 - LIBERANDO grid_mutex
+[18:52:48.524] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:48.524] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:48.524] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:48.524] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:48.531] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:48.531] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:48.531] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:48.531] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:48.556] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:48.579] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:48.579] Robo 2 - LIBERANDO grid_mutex
+[18:52:48.670] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:48.775] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:48.789] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:48.789] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:48.789] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:48.850] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:48.850] Robo 2 - Robo movendo para: (1, 0)
+[18:52:48.850] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:48.890] Robo 4 - Tentando mover para bateria 7 em (32,1)
+[18:52:48.890] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:48.890] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:48.890] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:48.955] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:48.955] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:48.956] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:48.956] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:48.956] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:48.982] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:48.982] Robo 4 - LIBERANDO grid_mutex
+[18:52:48.990] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:48.990] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:48.990] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:48.990] Robo 1 - LIBERANDO grid_mutex
+[18:52:49.044] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:49.044] Robo 3 - Robo movendo para: (0, -1)
+[18:52:49.044] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:49.045] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:49.157] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:49.254] Robo 4 - Robo movimento aleatório: (1, 0)
+[18:52:49.254] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:49.255] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:49.255] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:49.255] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:49.273] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:49.455] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (24,14)
+[18:52:49.456] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:49.456] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:49.456] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:49.465] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:49.465] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:49.465] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:49.465] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:49.490] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:49.516] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:49.516] Robo 2 - LIBERANDO grid_mutex
+[18:52:49.649] Robo 0 - ADQUIRINDO grid_mutex para mover de (33,12) para (32,12)
+[18:52:49.650] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:49.650] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:49.658] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:49.658] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:49.658] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:49.658] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:49.667] Robo 0 - Movimento normal de (33,12) para (32,12), estava em bateria: False
+[18:52:49.669] Robo 0 - LIBERANDO grid_mutex
+[18:52:49.669] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:49.678] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:49.678] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:49.678] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:49.678] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:49.700] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:49.729] Robo 1 - Robo movimento aleatório: (-1, 0)
+[18:52:49.729] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:49.739] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:49.739] Robo 4 - LIBERANDO grid_mutex
+[18:52:49.768] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:49.768] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:49.768] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:49.783] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:49.849] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:49.849] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:49.849] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:49.850] Robo 3 - LIBERANDO grid_mutex
+[18:52:49.934] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (10,7)
+[18:52:49.934] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:49.934] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:49.934] Robo 1 - LIBERANDO grid_mutex
+[18:52:49.947] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:49.966] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:49.966] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:49.966] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:50.086] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:50.086] Robo 3 - Robo decidiu ir para bateria: (0, -1)
+[18:52:50.087] Robo 3 - Executando movimento para bateria (0,-1) com delay 0.800s
+[18:52:50.149] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:50.182] Robo 1 - Robo movimento aleatório: (0, -1)
+[18:52:50.182] Robo 1 - Executando movimento (0,-1) com delay 0.200s
+[18:52:50.241] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:50.368] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (32,1)
+[18:52:50.369] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:50.369] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:50.369] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:50.373] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:50.374] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:50.374] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:50.382] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:50.382] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:50.382] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:50.382] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:50.387] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,7) para (11,6)
+[18:52:50.387] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:50.407] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:50.430] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:50.430] Robo 4 - LIBERANDO grid_mutex
+[18:52:50.430] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:50.437] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:50.437] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:50.437] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:50.437] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:50.462] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:50.486] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:50.486] Robo 2 - LIBERANDO grid_mutex
+[18:52:50.486] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:50.497] Robo 1 - Movimento normal de (11,7) para (11,6), estava em bateria: False
+[18:52:50.516] Robo 1 - LIBERANDO grid_mutex
+[18:52:50.552] Robo 0 - ADQUIRINDO grid_mutex para mover de (32,12) para (31,12)
+[18:52:50.552] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:50.553] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:50.562] Robo 0 - Movimento normal de (32,12) para (31,12), estava em bateria: False
+[18:52:50.564] Robo 0 - LIBERANDO grid_mutex
+[18:52:50.664] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:50.710] Robo 4 - Robo movimento aleatório: (1, 0)
+[18:52:50.710] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:50.721] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:50.776] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:50.776] Robo 2 - Robo movendo para: (1, 0)
+[18:52:50.776] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:50.778] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 4)
+[18:52:50.778] Robo 1 - Robo movendo para: (0, -1)
+[18:52:50.778] Robo 1 - Executando movimento (0,-1) com delay 0.200s
+[18:52:50.983] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,6) para (11,5)
+[18:52:50.984] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:50.984] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:50.991] Robo 1 - Movimento normal de (11,6) para (11,5), estava em bateria: False
+[18:52:50.997] Robo 1 - LIBERANDO grid_mutex
+[18:52:51.056] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:51.115] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:51.115] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:51.115] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:51.116] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:51.139] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:51.139] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:51.139] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:51.139] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:51.158] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:51.164] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:51.191] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:51.192] Robo 3 - Robo movendo para: (0, -1)
+[18:52:51.192] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:51.212] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:51.212] Robo 4 - LIBERANDO grid_mutex
+[18:52:51.249] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:51.256] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 3)
+[18:52:51.256] Robo 1 - Robo decidiu ir para bateria: (0, -1)
+[18:52:51.256] Robo 1 - Executando movimento para bateria (0,-1) com delay 0.200s
+[18:52:51.380] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (24,14)
+[18:52:51.380] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:51.381] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:51.381] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:51.392] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:51.392] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:51.392] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:51.392] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:51.417] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:51.445] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:51.445] Robo 2 - LIBERANDO grid_mutex
+[18:52:51.466] Robo 4 - Robo movimento aleatório: (0, 1)
+[18:52:51.466] Robo 4 - Executando movimento (0,1) com delay 0.400s
+[18:52:51.661] Robo 0 - ADQUIRINDO grid_mutex para mover de (31,12) para (30,12)
+[18:52:51.661] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:51.661] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:51.671] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:51.680] Robo 0 - Movimento normal de (31,12) para (30,12), estava em bateria: False
+[18:52:51.719] Robo 0 - LIBERANDO grid_mutex
+[18:52:51.723] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:51.723] Robo 2 - Robo movendo para: (-1, 0)
+[18:52:51.723] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:51.761] Robo 1 - Robo movendo para bateria: (1, 0)
+[18:52:51.761] Robo 1 - Executando movimento para bateria (1,0) com delay 0.200s
+[18:52:51.766] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:51.871] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (33,2)
+[18:52:51.872] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:51.872] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:51.872] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:51.881] Robo 4 - Movimento normal de (33,1) para (33,2), estava em bateria: True
+[18:52:51.913] Robo 4 - Saiu da bateria, liberando mutex
+[18:52:51.913] Robo 4 - LIBERANDO battery_mutex da bateria 7
+[18:52:51.913] Robo 4 - battery_mutex da bateria 7 LIBERADO COM SUCESSO
+[18:52:51.913] Robo 4 - Referências do battery_mutex da bateria 7 limpas
+[18:52:51.913] Robo 4 - LIBERANDO grid_mutex
+[18:52:51.959] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:51.995] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:51.996] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:51.996] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:51.996] Robo 3 - LIBERANDO grid_mutex
+[18:52:52.160] Robo 4 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:52.160] Robo 4 - Robo decidiu ir para bateria: (0, -1)
+[18:52:52.160] Robo 4 - Executando movimento para bateria (0,-1) com delay 0.400s
+[18:52:52.258] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 3)
+[18:52:52.259] Robo 1 - Robo movendo para: (0, -1)
+[18:52:52.259] Robo 1 - Executando movimento (0,-1) com delay 0.200s
+[18:52:52.260] Robo 3 - Encontrou 19 baterias, indo para mais próxima (distância 7)
+[18:52:52.260] Robo 3 - Robo decidiu ir para bateria: (0, -1)
+[18:52:52.261] Robo 3 - Executando movimento para bateria (0,-1) com delay 0.800s
+[18:52:52.280] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:52.326] Robo 2 - ADQUIRINDO grid_mutex para mover de (24,14) para (23,14)
+[18:52:52.326] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:52.326] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:52.327] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:52.333] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:52.333] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:52.333] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:52.334] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:52.358] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:52.382] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:52.382] Robo 2 - LIBERANDO grid_mutex
+[18:52:52.464] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,5) para (11,4)
+[18:52:52.464] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:52.464] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:52.474] Robo 1 - Movimento normal de (11,5) para (11,4), estava em bateria: False
+[18:52:52.477] Robo 1 - LIBERANDO grid_mutex
+[18:52:52.564] Robo 0 - ADQUIRINDO grid_mutex para mover de (30,12) para (29,12)
+[18:52:52.564] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:52.565] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:52.584] Robo 4 - Tentando mover para bateria 7 em (33,1)
+[18:52:52.584] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:52.584] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:52.585] Robo 0 - Movimento normal de (30,12) para (29,12), estava em bateria: False
+[18:52:52.634] Robo 0 - LIBERANDO grid_mutex
+[18:52:52.638] Robo 2 - Encontrou 19 baterias, indo para mais próxima (distância 1)
+[18:52:52.638] Robo 2 - Robo decidiu ir para bateria: (1, 0)
+[18:52:52.638] Robo 2 - Executando movimento para bateria (1,0) com delay 0.600s
+[18:52:52.640] Robo 4 - TENTANDO ADQUIRIR battery_mutex da bateria 7
+[18:52:52.640] Robo 4 - battery_mutex da bateria 7 ADQUIRIDO COM SUCESSO
+[18:52:52.681] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:52.681] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:52.681] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:52.681] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:52.681] Robo 4 - Movimento para bateria 7 de (33,2) para (33,1)
+[18:52:52.700] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:52.700] Robo 4 - LIBERANDO grid_mutex
+[18:52:52.737] Robo 1 - Encontrou 19 baterias, indo para mais próxima (distância 2)
+[18:52:52.737] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:52.737] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:52.777] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:52.864] Robo 0 - Executando movimento (0,1) com delay 0.600s
+[18:52:52.942] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,4) para (10,4)
+[18:52:52.943] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:52.943] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:52.943] Robo 1 - LIBERANDO grid_mutex
+[18:52:52.969] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:52.969] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:52.969] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:53.138] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:53.210] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 2)
+[18:52:53.211] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:53.211] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:53.251] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:53.257] Robo 2 - Tentando mover para bateria 9 em (24,14)
+[18:52:53.257] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:53.257] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:53.257] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:53.299] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:53.300] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:53.300] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:53.300] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:53.300] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:53.327] Robo 3 - Encontrou 18 baterias, indo para mais próxima (distância 7)
+[18:52:53.327] Robo 3 - Robo movendo para: (0, -1)
+[18:52:53.327] Robo 3 - Executando movimento (0,-1) com delay 0.800s
+[18:52:53.341] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:53.341] Robo 2 - LIBERANDO grid_mutex
+[18:52:53.374] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (32,1)
+[18:52:53.374] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:53.374] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:53.374] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:53.382] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:53.382] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:53.382] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:53.382] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:53.407] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:53.432] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:53.432] Robo 4 - LIBERANDO grid_mutex
+[18:52:53.469] Robo 0 - ADQUIRINDO grid_mutex para mover de (29,12) para (29,13)
+[18:52:53.469] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:53.469] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:53.480] Robo 0 - Movimento normal de (29,12) para (29,13), estava em bateria: False
+[18:52:53.505] Robo 0 - LIBERANDO grid_mutex
+[18:52:53.603] Robo 2 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:53.603] Robo 2 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:53.604] Robo 2 - Executando movimento para bateria (-1,0) com delay 0.600s
+[18:52:53.613] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:53.708] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 2)
+[18:52:53.708] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:53.708] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:53.742] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:53.774] Robo 4 - Robo movimento aleatório: (1, 0)
+[18:52:53.774] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:53.913] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,4) para (10,4)
+[18:52:53.914] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:53.914] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:53.914] Robo 1 - LIBERANDO grid_mutex
+[18:52:54.015] Robo 0 - Executando movimento (0,1) com delay 0.600s
+[18:52:54.083] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:54.128] Robo 3 - ADQUIRINDO grid_mutex para mover de (30,17) para (30,16)
+[18:52:54.128] RISCO DE DEADLOCK: Robo 3 - Adquirindo grid_mutex primeiro
+[18:52:54.128] Robo 3 - grid_mutex ADQUIRIDO
+[18:52:54.129] Robo 3 - LIBERANDO grid_mutex
+[18:52:54.161] Robo 1 - Robo movimento aleatório: (0, -1)
+[18:52:54.161] Robo 1 - Executando movimento (0,-1) com delay 0.200s
+[18:52:54.172] Robo 3 - MORREU por falta de energia
+[18:52:54.172] Robo 3 - Housekeeping: robo morreu
+[18:52:54.173] Robo 3 - Processando morte na posição (30,17)
+[18:52:54.179] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:54.180] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:54.180] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:54.180] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:54.185] JOGO - Robos vivos: 4
+[18:52:54.188] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:54.188] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:54.188] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:54.188] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:54.213] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:54.220] Robo 2 - Tentando mover para bateria 9 em (23,14)
+[18:52:54.220] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:54.220] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:54.220] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:54.253] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:54.253] Robo 4 - LIBERANDO grid_mutex
+[18:52:54.257] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:54.276] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:54.276] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:54.276] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:54.277] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:54.277] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:54.311] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:54.311] Robo 2 - LIBERANDO grid_mutex
+[18:52:54.362] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,4) para (11,3)
+[18:52:54.362] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:54.362] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:54.377] Robo 1 - Movimento normal de (11,4) para (11,3), estava em bateria: False
+[18:52:54.381] Robo 1 - LIBERANDO grid_mutex
+[18:52:54.400] Robo 3 - Finalizando processo
+[18:52:54.507] Robo 4 - Robo movendo para bateria: (0, -1)
+[18:52:54.507] Robo 4 - Executando movimento para bateria (0,-1) com delay 0.400s
+[18:52:54.568] Robo 2 - Robo movimento aleatório: (-1, 0)
+[18:52:54.568] Robo 2 - Executando movimento (-1,0) com delay 0.600s
+[18:52:54.614] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:54.620] Robo 0 - ADQUIRINDO grid_mutex para mover de (29,13) para (29,14)
+[18:52:54.620] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:54.620] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:54.635] Robo 0 - Movimento normal de (29,13) para (29,14), estava em bateria: False
+[18:52:54.642] Robo 0 - LIBERANDO grid_mutex
+[18:52:54.643] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:54.643] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:54.643] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:54.742] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:54.848] Robo 1 - ADQUIRINDO grid_mutex para mover de (11,3) para (10,3)
+[18:52:54.848] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:54.849] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:54.859] Robo 1 - Encontrou bateria 6, adquirindo mutex
+[18:52:54.860] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:54.860] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 6
+[18:52:54.883] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:54.907] Robo 1 - TENTANDO ADQUIRIR battery_mutex da bateria 6
+[18:52:54.907] Robo 1 - battery_mutex da bateria 6 ADQUIRIDO COM SUCESSO
+[18:52:54.907] Robo 1 - Movimento para bateria 6 de (11,3) para (10,3)
+[18:52:54.918] Robo 1 - Movimento para bateria 6 realizado com sucesso
+[18:52:54.918] Robo 1 - LIBERANDO grid_mutex
+[18:52:55.091] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:55.172] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (22,14)
+[18:52:55.172] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:55.172] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:55.172] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:55.177] Robo 4 - Robo movimento aleatório: (0, 0)
+[18:52:55.177] Robo 4 - Executando movimento (0,0) com delay 0.400s
+[18:52:55.179] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:55.179] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:55.179] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:55.182] Robo 2 - Movimento normal de (23,14) para (22,14), estava em bateria: True
+[18:52:55.195] Robo 2 - Saiu da bateria, liberando mutex
+[18:52:55.195] Robo 2 - LIBERANDO battery_mutex da bateria 9
+[18:52:55.195] Robo 2 - battery_mutex da bateria 9 LIBERADO COM SUCESSO
+[18:52:55.195] Robo 2 - Referências do battery_mutex da bateria 9 limpas
+[18:52:55.195] Robo 2 - LIBERANDO grid_mutex
+[18:52:55.244] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:52:55.391] Robo 1 - Tentando mover para bateria 6 em (9,3)
+[18:52:55.391] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:55.391] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 6
+[18:52:55.391] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 6
+[18:52:55.455] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 6
+[18:52:55.455] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 6
+[18:52:55.455] Robo 2 - Robo movimento aleatório: (0, 0)
+[18:52:55.455] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 6
+[18:52:55.455] Robo 2 - Executando movimento (0,0) com delay 0.600s
+[18:52:55.456] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:55.456] Robo 1 - Movimento para bateria 6 de (10,3) para (9,3)
+[18:52:55.468] Robo 1 - Movimento para bateria 6 realizado com sucesso
+[18:52:55.469] Robo 1 - LIBERANDO grid_mutex
+[18:52:55.484] Robo 0 - ADQUIRINDO grid_mutex para mover de (29,14) para (28,14)
+[18:52:55.484] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:55.484] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:55.494] Robo 0 - Movimento normal de (29,14) para (28,14), estava em bateria: False
+[18:52:55.496] Robo 0 - LIBERANDO grid_mutex
+[18:52:55.605] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:55.720] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:55.720] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:55.720] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:55.736] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:55.740] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:52:55.819] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:55.819] Robo 4 - Robo movendo para: (-1, 0)
+[18:52:55.819] Robo 4 - Executando movimento (-1,0) com delay 0.400s
+[18:52:55.924] Robo 1 - ADQUIRINDO grid_mutex para mover de (9,3) para (8,3)
+[18:52:55.924] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:55.925] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 6
+[18:52:55.925] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:55.926] Robo 1 - Encontrou bateria 0, adquirindo mutex
+[18:52:55.926] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:55.926] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 0
+[18:52:55.926] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 6
+[18:52:55.951] Robo 1 - Liberando mutex da bateria 6 antes de adquirir bateria 0
+[18:52:55.951] Robo 1 - LIBERANDO battery_mutex da bateria 6
+[18:52:55.951] Robo 1 - battery_mutex da bateria 6 LIBERADO COM SUCESSO
+[18:52:55.951] Robo 1 - Referências do battery_mutex da bateria 6 limpas
+[18:52:55.983] Robo 1 - TENTANDO ADQUIRIR battery_mutex da bateria 0
+[18:52:55.983] Robo 1 - battery_mutex da bateria 0 ADQUIRIDO COM SUCESSO
+[18:52:55.983] Robo 1 - Movimento para bateria 0 de (9,3) para (8,3)
+[18:52:55.995] Robo 1 - Movimento para bateria 0 realizado com sucesso
+[18:52:55.995] Robo 1 - LIBERANDO grid_mutex
+[18:52:56.055] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:56.205] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:56.224] Robo 4 - ADQUIRINDO grid_mutex para mover de (33,1) para (32,1)
+[18:52:56.224] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:56.224] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:56.224] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:56.228] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:56.228] Robo 1 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:56.228] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:56.231] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:56.231] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:56.231] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:56.231] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:56.256] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:56.295] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:56.295] Robo 4 - LIBERANDO grid_mutex
+[18:52:56.300] Robo 2 - Robo movimento aleatório: (1, 0)
+[18:52:56.300] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:56.341] Robo 0 - ADQUIRINDO grid_mutex para mover de (28,14) para (27,14)
+[18:52:56.341] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:56.341] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:56.352] Robo 0 - Movimento normal de (28,14) para (27,14), estava em bateria: False
+[18:52:56.361] Robo 0 - LIBERANDO grid_mutex
+[18:52:56.434] Robo 1 - Tentando mover para bateria 0 em (7,3)
+[18:52:56.435] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:56.435] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 0
+[18:52:56.435] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:56.492] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 0
+[18:52:56.492] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 0
+[18:52:56.492] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:56.493] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:56.493] Robo 1 - Movimento para bateria 0 de (8,3) para (7,3)
+[18:52:56.498] Robo 1 - Movimento para bateria 0 realizado com sucesso
+[18:52:56.498] Robo 1 - LIBERANDO grid_mutex
+[18:52:56.539] Robo 4 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:56.539] Robo 4 - Robo movendo para: (1, 0)
+[18:52:56.539] Robo 4 - Executando movimento (1,0) com delay 0.400s
+[18:52:56.542] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:56.610] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:56.706] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:56.776] Robo 1 - Encontrou 18 baterias, indo para mais próxima (distância 1)
+[18:52:56.776] Robo 1 - Robo movendo para: (1, 0)
+[18:52:56.776] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:56.901] Robo 2 - ADQUIRINDO grid_mutex para mover de (22,14) para (23,14)
+[18:52:56.901] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:56.902] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:56.911] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:56.911] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:56.912] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:56.944] Robo 4 - ADQUIRINDO grid_mutex para mover de (32,1) para (33,1)
+[18:52:56.944] RISCO DE DEADLOCK: Robo 4 - Adquirindo grid_mutex primeiro
+[18:52:56.944] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:56.965] Robo 2 - TENTANDO ADQUIRIR battery_mutex da bateria 9
+[18:52:56.966] Robo 2 - battery_mutex da bateria 9 ADQUIRIDO COM SUCESSO
+[18:52:56.966] Robo 2 - Movimento para bateria 9 de (22,14) para (23,14)
+[18:52:56.970] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:56.979] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:56.979] Robo 2 - LIBERANDO grid_mutex
+[18:52:56.980] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:56.981] Robo 1 - ADQUIRINDO grid_mutex para mover de (7,3) para (8,3)
+[18:52:56.981] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:56.981] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:56.988] Robo 4 - Encontrou bateria 7, adquirindo mutex
+[18:52:56.988] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:56.988] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:56.988] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:57.013] Robo 4 - Movimento para bateria 7 de (32,1) para (33,1)
+[18:52:57.034] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:57.034] Robo 4 - LIBERANDO grid_mutex
+[18:52:57.034] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:57.035] Robo 1 - Encontrou bateria 0, adquirindo mutex
+[18:52:57.035] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:57.035] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 0
+[18:52:57.035] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:57.060] Robo 1 - Movimento para bateria 0 de (7,3) para (8,3)
+[18:52:57.066] Robo 1 - Movimento para bateria 0 realizado com sucesso
+[18:52:57.066] Robo 1 - LIBERANDO grid_mutex
+[18:52:57.128] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:57.150] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:57.213] Robo 0 - ADQUIRINDO grid_mutex para mover de (27,14) para (26,14)
+[18:52:57.213] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:57.213] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:57.215] Robo 2 - Robo movimento aleatório: (1, 0)
+[18:52:57.215] Robo 2 - Executando movimento (1,0) com delay 0.600s
+[18:52:57.223] Robo 0 - Movimento normal de (27,14) para (26,14), estava em bateria: False
+[18:52:57.225] Robo 0 - LIBERANDO grid_mutex
+[18:52:57.273] Robo 4 - Robo movimento aleatório: (0, -1)
+[18:52:57.273] Robo 4 - Executando movimento (0,-1) com delay 0.400s
+[18:52:57.296] Robo 1 - Robo movendo para bateria: (-1, 0)
+[18:52:57.296] Robo 1 - Executando movimento para bateria (-1,0) com delay 0.200s
+[18:52:57.414] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:57.451] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:57.502] Robo 1 - Tentando mover para bateria 0 em (7,3)
+[18:52:57.503] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:57.503] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 0
+[18:52:57.503] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:57.562] Robo 1 - ADQUIRINDO grid_mutex para mover para bateria 0
+[18:52:57.563] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir grid_mutex já tendo battery_mutex 0
+[18:52:57.563] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:57.563] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:57.563] Robo 1 - Movimento para bateria 0 de (8,3) para (7,3)
+[18:52:57.587] Robo 1 - Movimento para bateria 0 realizado com sucesso
+[18:52:57.587] Robo 1 - LIBERANDO grid_mutex
+[18:52:57.588] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:57.604] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:57.819] Robo 2 - ADQUIRINDO grid_mutex para mover de (23,14) para (24,14)
+[18:52:57.819] RISCO DE DEADLOCK: Robo 2 - Adquirindo grid_mutex primeiro
+[18:52:57.819] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:57.819] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:57.833] Robo 2 - Encontrou bateria 9, adquirindo mutex
+[18:52:57.834] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:57.834] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:57.834] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:57.837] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:57.837] Robo 1 - Robo movendo para: (1, 0)
+[18:52:57.837] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:57.859] Robo 2 - Movimento para bateria 9 de (23,14) para (24,14)
+[18:52:57.898] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:57.898] Robo 2 - LIBERANDO grid_mutex
+[18:52:57.924] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:57.956] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:57.956] Robo 4 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:57.956] Robo 4 - Executando movimento para bateria (-1,0) com delay 0.400s
+[18:52:58.038] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:58.039] Robo 1 - ADQUIRINDO grid_mutex para mover de (7,3) para (8,3)
+[18:52:58.039] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:58.039] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:58.039] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:58.040] Robo 1 - Encontrou bateria 0, adquirindo mutex
+[18:52:58.040] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:58.040] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 0
+[18:52:58.040] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:58.057] Robo 0 - ADQUIRINDO grid_mutex para mover de (26,14) para (25,14)
+[18:52:58.057] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:58.065] Robo 1 - Movimento para bateria 0 de (7,3) para (8,3)
+[18:52:58.075] Robo 1 - Movimento para bateria 0 realizado com sucesso
+[18:52:58.075] Robo 1 - LIBERANDO grid_mutex
+[18:52:58.075] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:58.092] Robo 0 - Movimento normal de (26,14) para (25,14), estava em bateria: False
+[18:52:58.096] Robo 0 - LIBERANDO grid_mutex
+[18:52:58.104] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:58.141] Robo 2 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:58.141] Robo 2 - Robo decidiu ir para bateria: (-1, 0)
+[18:52:58.141] Robo 2 - Executando movimento para bateria (-1,0) com delay 0.600s
+[18:52:58.319] Robo 1 - Robo movimento aleatório: (1, 0)
+[18:52:58.320] Robo 1 - Executando movimento (1,0) com delay 0.200s
+[18:52:58.327] Robo 0 - Executando movimento (-1,0) com delay 0.600s
+[18:52:58.356] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:58.367] Robo 4 - Tentando mover para bateria 7 em (32,1)
+[18:52:58.367] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:58.367] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:58.367] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:58.433] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:58.433] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:58.433] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:58.433] Robo 4 - grid_mutex ADQUIRIDO
+[18:52:58.433] Robo 4 - Movimento para bateria 7 de (33,1) para (32,1)
+[18:52:58.453] Robo 4 - Movimento para bateria 7 realizado com sucesso
+[18:52:58.453] Robo 4 - LIBERANDO grid_mutex
+[18:52:58.525] Robo 1 - ADQUIRINDO grid_mutex para mover de (8,3) para (9,3)
+[18:52:58.525] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:58.525] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:58.526] Robo 1 - grid_mutex ADQUIRIDO
+[18:52:58.530] Robo 1 - Housekeeping: carregando energia na bateria 0
+[18:52:58.535] Robo 1 - Encontrou bateria 6, adquirindo mutex
+[18:52:58.535] RISCO DE DEADLOCK: Robo 1 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:58.535] RISCO DE DEADLOCK: Robo 1 - Tentando acessar bateria 6
+[18:52:58.535] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 0
+[18:52:58.560] Robo 1 - Liberando mutex da bateria 0 antes de adquirir bateria 6
+[18:52:58.560] Robo 1 - LIBERANDO battery_mutex da bateria 0
+[18:52:58.560] Robo 1 - battery_mutex da bateria 0 LIBERADO COM SUCESSO
+[18:52:58.560] Robo 1 - Referências do battery_mutex da bateria 0 limpas
+[18:52:58.577] Robo 1 - TENTANDO ADQUIRIR battery_mutex da bateria 6
+[18:52:58.577] Robo 1 - battery_mutex da bateria 6 ADQUIRIDO COM SUCESSO
+[18:52:58.577] Robo 1 - Movimento para bateria 6 de (8,3) para (9,3)
+[18:52:58.583] Robo 1 - Movimento para bateria 6 realizado com sucesso
+[18:52:58.583] Robo 1 - LIBERANDO grid_mutex
+[18:52:58.592] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:58.690] Robo 4 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:58.690] Robo 4 - Robo decidiu ir para bateria: (1, 0)
+[18:52:58.691] Robo 4 - Executando movimento para bateria (1,0) com delay 0.400s
+[18:52:58.756] Robo 2 - Tentando mover para bateria 9 em (23,14)
+[18:52:58.757] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:58.757] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:58.757] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:58.815] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:58.823] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:58.823] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:58.823] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:58.824] Robo 2 - grid_mutex ADQUIRIDO
+[18:52:58.824] Robo 2 - Movimento para bateria 9 de (24,14) para (23,14)
+[18:52:58.832] Robo 1 - Encontrou 17 baterias, indo para mais próxima (distância 1)
+[18:52:58.832] Robo 1 - Robo movendo para: (-1, 0)
+[18:52:58.832] Robo 1 - Executando movimento (-1,0) com delay 0.200s
+[18:52:58.851] Robo 2 - Movimento para bateria 9 realizado com sucesso
+[18:52:58.851] Robo 2 - LIBERANDO grid_mutex
+[18:52:58.930] Robo 0 - ADQUIRINDO grid_mutex para mover de (25,14) para (24,14)
+[18:52:58.930] RISCO DE DEADLOCK: Robo 0 - Adquirindo grid_mutex primeiro
+[18:52:58.930] Robo 0 - grid_mutex ADQUIRIDO
+[18:52:58.940] Robo 0 - Encontrou bateria 9, adquirindo mutex
+[18:52:58.940] RISCO DE DEADLOCK: Robo 0 - Tentando adquirir battery_mutex já tendo grid_mutex
+[18:52:58.940] RISCO DE DEADLOCK: Robo 0 - Tentando acessar bateria 9
+[18:52:58.996] Robo 0 - TENTANDO ADQUIRIR battery_mutex da bateria 9
+[18:52:59.022] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:52:59.037] Robo 1 - ADQUIRINDO grid_mutex para mover de (9,3) para (8,3)
+[18:52:59.037] RISCO DE DEADLOCK: Robo 1 - Adquirindo grid_mutex primeiro
+[18:52:59.037] RISCO DE DEADLOCK: Robo 1 - Já possui mutex da bateria 6
+[18:52:59.078] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:59.091] Robo 2 - Robo movendo para bateria: (0, 0)
+[18:52:59.091] Robo 2 - Executando movimento para bateria (0,0) com delay 0.600s
+[18:52:59.103] Robo 4 - Tentando mover para bateria 7 em (33,1)
+[18:52:59.103] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:59.103] RISCO DE DEADLOCK: Robo 4 - Tentando acessar bateria 7
+[18:52:59.103] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:59.184] Robo 4 - ADQUIRINDO grid_mutex para mover para bateria 7
+[18:52:59.184] RISCO DE DEADLOCK: Robo 4 - Tentando adquirir grid_mutex já tendo battery_mutex 7
+[18:52:59.184] RISCO DE DEADLOCK: Robo 4 - Já possui mutex da bateria 7
+[18:52:59.331] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:59.482] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:52:59.576] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:52:59.707] Robo 2 - Tentando mover para bateria 9 em (23,14)
+[18:52:59.708] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir battery_mutex antes de grid_mutex
+[18:52:59.708] RISCO DE DEADLOCK: Robo 2 - Tentando acessar bateria 9
+[18:52:59.708] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:59.769] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:52:59.777] Robo 2 - ADQUIRINDO grid_mutex para mover para bateria 9
+[18:52:59.778] RISCO DE DEADLOCK: Robo 2 - Tentando adquirir grid_mutex já tendo battery_mutex 9
+[18:52:59.778] RISCO DE DEADLOCK: Robo 2 - Já possui mutex da bateria 9
+[18:52:59.990] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:00.027] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:00.199] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:00.475] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:00.509] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:00.685] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:01.006] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:01.013] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:01.179] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:01.511] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:01.514] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:01.695] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:01.974] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:01.977] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:02.141] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:02.424] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:02.465] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:02.563] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:02.922] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:02.949] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:03.058] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:03.361] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:03.485] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:03.489] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:03.902] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:03.984] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:03.987] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:04.397] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:04.475] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:04.491] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:04.847] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:04.912] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:04.977] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:05.329] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:05.398] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:05.435] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:05.852] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:05.879] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:05.925] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:06.263] MAIN - Usuario pressionou 'q' - encerrando jogo
+[18:53:06.263] MAIN - Finalizando processos de robos
+[18:53:06.291] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:06.326] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:06.406] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:06.730] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:06.764] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:06.859] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:07.203] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:07.207] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:07.377] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:07.658] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:07.708] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:07.844] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:08.182] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:08.189] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:08.367] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:08.646] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:08.701] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:08.867] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:09.147] Robo 1 - Housekeeping: carregando energia na bateria 6
+[18:53:09.157] Robo 2 - Housekeeping: carregando energia na bateria 9
+[18:53:09.370] Robo 4 - Housekeeping: carregando energia na bateria 7
+[18:53:09.551] Robo 1 - Finalizando processo
+[18:53:09.551] Robo 2 - Finalizando processo
+[18:53:09.551] Robo 4 - Finalizando processo
+[18:53:09.582] Robo 0 - ERRO no processo principal: 
+[18:53:09.583] Robo 0 - Finalizando processo
+[18:53:09.587] Robo 2 - Liberando mutex final da bateria 9
+[18:53:09.587] Robo 2 - LIBERANDO battery_mutex da bateria 9
+[18:53:09.587] Robo 2 - ERRO ao liberar battery_mutex da bateria 9: [Errno 32] Broken pipe
+[18:53:09.587] Robo 2 - Referências do battery_mutex da bateria 9 limpas
+[18:53:09.638] Robo 1 - Liberando mutex final da bateria 6
+[18:53:09.638] Robo 1 - LIBERANDO battery_mutex da bateria 6
+[18:53:09.638] Robo 1 - ERRO ao liberar battery_mutex da bateria 6: [Errno 32] Broken pipe
+[18:53:09.638] Robo 1 - Referências do battery_mutex da bateria 6 limpas
+[18:53:09.756] Robo 4 - Liberando mutex final da bateria 7
+[18:53:09.757] Robo 4 - LIBERANDO battery_mutex da bateria 7
+[18:53:09.757] Robo 4 - ERRO ao liberar battery_mutex da bateria 7: [Errno 32] Broken pipe
+[18:53:09.757] Robo 4 - Referências do battery_mutex da bateria 7 limpas
